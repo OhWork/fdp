@@ -18,3 +18,14 @@
 }
 @media (min-width: 1680px){
 }
+.lgm {
+	vertical-align: middle;
+	margin:auto;
+	height:250px;
+	width:250px;
+	margin-top:10%;
+}
+.lg {
+	height:100px;
+	width:250px;
+}
