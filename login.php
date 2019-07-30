@@ -14,17 +14,12 @@ echo $form->open('','','','check_login.php','');
 				<?php echo $text_user; ?>
 			</div>
 		</div>
-		<div class="row mt-4">
+		<div class="row mt-2">
 			<img class="ml-3 pt-1 pb-1 pl-1 pr-1 imb" src="images/pw.png" />
 			<div class="form-group us">
 				<?php echo $text_pass; ?>	
 			</div>
 		</div>
-		<div class="checkbox mb-3 mt-2">
-			<div class="row">
-				<input class="mt-2 ml-3" type="checkbox" value="remember-me"><p class="ml-1">จดจำฉันไว้</p>
-			</div>
-		</div>
-		<button class="btn btn-primary btn-block" type="submit">เข้าสู่ระบบ</button>
+		<button class="btn btn-primary btn-block mt-3 btc" type="submit">เข้าสู่ระบบ</button>
 	</div>
    <?php echo $form->close();?>
