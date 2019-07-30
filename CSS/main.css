@@ -21,11 +21,27 @@
 .lgm {
 	vertical-align: middle;
 	margin:auto;
-	height:250px;
-	width:250px;
+	width:310px;
 	margin-top:10%;
 }
 .lg {
 	height:100px;
 	width:250px;
+}
+.us {
+	width:80%;
+	margin-bottom: 0rem;
+}
+.imb {
+	border-top: 1px solid #ced4da;
+	border-left: 1px solid #ced4da;
+	border-bottom: 1px solid #ced4da;
+    border-radius: 0.25rem;
+	border-top-right-radius: 0rem;
+	border-bottom-right-radius: 0rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.usb {
+	border-top-left-radius: 0rem;
+	border-bottom-left-radius: 0rem;
 }
