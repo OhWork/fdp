@@ -17,7 +17,7 @@ echo $form->open('','','','index.php?url=show_sale.php','');
 		<div class="row mt-2">
 			<img class="ml-3 pt-1 pb-1 pl-1 pr-1 imb" src="images/pw.png" />
 			<div class="form-group us">
-				<?php echo $text_pass; ?>	
+				<?php echo $text_pass; ?>
 			</div>
 		</div>
 		<button class="btn btn-primary btn-block mt-3 btc" type="submit">เข้าสู่ระบบ</button>
