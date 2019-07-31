@@ -25,7 +25,6 @@
 
     <body>
         <?php
-
             include  'login.php';
         ?>
     </body>
