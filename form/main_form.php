@@ -363,7 +363,7 @@ class labeladdday{
 		}
 
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
-		include_once 'database/db_tools.php';
+		include_once 'tools/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK($table,$type,$id)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
@@ -384,31 +384,8 @@ class labeladdday{
 		$html.="</select>";
 		return $html;
 		}
-// 	function selectFromTBinDBZootype($table,$value,$label,$type,$id,$result){
-// 		include_once 'database/db_tools.php';
-// 		$db = new db_tools();
-// 		$rs = $db->findbyPK($table,$type,$id)->execute();
-// 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
-// 			<option value=''>
-// 			-----{$this->lists}-----
-// 			</option>
-// 			";
-//
-// 		while($r = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
-// 			$html.="<option value= '{$r[$value]}'";
-// 		if($r[$value]==$result){
-// 				$html.='selected';
-// 			};
-// 			$html.=">
-// 			{$r[$label]}
-// 			 </option>";
-// 			}
-// 		$html.="</select>";
-// 		return $html;
-// 		}
-
 	function selectFromTBinDB2($table,$table2,$value,$label,$label2,$type,$id,$zoo,$idzoo,$sysallow,$idsysallow,$user,$iduser,$result){
-		include_once 'database/db_tools.php';
+		include_once 'tools/db_tools.php';
 		$db = new db_tools();
 		$rs = $db->findbyPK24($table,$table2,$type,$id,$zoo,$idzoo,$user,$iduser,$sysallow,$idsysallow)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
