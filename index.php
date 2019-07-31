@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php //แก้ content เป็น client id ที่ config ไว้กับ google?>
-            <meta name="google-signin-client_id" content="977916372948-p4d07ppqrn4i4m5paush7crr6qvicscq.apps.googleusercontent.com">
+        <meta name="google-signin-client_id" content="977916372948-p4d07ppqrn4i4m5paush7crr6qvicscq.apps.googleusercontent.com">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
@@ -20,7 +20,6 @@
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/main.css">
-
     </head>
 
     <body>
