@@ -8,41 +8,157 @@
     $lbemail = new label('อีเมล');
     $lbsubdistrict = new label('แขวง/ตำบล');
     $lbdistrict = new label('เขต/อำเภอ');
-    $lbprovince = new label('อีเมล');
-    $txtname = new textfield('customer_name','','','','');
-    $txtposition = new textfield('customer_position','','','','');
-    $txtaddress = new textfield('customer_address','','','','');
-    $txtshop = new textfield('customer_shop','','','','');
-    $txttel = new textfield('customer_tel','','','','');
-    $txtemail = new textfield('customer_email','','','','');
-    $txtsubdistrict = new textfield('customer_subdistrict','','','','');
-    $txtdistrict = new textfield('customer_district','','','','');
-    $txtprovince = new textfield('customer_province','','','','');
-    $submit = new buttonok('submit','','','');
-   echo $form->open("","","","insert_customer.php","");
+    $lbprovince = new label('จังหวัด');
+    $txtname = new textfield('customer_name','','form-control','','');
+    $txtposition = new textfield('customer_position','','form-control','','');
+    $txtaddress = new textfield('customer_address','','form-control','','');
+    $txtshop = new textfield('customer_shop','','form-control','','');
+    $txttel = new textfield('customer_tel','','form-control','','');
+    $txtemail = new textfield('customer_email','','form-control','','');
+    $txtsubdistrict = new textfield('customer_subdistrict','','form-control','','');
+    $txtdistrict = new textfield('customer_district','','form-control','','');
+    $txtprovince = new textfield('customer_province','','form-control','','');
+    $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
+   echo $form->open("","","col-12","insert_customer.php","");
    ?>
-   เพิ่มลูกค้า
-   <?php
-   echo $lbname;
-   echo $txtname;
-   echo $lbposition;
-   echo $txtposition;
-   echo $lbtel;
-   echo $txttel;
-   echo $lbaddress;
-   echo $txtaddress;
-   echo $lbemail;
-   echo $txtemail;
-   echo $lbshop;
-   echo $txtshop;
-   echo $lbsubdistrict;
-   echo $txtsubdistrict;
-   echo $lbdistrict;
-   echo $txtdistrict;
-   echo $lbprovince;
-   echo $txtprovince;
-   echo $submit;
-   
-   
-   ?>
-   
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <h3>เพิ่มลูกค้า</h3>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="row">
+                        <?php echo $lbname;  ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                        <?php echo $txtname;  ?>
+                </div>
+            </div>
+            <div class="col-12 pb-5">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbposition;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txtposition;  ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12 pr-0">
+                                <?php echo $lbshop;  ?>
+                            </div>
+                            <div class="col-12 pr-0">
+                                <?php echo $txtshop;  ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 bdac"></div>
+            <div class="col-12 mt-5">
+                <div class="row">
+                    <?php echo $lbaddress;  ?>
+                </div>
+             </div>
+            <div class="col-12">
+                <div class="row">
+                    <?php echo $txtaddress;  ?>
+                </div>
+            </div>
+            <div class="col-12 pb-5">
+                <div class="row">
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12 pl-0">
+                                <?php echo $lbsubdistrict;  ?>
+                            </div>
+                            <div class="col-12 pl-0">
+                                <?php echo $txtsubdistrict;  ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbdistrict;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txtdistrict;  ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12 pr-0">
+                                <?php echo $lbprovince;  ?>
+                            </div>
+                            <div class="col-12 pr-0">
+                                <?php echo $txtprovince;  ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="col-12 bdac"></div>
+            <div class="col-12 mt-5">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbtel;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txttel;  ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12 pr-0">
+                                <?php echo $lbemail;  ?>
+                            </div>
+                            <div class="col-12 pr-0">
+                                <?php echo $txtemail;  ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12 pr-0">
+                                <?php echo $submit; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>
