@@ -8,7 +8,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
          <?php 
-                include 'inc_js.php';  
+                include 'inc_js.php';
+                include 'form/main_form.php'
           ?>
 
         <title>เข้าสู่ระบบ</title>
