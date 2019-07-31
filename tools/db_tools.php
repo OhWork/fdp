@@ -1,6 +1,6 @@
 <?php
     class db_tools{
-        private  $dsn = "mysql:host=localhost;dbname=intranet_intranet;charset=utf8";
+        private  $dsn = "mysql:host=localhost;dbname=friendship_db;charset=utf8";
         private  $user = "root";
         private  $pass = "";
         private  $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
@@ -35,7 +35,7 @@
         }
 
         function moveNext_getRow($mode ='num'){
-            $arrmode = array("num"=>PDO::FETCH_NUM,"assoc"=>PDO::FETCH_ASSOC);
+            $arrmode = array("num"=>PDO::FETCH_NUM,"assoc"=>PDO::FETCH_ASSOC,"array"=>PDO::FETCH_BOTH,"obj"=>PDO::FETCH_OBJ);
             return $this->stm->fetch($arrmode[$mode]);
         }
         function closeStm(){
@@ -62,11 +62,9 @@
 		function update($table, $data, $field, $value){
 			$val = array();
 			$colon =array();
-			$rows ="";
 			$i=0;
 			foreach($data as $k => $v){
 				$val[":$v"] = $v;
-				$colon[] =":$v";
 				if($k!=$field){
 					$rows.="$k ="."'".$val[":$v"]."'";
 					if($i<count($data)-1){
@@ -83,16 +81,33 @@
 			$this->runStmSql($val);
 		}
 		public function findAll($table){
-				$this->sql = 'SELECT * FROM '.$table;
-				return $this;
+			$this->createStement('SELECT * FROM '.$table);
+			$this->runStmSql(array());
 			}
         function conditions($table,$condition){
-			$this->sql = "SELECT * FROM $table WHERE $condition";
-			return $this;
+			$this->createStement("SELECT * FROM $table WHERE $condition");
+			$this->runStmSql(array());
 		}
-		function findByPK($table,$column,$value){
-			$this->sql = "SELECT * FROM $table WHERE $column = $value";
-			return $this;
+		function findByPK($table,$data){
+			$field = "";
+			$val = array();
+			$condition="";
+			$i = 0;
+			$tablelist = join($table,",");
+			foreach($data as $k => $v){
+				$field = $k;
+				$val[":$v"] =$v;
+				$value = $val[":$v"];
+				$condition .= "$field = $value";
+				if($i<count($data)-1){
+					$condition .= " AND ";
+
+					}
+				$i++;
+
+			}
+			$this->createStement("SELECT * FROM $tablelist WHERE $condition");
+			$this->runStmSql($val);
 		}
 }
 ?>

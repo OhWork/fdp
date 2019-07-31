@@ -7,6 +7,8 @@
         <meta name="author" content="">
          <?php 
                 include 'inc_js.php';
+                include 'tools/db_tools.php';
+                include 'connect.php';
                 include 'form/main_form.php';
           ?>
         <title>เข้าสู่ระบบ</title>
@@ -24,7 +26,7 @@
     <body>
         <?php
 
-            include  'login.php';
+            include  'content.php';
         ?>
     </body>
 </html>

@@ -1,6 +1,4 @@
 <?php
-    include 'tools/db_tools.php';
-    include 'connect.php';
     $form = new form();
     $lbname = new label('ชื่อ-นามสกุล');
     $lbposition = new label('ตำแหน่ง');
@@ -20,7 +18,31 @@
     $txtsubdistrict = new textfield('customer_subdistrict','','','','');
     $txtdistrict = new textfield('customer_district','','','','');
     $txtprovince = new textfield('customer_province','','','','');
+    $submit = new buttonok('submit','','','');
    echo $form->open("","","","insert_customer.php","");
    ?>
-   เพิ่มลุกค้า
+   เพิ่มลูกค้า
+   <?php
+   echo $lbname;
+   echo $txtname;
+   echo $lbposition;
+   echo $txtposition;
+   echo $lbtel;
+   echo $txttel;
+   echo $lbaddress;
+   echo $txtaddress;
+   echo $lbemail;
+   echo $txtemail;
+   echo $lbshop;
+   echo $txtshop;
+   echo $lbsubdistrict;
+   echo $txtsubdistrict;
+   echo $lbdistrict;
+   echo $txtdistrict;
+   echo $lbprovince;
+   echo $txtprovince;
+   echo $submit;
+   
+   
+   ?>
    
