@@ -1,17 +1,14 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <?php //แก้ content เป็น client id ที่ config ไว้กับ google?>
-            <meta name="google-signin-client_id" content="977916372948-p4d07ppqrn4i4m5paush7crr6qvicscq.apps.googleusercontent.com">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
          <?php 
                 include 'inc_js.php';
-                include 'form/main_form.php'
+                include 'form/main_form.php';
           ?>
-
         <title>เข้าสู่ระบบ</title>
 
         <!-- Bootstrap core CSS -->

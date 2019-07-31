@@ -1,6 +1,6 @@
 <?php
     class db_tools{
-        private  $server = "mysql:host=localhost;dbname=intranet_intranet;charset=utf8";
+        private  $dsn = "mysql:host=localhost;dbname=intranet_intranet;charset=utf8";
         private  $user = "root";
         private  $pass = "";
         private  $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
@@ -10,7 +10,7 @@
         public function openConnection(){
                try
                  {
-        	        $this->con = new PDO($this->server, $this->user,$this->pass,$this->options);
+        	        $this->con = new PDO($this->dsn, $this->user,$this->pass,$this->options);
         	        return $this->con;
                   }
                catch (PDOException $e)
@@ -57,24 +57,30 @@
 
 
 	        $this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
-	        print_r($this);
 	        $this->runStmSql($val);
 		}
 		function update($table, $data, $field, $value){
-    		$con = $this->connect();
+			$val = array();
+			$colon =array();
 			$rows ="";
 			$i=0;
 			foreach($data as $k => $v){
+				$val[":$v"] = $v;
+				$colon[] =":$v";
 				if($k!=$field){
-					$rows.="$k ='$v'";
+					$rows.="$k ="."'".$val[":$v"]."'";
 					if($i<count($data)-1){
 						$rows.=',';
 					}
-					$i++;
 				}
+				$i++;
 			}
-			$this->sql = "UPDATE $table SET $rows WHERE $field = $value";
-			return mysqli_query($con,$this->sql);
+			$this->createStement("UPDATE $table SET $rows WHERE $field = $value");
+			$this->runStmSql($val);
+		}
+		function delete($table,$field,$value){
+			$this->createStement("DELETE FROM $table WHERE $field = $value");
+			$this->runStmSql($val);
 		}
 		public function findAll($table){
 				$this->sql = 'SELECT * FROM '.$table;
