@@ -23,8 +23,10 @@
     </head>
 
     <body>
+        <div class="warpper">
         <?php
             include  'content.php';
         ?>
+        </div>
     </body>
 </html>

@@ -48,3 +48,7 @@
 .btc {
 	background-color:#2a88d0;
 }
+.btn-circle {
+  padding: 6px 8px 8px 8px;
+  border-radius: 50%;
+}
