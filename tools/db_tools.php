@@ -1,6 +1,6 @@
 <?php
     class db_tools{
-        private  $dsn = "mysql:host=localhost;dbname=friendship_db;charset=utf8";
+        private  $dsn = "mysql:host=localhost;dbname=intranet_intranet;charset=utf8";
         private  $user = "root";
         private  $pass = "";
         private  $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
@@ -58,6 +58,7 @@
 
 	        $this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
 	        $this->runStmSql($val);
+	        return $this;
 		}
 		function update($table, $data, $field, $value){
 			$val = array();
@@ -75,18 +76,22 @@
 			}
 			$this->createStement("UPDATE $table SET $rows WHERE $field = $value");
 			$this->runStmSql($val);
+			return $this;
 		}
 		function delete($table,$field,$value){
 			$this->createStement("DELETE FROM $table WHERE $field = $value");
 			$this->runStmSql($val);
+			return $this;
 		}
 		public function findAll($table){
 			$this->createStement('SELECT * FROM '.$table);
 			$this->runStmSql(array());
+			return $this;
 			}
         function conditions($table,$condition){
 			$this->createStement("SELECT * FROM $table WHERE $condition");
 			$this->runStmSql(array());
+			return $this;
 		}
 		function findByPK($table,$data){
 			$field = "";
@@ -108,6 +113,7 @@
 			}
 			$this->createStement("SELECT * FROM $tablelist WHERE $condition");
 			$this->runStmSql($val);
+			return $this;
 		}
 }
 ?>
