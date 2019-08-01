@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "tools/db_tools.php";
 include "connect.php";
 if( isset($_SESSION['token']) ){
@@ -20,7 +21,7 @@ if( isset($_SESSION['token']) ){
     }//end chk token value
 }else{
     echo "Error : No Token";
-    echo "ไม่มี".$_SESSION['token'];
+    echo "ไม่มี",$_SESSION['token'];
 }
    if($rs){
        echo 'have';
