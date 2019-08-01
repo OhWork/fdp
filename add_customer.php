@@ -1,4 +1,5 @@
 <?php
+    include 'tools/genToken.php';
     $form = new form();
     $lbname = new label('ชื่อ-นามสกุล');
     $lbposition = new label('ตำแหน่ง');
@@ -15,9 +16,9 @@
     $txtshop = new textfield('customer_shop','','form-control','','');
     $txttel = new textfield('customer_tel','','form-control','','');
     $txtemail = new textfield('customer_email','','form-control','','');
-    $txtsubdistrict = new textfield('customer_subdistrict','','form-control','','');
-    $txtdistrict = new textfield('customer_district','','form-control','','');
-    $txtprovince = new textfield('customer_province','','form-control','','');
+    $txtsubdistrict = new textfield('customer_subdistricts','','form-control','','');
+    $txtdistrict = new textfield('customer_districts','','form-control','','');
+    $txtprovince = new textfield('customer_provinces','','form-control','','');
     $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
    echo $form->open("","","col-12","insert_customer.php","");
    ?>
@@ -149,6 +150,8 @@
             <div class="col-12 mt-5">
                 <div class="row">
                     <div class="col-6"></div>
+                    <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
+                    <input type="hidden" name="sale_sale_id" value="<?=$sale_id?>"/>
                     <div class="col-6">
                         <div class="row">
                             <div class="col-12 pr-0">

@@ -1,6 +1,8 @@
 <?php
 include "tools/db_tools.php";
 include "connect.php";
+if( isset($_SESSION['token']) ){
+    if( $_POST['token'] == $_SESSION['token'] ){
    $rs = $db->insert('customer',array(
                 'customer_name' => $_POST['customer_name'],
                 'customer_position' => $_POST['customer_position'],
@@ -11,8 +13,15 @@ include "connect.php";
                 'sale_sale_id' => $_POST['sale_sale_id'],
                 'customer_subdistricts' => $_POST['customer_subdistricts'],
                 'customer_districts' => $_POST['customer_districts'],
-                'customer_province' => $_POST['customer_province']
+                'customer_provinces' => $_POST['customer_provinces']
             ) );
+   }else{
+        echo "Error : Token Data not match<br>";
+    }//end chk token value
+}else{
+    echo "Error : No Token";
+    echo "ไม่มี".$_SESSION['token'];
+}
    if($rs){
        echo 'have';
    }else{
