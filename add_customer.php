@@ -20,6 +20,9 @@
     $txtdistrict = new textfield('customer_districts','','form-control','','');
     $txtprovince = new textfield('customer_provinces','','form-control','','');
     $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
+    $token = new tokens();
+    $tk = $token->openToken();
+    echo $tk;
    echo $form->open("","","col-12","insert_customer.php","");
    ?>
 <div class="row">
