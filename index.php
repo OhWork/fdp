@@ -14,18 +14,19 @@
         <title>เข้าสู่ระบบ</title>
 
         <!-- Bootstrap core CSS -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="CSS/bootstrap.css">
         <link rel="stylesheet" href="CSS/floating-labels.css">
         <link rel="stylesheet" href="CSS/sticky-footer.css">
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="CSS/jquery-ui.css">
+        <link href="CSS/sb-admin.css" rel="stylesheet">
         <link rel="stylesheet" href="CSS/main.css">
 
     </head>
 
     <body>
         <?php
-
             include  'content.php';
         ?>
     </body>
