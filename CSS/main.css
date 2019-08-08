@@ -55,3 +55,21 @@
 .bdac {
     border-bottom: 1px solid #ced4da;
 }
+input[type="text"]:focus {
+  border-color: #2A88AD;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+/*tx-color*/
+.tx1{
+    color:#555f61;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+}
+.tx2{
+    color:#495057;
+}
+/*border*/
+
+/*back-ground*/
+.bg1{
+    background-color: ;
+}
