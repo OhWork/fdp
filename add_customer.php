@@ -19,14 +19,14 @@
     $txtsubdistrict = new textfield('customer_subdistricts','','form-control','','');
     $txtdistrict = new textfield('customer_districts','','form-control','','');
     $txtprovince = new textfield('customer_provinces','','form-control','','');
-    $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
+    $submit = new buttonok('บันทึก ลูกค้า','bs','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
    echo $form->open("","","col-12","insert_customer.php","");
    ?>
 <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6 mt-5">
+    <div class="col-4"></div>
+    <div class="col-4 mt-5">
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -43,7 +43,7 @@
                         <?php echo $txtname;  ?>
                 </div>
             </div>
-            <div class="col-12 pb-5">
+            <div class="col-12 pb-4">
                 <div class="row">
                     <div class="col-6 mt-2">
                         <div class="row">
@@ -71,69 +71,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 bdac"></div>
-            <div class="col-12 mt-5">
-                <div class="row">
-                    <?php echo $lbaddress;  ?>
-                </div>
-             </div>
             <div class="col-12">
                 <div class="row">
-                    <?php echo $txtaddress;  ?>
+                    <h3>เพิ่มข้อมูลการติดต่อ</h3>
                 </div>
             </div>
-            <div class="col-12 pb-5">
-                <div class="row">
-                    <div class="col-4 mt-2">
-                        <div class="row">
-                            <div class="col-12 pl-0">
-                                <?php echo $lbsubdistrict;  ?>
-                            </div>
-                            <div class="col-12 pl-0">
-                                    <select id="selSubdistricts">
-    	<option value=""> ------- เลือก ------ </option>
-    </select><span id="waitSubdistricts"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 mt-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbdistrict;  ?>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                        <select id="selDistricts">
-    	<option value=""> ------- เลือก ------ </option>
-    </select><span id="waitDistricts"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 mt-2">
-                        <div class="row">
-                            <div class="col-12 pr-0">
-                                <?php echo $lbprovince;  ?>
-                            </div>
-                            <div class="col-12 pr-0">
-                                <select id="selProvince">
-    	<option value=""> ------- เลือก ------ </option>
-        <?php
-                        $db->findAll("provinces");
-			while($cols = $db->moveNext_getRow('assoc')){
-				echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
-			}
-             ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-            <div class="col-12 bdac"></div>
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-3">
                 <div class="row">
                     <div class="col-6 mt-2">
                         <div class="row">
@@ -161,7 +104,67 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-2">
+                <div class="row">
+                    <?php echo $lbaddress;  ?>
+                </div>
+             </div>
+            <div class="col-12">
+                <div class="row">
+                    <?php echo $txtaddress;  ?>
+                </div>
+            </div>
+            <div class="col-12 pb-5">
+                <div class="row">
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12 pl-0">
+                                <?php echo $lbprovince;  ?>
+                            </div>
+                            <div class="col-12 pl-0">
+                                <select id="selProvince" class="form-control">
+                                <option value=""> ------- เลือก ------ </option>
+                        <?php
+                                 $db->findAll("provinces");
+                                        while($cols = $db->moveNext_getRow('assoc')){
+                                        echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
+                                        }
+                        ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbdistrict;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <select id="selDistricts" class="form-control">
+                                    <option value=""> ------- เลือก ------ </option>
+                                    </select><span id="waitDistricts"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="row">
+                            <div class="col-12 pr-0">
+                                <?php echo $lbsubdistrict;  ?>
+                            </div>
+                            <div class="col-12 pr-0">
+                                <select id="selSubdistricts" class="form-control">
+                                <option value=""> ------- เลือก ------ </option>
+                                </select><span id="waitSubdistricts"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="col-12">
                 <div class="row">
                     <div class="col-6"></div>
                     <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
@@ -177,5 +180,16 @@
             </div>
         </div>
     </div>
-    <div class="col-3"></div>
+    <div class="col-4"></div>
 </div>
+<script>
+$(document).ready(function () {
+    $('#bs').on('click', function () {
+        Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+    });
+	});
+</script>

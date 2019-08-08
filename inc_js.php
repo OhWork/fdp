@@ -23,3 +23,4 @@
 
   <!-- Custom scripts for all pages-->
   <script src="jquery/sb-admin.min.js"></script>
+  <script src="jquery/sweetalert2.all.min.js"></script>
