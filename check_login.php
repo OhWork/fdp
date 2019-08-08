@@ -11,23 +11,25 @@
         <link rel="stylesheet" href="CSS/main.css">
           <title>Logining</title>
 		  <?php
-		  include_once 'inc_js.php';
-                  include_once 'tools/db_tools.php';
+                error_reporting(0);
+	include_once 'inc_js.php';
+                include_once 'tools/db_tools.php';
 	include_once 'connect.php';
 		  ?>
 	</head>
 <?php
+if( isset($_SESSION['token']) ){
+    if( $_POST['token'] == $_SESSION['token'] ){
 	$empname = $_POST['emp_email'];
-        $password = $_POST['emp_password'];
+                $password = $_POST['emp_password'];
 
                 $db->findByPK(array(
-				'emp'
-				),array(
-                                                                            'emp_email' => "'$empname'",
-                                                                            'emp_password' => "'$password'"
-                                                                           ));
-
-                    $rs = $db->moveNext_getRow('assoc');
+			'emp'
+			),array(
+                                                           'emp_email' => "'$empname'",
+                                                           'emp_password' => "'$password'"
+                                                           ));
+                $rs = $db->moveNext_getRow('assoc');
 	if($rs){
     	$_SESSION['emp_id'] = $rs['emp_id'];
 		$_SESSION['emp_name'] = $rs['emp_name'];
@@ -98,6 +100,9 @@
 		$login_confirm = 0;
 		echo "<div class='loginwrong'>ไอดีหรือรหัสผิดพลาด กรุณาลองใหม่</div>";
 	}
-
+    }else{
+        echo "ติดต่อเจ้าหน้าที่";
+    }
+}
 ?>
 </html>

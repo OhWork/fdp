@@ -1,5 +1,5 @@
 <?php
-	//error_reporting(0);
+	error_reporting(0);
     class db_tools{
         private  $dsn = "mysql:host=localhost;dbname=friendship_db;charset=utf8";
         private  $user = "root";

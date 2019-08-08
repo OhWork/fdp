@@ -1,4 +1,7 @@
     <?php
+    session_start();
+        $token = new tokens();
+        $tk = $token->openToken();
         $form = new form();
         $text_user = new textfield('emp_email','inputEmail','form-control usb','ลงชื่อเข้าสู่ระบบ');
         $text_pass = new pass('emp_password','form-control usb','รหัสผ่าน','');
@@ -19,6 +22,7 @@ echo $form->open('','','','check_login.php','');
 				<?php echo $text_pass; ?>
 			</div>
 		</div>
+                                <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
 		<button class="btn btn-primary btn-block mt-3 btc" type="submit">เข้าสู่ระบบ</button>
 	</div>
    <?php echo $form->close();?>
