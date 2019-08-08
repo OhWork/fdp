@@ -5,6 +5,4 @@
                 return $_SESSION['token'];
             }
         }
-session_start();
-
 ?>

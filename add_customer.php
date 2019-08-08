@@ -1,5 +1,5 @@
 <?php
-    include 'tools/genToken.php';
+    include "tools/ddd.php";
     $form = new form();
     $lbname = new label('ชื่อ-นามสกุล');
     $lbposition = new label('ตำแหน่ง');
@@ -91,7 +91,9 @@
                                 <?php echo $lbsubdistrict;  ?>
                             </div>
                             <div class="col-12 pl-0">
-                                <?php echo $txtsubdistrict;  ?>
+                                    <select id="selSubdistricts">
+    	<option value=""> ------- เลือก ------ </option>
+    </select><span id="waitSubdistricts"></span>
                             </div>
                         </div>
                     </div>
@@ -104,7 +106,9 @@
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <?php echo $txtdistrict;  ?>
+                                        <select id="selDistricts">
+    	<option value=""> ------- เลือก ------ </option>
+    </select><span id="waitDistricts"></span>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +119,15 @@
                                 <?php echo $lbprovince;  ?>
                             </div>
                             <div class="col-12 pr-0">
-                                <?php echo $txtprovince;  ?>
+                                <select id="selProvince">
+    	<option value=""> ------- เลือก ------ </option>
+        <?php
+                        $db->findAll("provinces");
+			while($cols = $db->moveNext_getRow('assoc')){
+				echo '<option value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
+			}
+             ?>
+                                </select>
                             </div>
                         </div>
                     </div>
