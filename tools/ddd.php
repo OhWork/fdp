@@ -43,7 +43,7 @@ $(function(){
 			success: function(json){
 				$("#waitSubdistricts").html("");
 				$.each(json, function(index, value) {
-					 $("#selSubdistricts").append('<option name="customer_subdistricts"  value="' + value.subdistricts_id + '">' + value.subdistricts_name + '</option>');
+					 $("#selSubdistricts").append('<option name="customer_subdistricts" value="' + value.subdistricts_id + '">' + value.subdistricts_name + '</option>');
 				});
 			}
 		});
