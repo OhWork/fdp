@@ -1,7 +1,7 @@
     <?php
         $form = new form();
-        $text_user = new textfield('member_username','inputEmail','form-control usb','ลงชื่อเข้าสู่ระบบ');
-        $text_pass = new pass('member_password','form-control usb','รหัสผ่าน','');
+        $text_user = new textfield('emp_email','inputEmail','form-control usb','ลงชื่อเข้าสู่ระบบ');
+        $text_pass = new pass('emp_password','form-control usb','รหัสผ่าน','');
         $submit = new buttonok('Login','','btn btn-lg btn-primary btn-block col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12','');
 echo $form->open('','','','check_login.php','');
     ?>

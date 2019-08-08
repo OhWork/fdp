@@ -12,28 +12,25 @@
           <title>Logining</title>
 		  <?php
 		  include_once 'inc_js.php';
+                  include_once 'tools/db_tools.php';
+	include_once 'connect.php';
 		  ?>
 	</head>
 <?php
-	include_once 'tools/db_tools.php';
-	include_once 'connect.php';
+	$empname = $_POST['emp_email'];
+        $password = $_POST['emp_password'];
 
-	$db->findByAttributes('user',array(
-		'user_user =' => $_POST['user_user'],
-		'user_pass =' => $_POST['user_pass'])
-		));
                 $db->findByPK(array(
-				'subdistricts',
+				'emp'
 				),array(
-                                                                            'districts_id'=>$districts_id,
-                                                                            'emp_user =' => $_POST['emp_user'],
-                                                                            'emp_pass =' => $_POST['emp_pass'])
+                                                                            'emp_email' => "'$empname'",
+                                                                            'emp_password' => "'$password'"
                                                                            ));
 
-	$rs = $db->executeRow();
+                    $rs = $db->moveNext_getRow('assoc');
 	if($rs){
     	$_SESSION['emp_id'] = $rs['emp_id'];
-		$_SESSION['user_name'] = $rs['user_name'];
+		$_SESSION['emp_name'] = $rs['emp_name'];
 		?>
 		<div class="modal" id="myModal">
 		  <div class="modal-dialog">
@@ -45,7 +42,7 @@
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>
-			       <a href="main.php"><button type="button" class="btn btn-primary">Ok</button></a>
+			       <a href="index.php?url=main.php"><button type="button" class="btn btn-primary">Ok</button></a>
 		       </div>
 		    </div>
 		  </div>
@@ -75,7 +72,7 @@
 		</script>
 		<?php
 		//header('location: admin_index.php');
-		$log_user = $_SESSION['user_name']." ".$_SESSION['user_last'];
+		//$log_user = $_SESSION['user_name']." ".$_SESSION['user_last'];
 		 //Log
 		if(@getenv(HTTP_X_FORWARDED_FOR)){
             $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; // IP proxy
@@ -83,13 +80,13 @@
             $ip = $_SERVER['REMOTE_ADDR'];
         }
         $ipshow = gethostbyaddr($ip);
-        $log = $db->insert('log',array(
-    	'log_system' => 'เข้าระบบ',
-    	'log_action' => 'Login',
-    	'log_action_date' => $date,
-    	'log_action_by' => $log_user,
-    	'log_ip' => $ipshow
-    	));
+       // $log = $db->insert('log',array(
+    //	'log_system' => 'เข้าระบบ',
+    //	'log_action' => 'Login',
+    //	'log_action_date' => $date,
+    //	'log_action_by' => $log_user,
+    //	'log_ip' => $ipshow
+    //	));
 	}else{
 		?>
 		<script>
