@@ -11,13 +11,13 @@
     $lbsubdistrict = new label('แขวง/ตำบล');
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
-    $txtname = new textfield('customer_name','','form-control','','');
-    $txtnickname = new textfield('customer_name','','form-control','','');
-    $txtposition = new textfield('customer_position','','form-control','','');
-    $txtaddress = new textfield('customer_address','','form-control','','');
-    $txtshop = new textfield('customer_shop','','form-control','','');
-    $txttel = new textfield('customer_tel','','form-control','','');
-    $txtemail = new textfield('customer_email','','form-control','','');
+    $txtname = new textfield('customer_name','','form-control','ชื่อ-นามสกุล','');
+    $txtnickname = new textfield('customer_name','','form-control','ชื่อเล่น','');
+    $txtposition = new textfield('customer_position','','form-control','ตำแหน่ง','');
+    $txtaddress = new textfield('customer_address','','form-control','ที่อยู่','');
+    $txtshop = new textfield('customer_shop','','form-control','ชื่อร้าน','');
+    $txttel = new textfield('customer_tel','','form-control','เบอร์โทรศัพท์','');
+    $txtemail = new textfield('customer_email','','form-control','อีเมล','');
     $txtsubdistrict = new textfield('customer_subdistricts','','form-control','','');
     $txtdistrict = new textfield('customer_districts','','form-control','','');
     $txtprovince = new textfield('customer_provinces','','form-control','','');
@@ -40,11 +40,11 @@
     ?>
         <div class="col-12 mt-3">
             <div class="row">
-                <div class="col-12 tx2">
+<!--                <div class="col-12 tx2">
                     <div class="row">
-                            <?php echo $lbname;  ?>
+                            <?php // echo $lbname;  ?>
                     </div>
-                </div>
+                </div>-->
                 <div class="col-12">
                     <div class="row">
                             <?php echo $txtname;  ?>
@@ -54,11 +54,11 @@
                     <div class="row">
                         <div class="col-6 mt-2">
                             <div class="row">
-                                <div class="col-12 tx2">
+<!--                                <div class="col-12 tx2">
                                     <div class="row">
-                                        <?php echo $lbposition;  ?>
+                                        <?php // echo $lbposition;  ?>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="col-12">
                                     <div class="row">
                                         <?php echo $txtposition;  ?>
@@ -68,9 +68,9 @@
                         </div>
                         <div class="col-6 mt-2">
                             <div class="row">
-                                <div class="col-12 pr-0 tx2">
-                                    <?php echo $lbnickname;  ?>
-                                </div>
+<!--                                <div class="col-12 pr-0 tx2">
+                                    <?php // echo $lbnickname;  ?>
+                                </div>-->
                                 <div class="col-12 pr-0">
                                     <?php echo $txtnickname;  ?>
                                 </div>
@@ -78,12 +78,12 @@
                         </div>
                     </div>
                 </div>
-                 <div class="col-12 mt-2 tx2">
+<!--                 <div class="col-12 mt-2 tx2">
                     <div class="row">
-                            <?php echo $lbshop;  ?>
+                            <?php // echo $lbshop;  ?>
                     </div>
-                </div>
-                <div class="col-12">
+                </div>-->
+                <div class="col-12 mt-2">
                     <div class="row">
                             <?php echo $txtshop;  ?>
                     </div>
@@ -94,7 +94,7 @@
                             <div class="row">
                                 <div class="col-12 tx2">
                                     <div class="row">
-                                        <?php echo $lbtel;  ?>
+                                        <?php // echo $lbtel;  ?>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -107,7 +107,7 @@
                         <div class="col-6 mt-2">
                             <div class="row">
                                 <div class="col-12 pr-0 tx2">
-                                    <?php echo $lbemail;  ?>
+                                    <?php // echo $lbemail;  ?>
                                 </div>
                                 <div class="col-12 pr-0">
                                     <?php echo $txtemail;  ?>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-12 mt-2 tx2">
                     <div class="row">
-                        <?php echo $lbaddress;  ?>
+                        <?php // echo $lbaddress;  ?>
                     </div>
                  </div>
                 <div class="col-12">
