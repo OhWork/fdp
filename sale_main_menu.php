@@ -23,6 +23,10 @@
           <a class="dropdown-item" href="blank.html">Blank Page</a>
         </div>-->
       </li>
+      <li class="nav-item">
+          <a href="index.php?url=add_customer.php" class="nav-link"><i class="far fa-user"></i>
+          <span>เพิ่มข้อมูลลูกค้า</span></a>
+      </li>
 <!--      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
