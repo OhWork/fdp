@@ -25,7 +25,7 @@ $(function(){
 				$.each(json, function(index, value) {
 					// Insert content, specified by the parameter, to the end of each element
 					// in the set of matched elements.
-					 $("#selDistricts").append('<option value="' + value.districts_id + '">' + value.districts_name + '</option>');
+					 $("#selDistricts").append('<option name="customer_districts" value="' + value.districts_id + '">' + value.districts_name + '</option>');
 				});
 			}
 		});
@@ -43,7 +43,7 @@ $(function(){
 			success: function(json){
 				$("#waitSubdistricts").html("");
 				$.each(json, function(index, value) {
-					 $("#selSubdistricts").append('<option value="' + value.subdistricts_id + '">' + value.subdistricts_name + '</option>');
+					 $("#selSubdistricts").append('<option name="customer_subdistricts"  value="' + value.subdistricts_id + '">' + value.subdistricts_name + '</option>');
 				});
 			}
 		});

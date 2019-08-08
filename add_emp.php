@@ -123,7 +123,7 @@
         <?php
                         $db->findAll("provinces");
 			while($cols = $db->moveNext_getRow('assoc')){
-				echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
+				echo '<option value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
 			}
              ?>
                                 </select>
