@@ -8,6 +8,7 @@
          <?php 
                 include 'inc_js.php';
                 include 'tools/db_tools.php';
+                include 'tools/genToken.php';
                 include 'connect.php';
                 include 'form/main_form.php';
           ?>
