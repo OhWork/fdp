@@ -11,8 +11,8 @@ session_start();
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
 <body id="page-top"> 
-<?php  include_once 'sale_menutop.php'; ?>
-<?php  include_once 'sale_main_menu.php'; ?>
+<?php  include_once 'menutop.php'; ?>
+<?php  include_once 'main_menu.php'; ?>
  
   
 
