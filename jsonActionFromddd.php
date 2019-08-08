@@ -2,7 +2,7 @@
                 include 'tools/db_tools.php';
                 include 'connect.php';
 // Set delay 1 second. 
-sleep(1);
+//sleep(1);
 
 $nextList = isset($_GET['nextList']) ? $_GET['nextList'] : '';
 
