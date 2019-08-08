@@ -166,16 +166,17 @@
              </div>
             <div class="col-12">
                 <div class="row">
-                    <div class="col-6"></div>
+                    <div class="col-4"></div>
                     <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
                     <input type="hidden" name="sale_sale_id" value="<?=$sale_id?>"/>
-                    <div class="col-6">
+                    <div class="col-4">
                         <div class="row">
-                            <div class="col-12 pr-0">
+                            <div class="col-12">
                                 <?php echo $submit; ?>
                             </div>
                         </div>
                     </div>
+                    <div class="col-4"></div>
                 </div>
             </div>
         </div>
