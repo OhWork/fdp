@@ -1,7 +1,7 @@
 <?php
-	error_reporting(0);
+	//error_reporting(0);
     class db_tools{
-        private  $dsn = "mysql:host=localhost;dbname=intranet_intranet;charset=utf8";
+        private  $dsn = "mysql:host=localhost;dbname=friendship_db;charset=utf8";
         private  $user = "root";
         private  $pass = "";
         private  $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
