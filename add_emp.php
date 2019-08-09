@@ -3,6 +3,7 @@
     $form = new form();
     $lbname = new label('ชื่อ-นามสกุล');
     $lbidcard = new label('บัตรประชาชน');
+    $lbbd = new label('วันเดือนปีเกิด'); 
     $lbtel = new label('เบอร์โทรศัพท์');
     $lbemail = new label('อีเมล');
     $lbpass = new label('รหัสผ่าน'); 
@@ -13,16 +14,18 @@
     $txtname = new textfield('emp_name','','form-control','','');
     $txtaddress = new textfield('emp_address','','form-control','','');
     $txttel = new textfield('emp_tel','','form-control','','');
+    $txtbd = new textfield('emp_bd','','form-control','','');
     $txtemail = new textfield('emp_email','','form-control','','');
-    $txtpass = new textfield('emp_password','user_pass','form-control','','');
-    $txtpasscon = new textfield('emp_passcon','user_pass_confirm','form-control','','');
+    $txtidcard = new textfield('emp_idcard','','form-control','','');
+    $txtpass = new textfield('emp_password','emp_pass','form-control','','emp_pass');
+    $txtpasscon = new textfield('emp_passcon','emp_pass_confirm','form-control','','emp_pass_confirm');
     $txtsubdistrict = new textfield('emp_subdistricts','','form-control','','');
     $txtdistrict = new textfield('emp_districts','','form-control','','');
     $txtprovince = new textfield('emp_provinces','','form-control','','');
-    $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
+    $submit = new buttonok('บันทึก ลูกค้า','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
-   echo $form->open("","","col-12","insert_customer.php","");
+   echo $form->open("","","col-12","insert_emp.php","");
    ?>
 <div class="row">
     <div class="col-3"></div>
@@ -49,23 +52,68 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
-                                    <?php echo $lbposition;  ?>
+                                    <?php echo $lbemail;  ?>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <?php echo $txtposition;  ?>
+                                    <?php echo $txtemail;  ?>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+                        <div class="col-12 pb-5">
+                <div class="row">
                     <div class="col-6 mt-2">
                         <div class="row">
-                            <div class="col-12 pr-0">
-                                <?php echo $lbshop;  ?>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbpass;  ?>
+                                </div>
                             </div>
-                            <div class="col-12 pr-0">
-                                <?php echo $txtshop;  ?>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txtpass;  ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-12 pb-5">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbpasscon;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txtpasscon;  ?>
+                                </div>
+                                <div id="msg2" class="col-md-12 form-group" style="text-align:center;padding-top:10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-12 pb-5">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $lbidcard;  ?>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <?php echo $txtidcard;  ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -180,9 +228,33 @@
     <div class="col-3"></div>
 </div>
 <script>
-    $('#user_pass_confirm').focusout(function(){
-                    var pass = $('#user_pass').val();
-	    var passcon =  $('#user_pass_confirm').val();
+    $('#emp_email').keyup(function(){
+		console.log($('#emp_email').val().length);
+		//if($('#user_email').val().length >= 8 &&  $('#emp_email').val().length <= 16){
+		$.ajax({
+	            url: "check_emp.php",
+	            data: {user_user : $('#user_user').val()},
+	            type: "POST",
+	            success: function(data) {
+// 		            console.log($('#user_user').val());
+		           	$('#msg').show();
+	                if((data > '0')) {
+//    	                    $("#btnSubmit").attr("disabled", true);
+	                     $("#msg").html('<span class="text-danger">ชื่อผู้ใช้ไม่สามารถใช้งานได้</span>');
+	                } else {
+		                $("#msg").html('<span class="text-success">ชื่อผู้ใช้นี้สามารถใช้ได้</span>');
+//  	                    $("#btnSubmit").attr("disabled", false);
+	                }
+	            },
+	           error: function(XMLHttpRequest, textStatus, errorThrown) {
+			   alert("some error");
+	  		   }
+	     });
+	    //}
+    });
+    $('#emp_pass_confirm').focusout(function(){
+                    var pass = $('#emp_pass').val();
+	    var passcon =  $('#emp_pass_confirm').val();
 	    //var passconmd5 = $.md5($.md5($.md5(passcon)));
 	    //var passmd5 =$.md5($.md5($.md5(pass)));
 	    if(pass == passcon){
