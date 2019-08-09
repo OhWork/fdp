@@ -177,7 +177,7 @@
                     <div class="row">
                         <div class="col-10"></div>
                         <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
-                        <input type="hidden" name="sale_sale_id" value="<?=$sale_id?>"/>
+                        <input type="hidden" name="emp_emp_id" value="<?=$_SESSION['emp_id']?>"/>
                         <div class="col-2">
                             <div class="row">
                                 <div class="col-12 pl-0">
