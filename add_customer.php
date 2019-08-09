@@ -11,7 +11,7 @@
     $lbsubdistrict = new label('แขวง/ตำบล');
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
-    $txtname = new textfield('customer_name','','form-control','คลิก-เพื่อกรอกข้อมูล','');
+    $txtname = new textfield('customer_name','','form-control','','');
     $txtnickname = new textfield('customer_name','','form-control','','');
     $txtposition = new textfield('customer_position','','form-control','','');
     $txtaddress = new textfield('customer_address','','form-control','','');
