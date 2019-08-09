@@ -52,9 +52,6 @@
     padding: 6px 8px 8px 8px;
     border-radius: 50%;
 }
-.bdac {
-    border-bottom: 1px solid #ced4da;
-}
 input[type="text"]:focus {
   border-color: #2A88AD;
   box-shadow: 0 0 8px 0 dodgerBlue;
@@ -65,11 +62,23 @@ input[type="text"]:focus {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
 .tx2{
-    color:#495057;
+    color:#333333;
+}
+.tx3{
+    color:#2a88d0;
+}
+.tx4 {
+    color:red;
 }
 /*border*/
-
+.bdac {
+    border-bottom: 1px solid #dddddd;
+}
+.bdac1 {
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
 /*back-ground*/
 .bg1{
-    background-color: ;
+    background-color: #fafafa;
 }
