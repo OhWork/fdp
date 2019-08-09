@@ -14,7 +14,8 @@ if( isset($_SESSION['token']) ){
                 'sale_sale_id' => $_POST['sale_sale_id'],
                 'customer_subdistricts' => $_POST['customer_subdistricts'],
                 'customer_districts' => $_POST['customer_districts'],
-                'customer_provinces' => $_POST['customer_provinces']
+                'customer_provinces' => $_POST['customer_provinces'],
+                'emp_emp_id' => $_POST['emp_emp_id']
             ) );
    }else{
         echo "Error : Token Data not match<br>";
