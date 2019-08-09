@@ -2,23 +2,23 @@
     include "tools/ddd.php";
     $form = new form();
     $lbname = new label('ชื่อ-นามสกุล');
-    $lbposition = new label('ตำแหน่ง');
-    $lbaddress = new label('ที่อยู่');
-    $lbshop = new label('ชื่อร้าน');
+    $lbidcard = new label('บัตรประชาชน');
     $lbtel = new label('เบอร์โทรศัพท์');
     $lbemail = new label('อีเมล');
+    $lbpass = new label('รหัสผ่าน'); 
+    $lbpasscon = new label('ยืนยันรหัสผ่าน'); 
     $lbsubdistrict = new label('แขวง/ตำบล');
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
-    $txtname = new textfield('customer_name','','form-control','','');
-    $txtposition = new textfield('customer_position','','form-control','','');
-    $txtaddress = new textfield('customer_address','','form-control','','');
-    $txtshop = new textfield('customer_shop','','form-control','','');
-    $txttel = new textfield('customer_tel','','form-control','','');
-    $txtemail = new textfield('customer_email','','form-control','','');
-    $txtsubdistrict = new textfield('customer_subdistricts','','form-control','','');
-    $txtdistrict = new textfield('customer_districts','','form-control','','');
-    $txtprovince = new textfield('customer_provinces','','form-control','','');
+    $txtname = new textfield('emp_name','','form-control','','');
+    $txtaddress = new textfield('emp_address','','form-control','','');
+    $txttel = new textfield('emp_tel','','form-control','','');
+    $txtemail = new textfield('emp_email','','form-control','','');
+    $txtpass = new textfield('emp_password','user_pass','form-control','','');
+    $txtpasscon = new textfield('emp_passcon','user_pass_confirm','form-control','','');
+    $txtsubdistrict = new textfield('emp_subdistricts','','form-control','','');
+    $txtdistrict = new textfield('emp_districts','','form-control','','');
+    $txtprovince = new textfield('emp_provinces','','form-control','','');
     $submit = new buttonok('บันทึก ลูกค้า','','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
@@ -179,3 +179,19 @@
     </div>
     <div class="col-3"></div>
 </div>
+<script>
+    $('#user_pass_confirm').focusout(function(){
+                    var pass = $('#user_pass').val();
+	    var passcon =  $('#user_pass_confirm').val();
+	    //var passconmd5 = $.md5($.md5($.md5(passcon)));
+	    //var passmd5 =$.md5($.md5($.md5(pass)));
+	    if(pass == passcon){
+		   $("#msg2").html('<span class="text-success">รหัสผ่านตรงกัน</span>');
+ 		   $("#btnSubmit").attr("disabled", false);
+	    }
+	    else{
+		   $("#msg2").html('<span class="text-danger">รหัสผ่านไม่ตรงกัน</span>');
+ 		   $("#btnSubmit").attr("disabled", true);
+	    }
+    });
+ </script>
