@@ -12,7 +12,7 @@
                 include 'connect.php';
                 include 'form/main_form.php';
           ?>
-        <title>เข้าสู่ระบบ</title>
+        <title>Friendship</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
