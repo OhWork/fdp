@@ -40,7 +40,7 @@
     ?>
         <div class="col-12">
             <div class="row">
-                 <div class="col-12 pt-3 pb-2 tx2">
+                 <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
                         <i class="far fa-building pt-1 tx3"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
                     </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-12 mt-3 bdac">
                 </div>
-                <div class="col-12 pt-3 pb-2 tx2">
+                <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
                         <i class="fas fa-users pt-1 tx3"></i>&nbsp<span>ข้อมูลบุคคล</span>
                     </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-12 mt-3 bdac">
                 </div>
-                <div class="col-12 pt-3 pb-2 tx2">
+                <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
                         <i class="fas fa-map pt-1 tx3"></i>&nbsp<span>ข้อมูลที่อยู่</span>
                     </div>

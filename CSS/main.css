@@ -62,13 +62,16 @@ input[type="text"]:focus {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
 .tx2{
-    color:#333333;
+    color:#8e8e8e;
 }
 .tx3{
     color:#2a88d0;
 }
 .tx4 {
     color:red;
+}
+.tx5 {
+    color:eeeeee;
 }
 /*border*/
 .bdac {
@@ -81,4 +84,10 @@ input[type="text"]:focus {
 /*back-ground*/
 .bg1{
     background-color: #fafafa;
+    font-family: "CordiaUPC_1230459";
+    font-size: 14px;
+}
+/*font-size*/
+.fs1{
+    font-size: 18px;
 }
