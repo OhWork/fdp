@@ -42,7 +42,7 @@
             <div class="row">
                  <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
-                        <i class="far fa-building pt-1 tx3"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
+                        <i class="far fa-building pt-1 tx3"></i>&nbsp<span>ข้อมูลคู่ค้า</span>
                     </div>
                  </div>
                  <div class="col-12 mt-2 tx2">
@@ -51,11 +51,63 @@
                 <div class="col-12">
                         <?php echo $txtshop;  ?>
                 </div>
+                <div class="col-12 mt-2 tx2">
+                    <?php echo $lbaddress;  ?><span class="tx4">*</span>
+                 </div>
+                <div class="col-12">
+                    <?php echo $txtaddress;  ?>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4 mt-2">
+                            <div class="row">
+                                <div class="col-12 pr-0 tx2">
+                                    <?php echo $lbprovince;  ?><span class="tx4">*</span>
+                                </div>
+                                <div class="col-12 pr-0">
+                                    <select id="selProvince" class="form-control">
+                                    <option value=""> ----- เลือก ----- </option>
+                            <?php
+                                     $db->findAll("provinces");
+                                            while($cols = $db->moveNext_getRow('assoc')){
+                                            echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
+                                            }
+                            ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <div class="row">
+                                <div class="col-12 tx2">
+                                        <?php echo $lbdistrict;  ?><span class="tx4">*</span>
+                                </div>
+                                <div class="col-12">
+                                        <select id="selDistricts" class="form-control">
+                                        <option value=""> ----- เลือก ----- </option>
+                                        </select><span id="waitDistricts"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <div class="row">
+                                <div class="col-12 pl-0 tx2">
+                                    <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
+                                </div>
+                                <div class="col-12 pl-0">
+                                    <select id="selSubdistricts" class="form-control">
+                                    <option value=""> ----- เลือก ----- </option>
+                                    </select><span id="waitSubdistricts"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
                 <div class="col-12 mt-3 bdac">
                 </div>
                 <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
-                        <i class="fas fa-users pt-1 tx3"></i>&nbsp<span>ข้อมูลบุคคล</span>
+                        <i class="fas fa-users pt-1 tx3"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
                     </div>
                  </div>
                 <div class="col-12 mt-3 tx2">
@@ -112,65 +164,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 mt-3 bdac">
-                </div>
-                <div class="col-12 pt-3 pb-2 tx5 fs1">
-                    <div class="row">
-                        <i class="fas fa-map pt-1 tx3"></i>&nbsp<span>ข้อมูลที่อยู่</span>
-                    </div>
-                 </div>
-                <div class="col-12 mt-2 tx2">
-                    <?php echo $lbaddress;  ?><span class="tx4">*</span>
-                 </div>
-                <div class="col-12">
-                    <?php echo $txtaddress;  ?>
-                </div>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-4 mt-2">
-                            <div class="row">
-                                <div class="col-12 pr-0 tx2">
-                                    <?php echo $lbprovince;  ?><span class="tx4">*</span>
-                                </div>
-                                <div class="col-12 pr-0">
-                                    <select id="selProvince" class="form-control">
-                                    <option value=""> ----- เลือก ----- </option>
-                            <?php
-                                     $db->findAll("provinces");
-                                            while($cols = $db->moveNext_getRow('assoc')){
-                                            echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
-                                            }
-                            ?>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mt-2">
-                            <div class="row">
-                                <div class="col-12 tx2">
-                                        <?php echo $lbdistrict;  ?><span class="tx4">*</span>
-                                </div>
-                                <div class="col-12">
-                                        <select id="selDistricts" class="form-control">
-                                        <option value=""> ----- เลือก ----- </option>
-                                        </select><span id="waitDistricts"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 mt-2">
-                            <div class="row">
-                                <div class="col-12 pl-0 tx2">
-                                    <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
-                                </div>
-                                <div class="col-12 pl-0">
-                                    <select id="selSubdistricts" class="form-control">
-                                    <option value=""> ----- เลือก ----- </option>
-                                    </select><span id="waitSubdistricts"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
                 <div class="col-12 mt-3 bdac">
                 </div>
                 <div class="col-12 mt-3 mb-3">
