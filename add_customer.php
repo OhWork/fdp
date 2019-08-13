@@ -24,15 +24,15 @@
     $submit = new buttonok('ยินยัน','bs','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();?>
-<div class="row">
+
 <div class="col-12 bg1">
   <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 bdac1">
+    <div class="col-4 bg-dark bdac1">
         <div class="row">
         <div class="col-12 pt-3 tx3">
            <div class="row">
-               <h2 class="pl-3"><u>ลงทะเบียนรายชื่อผู้ติดต่อ</u></h2>
+               <h2 class="pl-3">ลงทะเบียนรายชื่อผู้ติดต่อ</h2>
            </div>
         </div>
     <?php
@@ -42,7 +42,7 @@
             <div class="row">
                  <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
-                        <i class="far fa-building pt-1 tx3"></i>&nbsp<span>ข้อมูลคู่ค้า</span>
+                        <i class="far fa-building pt-1 tx5"></i>&nbsp<span>ข้อมูลลูกค้า</span>
                     </div>
                  </div>
                  <div class="col-12 mt-2 tx2">
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
-                        <i class="fas fa-users pt-1 tx3"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
+                        <i class="fas fa-users pt-1 tx5"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
                     </div>
                  </div>
                 <div class="col-12 mt-3 tx2">
@@ -164,8 +164,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 mt-3 bdac">
-                </div>
+<!--                <div class="col-12 mt-3 bdac">
+                </div>-->
                 <div class="col-12 mt-3 mb-3">
                     <div class="row">
                         <div class="col-10"></div>
@@ -184,7 +184,6 @@
         </div>
         <?php echo $form->close(); ?>
     <div class="col-4"></div>
-</div>
 </div>
 </div>
 </div>
