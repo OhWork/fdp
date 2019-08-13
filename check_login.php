@@ -44,7 +44,7 @@ if( isset($_SESSION['token']) ){
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>
-			       <a href="index.php?url=main.php"><button type="button" class="btn btn-primary">Ok</button></a>
+			       <a href="main.php"><button type="button" class="btn btn-primary">Ok</button></a>
 		       </div>
 		    </div>
 		  </div>

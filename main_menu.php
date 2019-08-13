@@ -24,7 +24,7 @@
         </div>-->
       </li>
       <li class="nav-item">
-          <a href="index.php?url=add_customer.php" class="nav-link"><i class="far fa-user"></i>
+          <a href="main.php?url=add_customer.php" class="nav-link"><i class="far fa-user"></i>
           <span>เพิ่มข้อมูลลูกค้า</span></a>
       </li>
 <!--      <li class="nav-item">

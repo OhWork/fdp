@@ -7,7 +7,7 @@ session_start();
 	}else if(!empty($url)){
                     include_once $url;
                  }else{
-                      include_once 'index.php?url=main.php';
+                      include_once 'main.php?url=main.php';
                  }
 
 ?>

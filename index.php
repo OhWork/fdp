@@ -29,7 +29,7 @@
 
     <body class="bg1">
         <?php
-            include  'content.php';
+            include  'login.php';
         ?>
     </body>
 </html>
