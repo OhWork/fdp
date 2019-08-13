@@ -1,4 +1,4 @@
-<div id="wrapper">
+
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav bg-dark">
         <li class="nav-item active">
@@ -38,17 +38,3 @@
           <span>Tables</span></a>
       </li>-->
     </ul>
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © by Delicode.com 2019</span>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-    <!-- /.content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->

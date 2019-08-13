@@ -41,14 +41,25 @@
 </nav>-->
 <body id="page-top"> 
 <?php  include_once 'menutop.php'; ?>
-<?php  include_once 'main_menu.php'; ?>
-<?php  include_once 'content.php'; ?>
+    <div id="wrapper">
+        <?php  include_once 'main_menu.php'; ?>
+        <div>
+            <?php  include_once 'content.php'; ?>
+        </div>
+    </div><!-- /#wrapper -->
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © by Delicode.com 2019</span>
+          </div>
+        </div>
+      </footer>
   
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
+<!--  <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
+  </a>-->
 
 <!--   Logout Modal
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

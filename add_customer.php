@@ -28,7 +28,7 @@
 <div class="col-12 bg1">
   <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 bg-dark bdac1">
+    <div class="col-4 bg-dark bdac1 mt-3">
         <div class="row">
         <div class="col-12 pt-3 tx3">
            <div class="row">
