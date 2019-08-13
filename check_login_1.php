@@ -29,10 +29,10 @@ if( isset($_SESSION['token']) ){
                                                            'emp_email' => "'$empname'",
                                                            'emp_password' => "'$password'"
                                                            ));
-                 while( $col = $db->moveNext_getRow('assoc')){
-                    $_SESSION['emp_name'] =  $col['emp_name'];
-         }
-	if($_SESSION['emp_name']){
+                $rs = $db->moveNext_getRow('assoc');
+	if($rs){
+    	$_SESSION['emp_id'] = $rs['emp_id'];
+	$_SESSION['emp_name'] = $rs['emp_name'];
 		?>
 		<div class="modal" id="myModal">
 		  <div class="modal-dialog">
@@ -40,7 +40,7 @@ if( isset($_SESSION['token']) ){
 
 		      <!-- Modal body -->
 		      <div class="modal-body">
-		        ยินดีต้อนรับเข้าสู่ระบบ <?php echo $_SESSION['emp_name']; ?>
+		        ยินดีต้อนรับเข้าสู่ระบบ
 		      </div>
 		       <div class="modal-footer">
 			       <div id="showcountdown"></div>

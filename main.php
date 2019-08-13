@@ -1,11 +1,12 @@
 	<?php
-session_start();
+                session_start();
 	ob_start();
 	error_reporting(0);
 	if(empty($_SESSION['emp_name'])){
 	  header( "Refresh: 0; index.php" );
 	}
         ?>
+
 <!--<nav class="navbar navbar-light w-100">
     <a href="index.php?url=add_customer.php" class="">เพิ่มข้อมูลลูกค้า</a>
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
@@ -13,7 +14,7 @@ session_start();
 <body id="page-top"> 
 <?php  include_once 'menutop.php'; ?>
 <?php  include_once 'main_menu.php'; ?>
- 
+<?php  include_once 'content.php'; ?>
   
 
   <!-- Scroll to Top Button-->
