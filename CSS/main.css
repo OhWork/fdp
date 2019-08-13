@@ -5,7 +5,7 @@
 	
 }
 @media (min-width: 768px){
-	
+ 
 }
 @media (min-width: 992px){
 	
@@ -90,4 +90,12 @@ input[type="text"]:focus {
 /*font-size*/
 .fs1{
     font-size: 18px;
+}
+   /*footer*/
+.ft {
+    width: 100%;
+    height: 80px;
+    background-color: #e9ecef;
+    display: flex;
+    margin-top: auto;
 }
