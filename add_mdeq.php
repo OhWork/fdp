@@ -43,108 +43,16 @@
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <?php echo $txtpricel;  ?>
+                                    <?php echo $txtprice;  ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                        <div class="col-12 pb-5">
-                <div class="row">
-                    <div class="col-6 mt-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbpass;  ?>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $txtpass;  ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                        <div class="col-12 pb-5">
-                <div class="row">
-                    <div class="col-6 mt-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbpasscon;  ?>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $txtpasscon;  ?>
-                                </div>
-                                <div id="msg2" class="col-md-12 form-group" style="text-align:center;padding-top:10px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                                    <div class="col-12 pb-5">
-                <div class="row">
-                    <div class="col-6 mt-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbidcard;  ?>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $txtidcard;  ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 bdac"></div>
-            <div class="col-12 mt-5">
-                <div class="row">
-                    <?php echo $lbaddress;  ?>
-                </div>
-             </div>
-            <div class="col-12">
-                <div class="row">
-                    <?php echo $txtaddress;  ?>
-                </div>
-            </div>
-            <div class="col-12 bdac"></div>
-            <div class="col-12 mt-5">
-                <div class="row">
-                    <div class="col-6 mt-2">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbtel;  ?>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $txttel;  ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 mt-2">
-                        <div class="row">
-                            <div class="col-12 pr-0">
-                                <?php echo $lbemail;  ?>
-                            </div>
-                            <div class="col-12 pr-0">
-                                <?php echo $txtemail;  ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+ 
+
             <div class="col-12 mt-5">
                 <div class="row">
                     <div class="col-6"></div>
