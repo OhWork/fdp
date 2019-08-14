@@ -35,6 +35,10 @@
           <a href="main.php?url=add_emp.php" class="nav-link"><i class="fas fa-plus-circle"></i>
           <span>เพิ่มพนักงาน</span></a>
       </li>
+       <li class="nav-item">
+          <a href="main.php?url=show_emp.php" class="nav-link"><i class="far fa-address-book"></i>
+          <span>รายการพนักงาน</span></a>
+      </li>
       <li class="nav-item">
           <a href="main.php?url=add_mdeq.php" class="nav-link"><i class="fas fa-plus-circle"></i>
           <span>เพิ่มชื่อสินค้า</span></a>
