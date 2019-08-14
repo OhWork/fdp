@@ -31,6 +31,14 @@
           <a href="#" class="nav-link"><i class="far fa-address-book"></i>
           <span>รายการลูกค้า</span></a>
       </li>
+      <li class="nav-item">
+          <a href="#" class="nav-link"><i class="fas fa-plus-circle"></i>
+          <span>เพิ่มพนักงาน</span></a>
+      </li>
+      <li class="nav-item">
+          <a href="#" class="nav-link"><i class="fas fa-plus-circle"></i>
+          <span>เพิ่มชื่อสินค้า</span></a>
+      </li>
 <!--      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
