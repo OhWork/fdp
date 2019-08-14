@@ -42,7 +42,7 @@
             <div class="row">
                  <div class="col-12 pt-3 pb-2 tx5 fs1">
                     <div class="row">
-                        <i class="far fa-building pt-1 tx5"></i>&nbsp<span>ข้อมูลลูกค้า</span>
+                        <i class="far fa-building pt-1 tx5"></i>&nbsp<span>ข้อมูลสถานประกอบการ</span>
                     </div>
                  </div>
                  <div class="col-12 mt-2 tx2">
