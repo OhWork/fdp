@@ -39,13 +39,15 @@
     <a href="index.php?url=add_customer.php" class="">เพิ่มข้อมูลลูกค้า</a>
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
-<body id="page-top"> 
+<body id="page-top" class="bg1"> 
 <?php  include_once 'menutop.php'; ?>
     <div id="wrapper">
         <?php  include_once 'main_menu.php'; ?>
-        <div>
-            <?php  include_once 'content.php'; ?>
-            <footer class="col-12 ft">
+        <div id="content-wrapper">
+            <div class="container-fluid">
+                <?php  include_once 'content.php'; ?> 
+            </div>
+        <footer class="sticky-footer">
                 <div class="container my-auto">
                   <div class="copyright text-center my-auto">
                     <span>Copyright © by Delicode.com 2019</span>
