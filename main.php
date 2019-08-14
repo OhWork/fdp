@@ -44,8 +44,8 @@
     <div id="wrapper">
         <?php  include_once 'main_menu.php'; ?>
         <div id="content-wrapper">
-            <div class="container-fluid">
-                <?php  include_once 'content.php'; ?> 
+            <div class="container-fluid mb-3">
+                <?php  include_once 'content.php'; ?>
             </div>
         <footer class="sticky-footer">
                 <div class="container my-auto">
