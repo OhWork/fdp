@@ -28,7 +28,7 @@
           <span>ผู้ติดต่อ</span></a>
       </li>
       <li class="nav-item">
-          <a href="#" class="nav-link"><i class="far fa-address-book"></i>
+          <a href="main.php?url=show_customer.php" class="nav-link"><i class="far fa-address-book"></i>
           <span>รายการลูกค้า</span></a>
       </li>
       <li class="nav-item">
