@@ -11,6 +11,7 @@
                 include 'tools/genToken.php';
                 include 'connect.php';
                 include 'form/main_form.php';
+                include 'form/gridview.php';
           ?>
         <title>Friendship</title>
 

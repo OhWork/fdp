@@ -1,5 +1,7 @@
 <?php
 include_once 'change2thaidate.php';
+include '../tools/db_tools.php';
+include '../connect.php';
 class gridView{
 	public $name,$data,$delete,$edit,$img,$imgpath,$view,$deletetxt,$edittxt,$imgname,$printtxt,$viewtxt,$header,$width,$pr,$change,$changestatus,$sts,$span,$link,$special,$system,$showimg;
 
@@ -88,8 +90,9 @@ class gridView{
 
 			$footer.= "<td width='{$footerwidth}'>{$footertxt}</td>";
 		}
+                           
 		$columncount = count($fields);
-			while(@$r = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+			while( $r = $result->moveNext_getRow('assoc')){
 
     			@$id = $r[$this->pr];
 
@@ -98,42 +101,13 @@ class gridView{
 				for($i =0; $i<$columncount; $i++){
     				//ส่วนนี้อาจกระทบทั้งระบบ
     				$body.="<td><center>";
-    				if($this->system){
-    				if('touristreport'== $this->system){
-     				   if($i >=1 && $students <=12){
-                         $fieldIndex = $fields[$i];
-                         $columntxt = $r[$fieldIndex];
-                         $body.= number_format($columntxt);
-     				   }
-                       else{
-                            $fieldIndex = $fields[$i];
-                            $columntxt = $r[$fieldIndex];
-                            $eng_date=strtotime($columntxt);
-                            $thai_date = thai_date($eng_date);
-                            $body.= $thai_date;
-					   }
-				    }
-
-				    //ส่วนหน้าหลัก
-				    if('touristreportmain'== $this->system){
-     				   if($i >=1 && @$students <=12){
-                         $fieldIndex = $fields[$i];
-                         $columntxt = $r[$fieldIndex];
-                         $body.= number_format($columntxt);
-     				   }
-                       else{
-                            $fieldIndex = $fields[$i];
-                            $columntxt = $r[$fieldIndex];
-                            $body.= $columntxt;
-					   }
-				    }
-				    }else{
+    				
     				    $fieldIndex = $fields[$i];
-                            $columntxt = $r[$fieldIndex];
-                            $body.= $columntxt;
-				    }
+                                                                    $columntxt = $r[$fieldIndex];
+                                                                    $body.= $columntxt;
+				    
 
-				    $body.="</center></td>";
+				 $body.="</center></td>";
 				}
                 @$id = $r[$this->pr];
                 @$status = $r[$this->sts];
@@ -167,18 +141,6 @@ class gridView{
 				$this->changestatus ='btn btn-warning editok';
 				$this->span ='glyphicon glyphicon-question-sign';
 				$this->changetxt = '&nbsp;กำลังดำเนินการแก้ไข';
-			}
-			 if(@$rs_plan["plan_status"]=='1')
-			{
-				$this->changestatus ='btn btn-success editok';
-				$this->span ='glyphicon glyphicon-ok-sign';
-				$this->changetxt = '&nbsp;ใช้งาน';
-			}
-			else if(@$rs_plan["plan_status"]=='0')
-			{
-				$this->changestatus ='btn btn-danger editwait';
-				$this->span ='glyphicon glyphicon-info-sign';
-				$this->changetxt = '&nbsp;ไม่ใช้งาน';
 			}
 
 			if($this->imgpath !=""){
@@ -225,99 +187,6 @@ class gridView{
 				<table id='{$this->name}' class='table table-hover table-striped table-bordered edittable tablefp' border='0' border=collapse: collapse;' style='width:100%'>
 					<thead class='headrow'>";
 // 					ตัวแก้ไข
-					if($this->special == 1){
-    					$html .="
-                        <tr>
-    					    <td rowspan='3' width='16%' style='padding: 80 8 0 8;'><b><center>วันเดือนปี</center</b></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 30 8 0 8;'><b><center>ผู้ใหญ่</center</b></td>
-							<td rowspan='2' colspan='3' width='12%' style='padding: 30 8 0 8;'><b><center>เด็ก/นักเรียน(อนุบาล-ปวช.)</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 20 8 0 8;'><b><center><b><center>นักศึกษา/ครู/ทหาร/ตำรวจ</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 20 8 0 8;'><b><center>นักท่องเที่ยวต่างชาติ</b></center></td>
-							<td rowspan='2' colspan='2' width='8%'style='padding: 20 8 0 8;'><b><center>โครงการพิเศษ</b></center></td>
-							<td colspan='6' width='24%' style='border-right-width:0px;'><b><center>ไนท์ซาฟารี</b></center></td>
-							<td rowspan='3' width='4%' style='border-left-width:1px; padding: 80 30 0 30;'><b><center>เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='4%' style='padding: 50 8 0 8;'><b><center>ยกเว้น/หมู่คณะไม่เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='4%' style='padding: 80 30 0 30;'><b><center>รวมทั้งสิ้น</b></center></td>
-							<td rowspan='3' width='4%' style='padding: 80 30 0 30;'><b><center>#</center</b></td>
-    					</tr>
-    					<tr>
-    				        <td colspan='2' width='8%'><b><center>ผู้ใหญ่</b></center></td>
-                            <td colspan='2' width='8%'><b><center>เด็ก</b></center></td>
-                            <td colspan='2' width='8%'><b><center>ชาวต่างชาติ</b></center></td>
-
-    					</tr>";
-					}else if($this->special == 2){
-    					$html .="
-    					<tr>
-    					    <td rowspan='3' width='6%' style='padding: 80 8 0 8;'><b><center>สวนสัตว์</center</b></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 25 8 0 8;'><b><center>ผู้ใหญ่</center</b></td>
-							<td rowspan='2' colspan='3' width='12%' style='padding: 25 8 0 8;'><b><center>เด็ก/นักเรียน(อนุบาล-ปวช.)</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 18 8 0 8;'><b><center><b><center>นักศึกษา/ครู/ทหาร/ตำรวจ</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 18 8 0 8;'><b><center>นักท่องเที่ยวต่างชาติ</b></center></td>
-							<td rowspan='2' colspan='2' width='8%'style='padding: 25 8 0 8;'><b><center>โครงการพิเศษ</b></center></td>
-							<td colspan='6' width='24%' style='border-right-width:0px;'><b><center>ไนท์ซาฟารี</b></center></td>
-							<td rowspan='3' width='6%' style='border-left-width:1px; padding: 80 16 0 16;'><b><center>เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='6%' style='padding: 65 8 0 8;'><b><center>ยกเว้น/หมู่คณะไม่เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='7%' style='padding: 80 30 0 30;'><b><center>รวมทั้งสิ้น</b></center></td>
-    					</tr>
-    					<tr>
-    					<td colspan='2' width='8%'><b><center>ผู้ใหญ่</b></center></td>
-    					<td colspan='2' width='8%'><b><center>เด็ก</b></center></td>
-    					<td colspan='2' width='8%'><b><center>ชาวต่างชาติ</b></center></td>
-    					</tr>";
-                        }else if($this->special == 3){
-                            $html .="
-    					<tr>
-    					    <td rowspan='2' width='10%' style='padding: 50 8 0 8;'><b><center>ปัญหา</center</b></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center>ผู้อำนวยการสวนสัตว์<br>ผู้ช่วยผู้อำนวยการสวนสัตว์</center</b></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center>ฝ่ายบริหารงานทั่วไป</b></center></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center><b><center>ฝ่ายพัฒนาธุรกิจและประชาสัมพันธ์</b></center></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center>ฝ่ายการศึกษา</b></center></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center>ฝ่ายบำรุงสัตว์</b></center></td>
-							<td rowspan='1' colspan='3' width='8%' style='padding: 8 8 0 8;'><b><center>ฝ่ายพัฒนาสวนสัตว์</b></center></td>
-							<td rowspan='1' colspan='3' width='8%'style='padding: 8 8 0 8;'><b><center>ฝ่ายอนุรักษ์ วิจัยและสุขภาพสัตว์</b></center></td
-    					</tr>";
-                            }else if($this->special == 4){
-                            //ver.2
-                            $html .="
-    					<tr>
-    					    <td rowspan='3' width='6%' style='padding: 80 8 0 8;'><b><center>สวนสัตว์</center</b></td>
-							<td rowspan='2' colspan='3' width='8%' style='padding: 25 8 0 8;'><b><center>ผู้ใหญ่</center</b></td>
-							<td rowspan='2' colspan='4' width='12%' style='padding: 25 8 0 8;'><b><center>เด็ก/นักเรียน(อนุบาล-ปวช.)</b></center></td>
-							<td rowspan='3' colspan='1' width='8%'style='padding: 25 8 0 8;'><b><center>โครงการทัวร์สวนสัตว์</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 18 8 0 8;'><b><center><b><center>นักศึกษา/ครู/ทหาร/ตำรวจ</b></center></td>
-							<td rowspan='1' colspan='6' width='8%' style='padding: 18 8 0 8;'><b><center>นักท่องเที่ยวต่างชาติ</b></center></td>
-
-							<td rowspan='2' colspan='2' width='8%' style='border-right-width:0px;'><b><center>ผู้เข้าชมไนท์ซาฟารี</b></center></td>
-							<td rowspan='3' width='6%' style='border-left-width:1px; padding: 80 16 0 16;'><b><center>เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='6%' style='padding: 65 8 0 8;'><b><center>ยกเว้น/หมู่คณะไม่เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='7%' style='padding: 80 30 0 30;'><b><center>รวมทั้งสิ้น</b></center></td>
-    					</tr>
-    					<tr>
-    					<td colspan='3' width='8%'><b><center>ผู้ใหญ่</b></center></td>
-    					<td colspan='3' width='8%'><b><center>เด็ก</b></center></td>
-    					</tr>";
-                            }else if($this->special == 5){
-    					$html .="
-                        <tr>
-    					    <td rowspan='3' width='4%' style='padding: 80 8 0 8;'><b><center>วันเดือนปี</center</b></td>
-							<td rowspan='2' colspan='3' width='12%' style='padding: 25 8 0 8;'><b><center>ผู้ใหญ่</center</b></td>
-							<td rowspan='2' colspan='4' width='16%' style='padding: 25 8 0 8;'><b><center>เด็ก/นักเรียน(อนุบาล-ปวช.)</b></center></td>
-							<td rowspan='3' colspan='1' width='4%'style='padding: 25 8 0 8;'><b><center>โครงการทัวร์สวนสัตว์</b></center></td>
-							<td rowspan='2' colspan='2' width='8%' style='padding: 18 8 0 8;'><b><center><b><center>นักศึกษา/ครู/ทหาร/ตำรวจ</b></center></td>
-							<td rowspan='1' colspan='6' width='12%' style='padding: 18 8 0 8;'><b><center>นักท่องเที่ยวต่างชาติ</b></center></td>
-
-							<td rowspan='2' colspan='2' width='12%' style='border-right-width:0px;'><b><center>ผู้เข้าชมไนท์ซาฟารี</b></center></td>
-							<td rowspan='3' width='8%' style='border-left-width:1px; padding: 80 16 0 16;'><b><center>เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='4%' style='padding: 65 8 0 8;'><b><center>ยกเว้น/หมู่คณะไม่เสียค่าบัตร</b></center></td>
-							<td rowspan='3' width='4%' style='padding: 80 16 0 16;'><b><center>รวมทั้งสิ้น</b></center></td>
-							<td rowspan='3' width='8%' style='padding: 80 25 0 25;'><b><center>#</b></center></td>
-    					</tr>
-    					<tr>
-    					<td colspan='3' width='8%'><b><center>ผู้ใหญ่</b></center></td>
-    					<td colspan='3' width='8%'><b><center>เด็ก</b></center></td>
-    					</tr>";
-    					}
 						$html .="<tr>
 							{$header}
 						</tr>
