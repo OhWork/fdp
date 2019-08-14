@@ -32,11 +32,11 @@
           <span>รายการลูกค้า</span></a>
       </li>
       <li class="nav-item">
-          <a href="#" class="nav-link"><i class="fas fa-plus-circle"></i>
+          <a href="main.php?url=add_emp.php" class="nav-link"><i class="fas fa-plus-circle"></i>
           <span>เพิ่มพนักงาน</span></a>
       </li>
       <li class="nav-item">
-          <a href="#" class="nav-link"><i class="fas fa-plus-circle"></i>
+          <a href="main.php?url=add_mdeq.php" class="nav-link"><i class="fas fa-plus-circle"></i>
           <span>เพิ่มชื่อสินค้า</span></a>
       </li>
 <!--      <li class="nav-item">
