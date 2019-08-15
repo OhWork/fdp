@@ -1,7 +1,7 @@
 <?php
 include_once 'change2thaidate.php';
-include '../tools/db_tools.php';
-include '../connect.php';
+//include_once 'tools/db_tools.php';
+//include_once 'connect.php';
 class gridView{
 	public $name,$data,$delete,$edit,$img,$imgpath,$view,$deletetxt,$edittxt,$imgname,$printtxt,$viewtxt,$header,$width,$pr,$change,$changestatus,$sts,$span,$link,$special,$system,$showimg;
 
