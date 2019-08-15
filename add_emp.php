@@ -8,8 +8,8 @@
     $lbtel = new label('เบอร์โทรศัพท์');
     $lbemail = new label('อีเมล');
     $lbpic = new label('รูปโปรไฟล์');
-    $lbpass = new label('รหัสผ่าน'); 
-    $lbpasscon = new label('ยืนยันรหัสผ่าน'); 
+    $lbpass = new label('รหัสผ่าน');
+    $lbpasscon = new label('ยืนยันรหัสผ่าน');
     $lbsubdistrict = new label('แขวง/ตำบล');
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
@@ -18,7 +18,7 @@
     $txtaddress = new textfield('emp_address','','form-control','','');
     $txttel = new textfield('emp_tel','','form-control','','');
     $txtbd = new textfield('emp_bd','','form-control','','');
-    $txtcomment = new textfield('emp_tel','','form-control ch','','');
+    $txtcomment = new textfield('emp_comment','','form-control ch','','');
     $txtemail = new textfield('emp_email','','form-control','','');
     $txtidcard = new textfield('emp_idcard','','form-control','','');
     $txtpass = new textfield('emp_password','emp_pass','form-control','','emp_pass');
@@ -125,7 +125,7 @@
                                                                     <?php echo $lbprovince;  ?><span class="tx4">*</span>
                                                                 </div>
                                                                 <div class="col-12 pr-0">
-                                                                    <select id="selProvince" class="form-control">
+                                                                    <select id="selProvince" name="emp_provinces" class="form-control">
                                                                     <option value=""> ----- เลือก ----- </option>
                                                             <?php
                                                                      $db->findAll("provinces");
@@ -143,7 +143,7 @@
                                                                         <?php echo $lbdistrict;  ?><span class="tx4">*</span>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                        <select id="selDistricts" class="form-control">
+                                                                        <select id="selDistricts" name="emp_districts" class="form-control">
                                                                         <option value=""> ----- เลือก ----- </option>
                                                                         </select><span id="waitDistricts"></span>
                                                                 </div>
@@ -155,7 +155,7 @@
                                                                     <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
                                                                 </div>
                                                                 <div class="col-12 pl-0">
-                                                                    <select id="selSubdistricts" class="form-control">
+                                                                    <select id="selSubdistricts" name="emp_subdistricts" class="form-control">
                                                                     <option value=""> ----- เลือก ----- </option>
                                                                     </select><span id="waitSubdistricts"></span>
                                                                 </div>
