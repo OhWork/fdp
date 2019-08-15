@@ -41,6 +41,11 @@
                                         </div>
                                 </div>
 <?php echo $form->open("","","col-12","insert_emp.php",""); ?>
+                                <div class="col-12 pt-3 pb-2 tx5 fs1">
+                                        <div class="row">
+                                            <i class="fas fa-sign-in-alt pt-1 tx5"></i>&nbsp<span>ข้อมูลเข้าสู่ระบบ</span>
+                                        </div>
+                                </div>
                                 <div class="col-12 mt-2 tx2">
                                         <?php echo $lbemail;  ?><span class="tx4">*</span>
                                 </div>
@@ -69,6 +74,11 @@
                                                                 </div>
                                                         </div>
                                                 </div>
+                                        </div>
+                                </div>
+                                <div class="col-12 pt-3 pb-2 tx5 fs1">
+                                        <div class="row">
+                                            <i class="fas fa-user-tie pt-1 tx5"></i>&nbsp<span>ข้อมูลพนักงาน</span>
                                         </div>
                                 </div>
                                 <div class="col-12 mt-2 tx2">
