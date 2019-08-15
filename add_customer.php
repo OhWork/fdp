@@ -12,7 +12,7 @@
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
     $txtname = new textfield('customer_name','','form-control','','');
-    $txtnickname = new textfield('customer_name','','form-control','','');
+    $txtnickname = new textfield('customer_nickname','','form-control','','');
     $txtposition = new textfield('customer_position','','form-control','','');
     $txtaddress = new textfield('customer_address','','form-control','','');
     $txtshop = new textfield('customer_shop','','form-control','','');
@@ -65,7 +65,7 @@
                                     <?php echo $lbprovince;  ?><span class="tx4">*</span>
                                 </div>
                                 <div class="col-12 pr-0">
-                                    <select id="selProvince" class="form-control">
+                                    <select id="selProvince" name="customer_provinces" class="form-control">
                                     <option value=""> ----- เลือก ----- </option>
                             <?php
                                      $db->findAll("provinces");
@@ -83,7 +83,7 @@
                                         <?php echo $lbdistrict;  ?><span class="tx4">*</span>
                                 </div>
                                 <div class="col-12">
-                                        <select id="selDistricts" class="form-control">
+                                        <select id="selDistricts" name="customer_districts"class="form-control">
                                         <option value=""> ----- เลือก ----- </option>
                                         </select><span id="waitDistricts"></span>
                                 </div>
@@ -95,7 +95,7 @@
                                     <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
                                 </div>
                                 <div class="col-12 pl-0">
-                                    <select id="selSubdistricts" class="form-control">
+                                    <select id="selSubdistricts" name="customer_subdistricts" class="form-control">
                                     <option value=""> ----- เลือก ----- </option>
                                     </select><span id="waitSubdistricts"></span>
                                 </div>

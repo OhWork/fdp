@@ -63,13 +63,12 @@
 				        $array = array_combine($keys, $val);
 				        $array2+=$array;
 				        unset($val[":$v"]);
-						$i++;
+				        $i++;
 				        continue;
 				    }
 				}
 				$newarray = array_merge($array2 , $val);
 				$fnlist = join($field,",");
-				$vnlist = join($colon,",");
 			}
 				if(in_array(preg_match('/[^A-Za-z0-9]/', $val[":$v"]), $newarray)){
 					$keyadd =array();
@@ -84,6 +83,8 @@
 					return $this;
 
 				}else{
+                                    
+				$vnlist = join($colon,",");
 					$this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
 					$this->runStmSql($val);
 					return $this;
