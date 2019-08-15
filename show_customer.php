@@ -33,9 +33,9 @@
                                         <h4>รายชื่อผู้ติดต่อ</h4>
                                 </div>
                                 <div class="col-1">
-                                        <button class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_emp.php">
+                                        <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_customer.php">
                                                 <i class="fas fa-plus"></i>
-                                        </button>
+                                        </a>
                                 </div>
                         </div>
 	</div>
