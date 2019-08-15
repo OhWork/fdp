@@ -191,11 +191,12 @@
 <script>
 $(document).ready(function () {
     $('#bs').on('click', function () {
-        Swal.fire(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)
-    });
+			Swal.fire({
+			   type: 'success',
+			  title: 'Correct...',
+			  text: 'Something went Correct!',
+			  timer: 1500
+			})
 	});
+});
 </script>
