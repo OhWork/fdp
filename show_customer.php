@@ -28,7 +28,16 @@
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
         <div class="row">
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
-                        <h4>รายชื่อผู้ติดต่อ</h4>
+                        <div class="row">
+                                <div class="col-11">
+                                        <h4>รายชื่อผู้ติดต่อ</h4>
+                                </div>
+                                <div class="col-1">
+                                        <button class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_emp.php">
+                                                <i class="fas fa-plus"></i>
+                                        </button>
+                                </div>
+                        </div>
 	</div>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">
 			<?php
