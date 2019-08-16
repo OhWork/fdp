@@ -169,7 +169,7 @@ class gridView{
 
 				$body .="
 				<td>
-					<a href='{$this->edit}&id={$id}'class='btn btn-warning editbox'><div class='edittext'>{$this->edittxt}</div></a>
+					<a href='{$this->edit}&id={$id}'class='btn btn-warning w-100'><div class='edittext'>{$this->edittxt}</div></a>
 				</td>";
 			}
 			if($this->change !=""){

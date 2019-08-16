@@ -21,14 +21,21 @@
     $rs = $db->findAll('emp');
                  
 ?>
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
-	<div class="row">
-		<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1'></div>
-		<div class='col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10'>
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h4>รายชื่อลูกค้า</h4>
-			</div>
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
+        <div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
+                        <div class="row">
+                                <div class="col-11">
+                                        <h4>รายชื่อพนักงาน</h4>
+                                </div>
+                                <div class="col-1">
+                                    <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_emp.php">
+                                                <i class="fas fa-plus"></i>
+                                        </a>
+                                </div>
+                        </div>
+	</div>
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'customer_id';
@@ -39,9 +46,7 @@
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);
 			?>
-			</div>
-		</div>
-		<div class='col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1'></div>
 	</div>
+        </div>
 </div>
 <?php endif; ?>

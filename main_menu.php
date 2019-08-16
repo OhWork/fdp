@@ -29,11 +29,7 @@
       </li>
       <li class="nav-item">
           <a href="main.php?url=show_customer.php" class="nav-link"><i class="far fa-address-book"></i>
-          <span>รายการลูกค้า</span></a>
-      </li>
-      <li class="nav-item">
-          <a href="main.php?url=add_emp.php" class="nav-link"><i class="fas fa-plus-circle"></i>
-          <span>เพิ่มพนักงาน</span></a>
+          <span>รายการผู้ติดต่อ</span></a>
       </li>
        <li class="nav-item">
           <a href="main.php?url=show_emp.php" class="nav-link"><i class="far fa-address-book"></i>

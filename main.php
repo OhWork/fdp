@@ -23,6 +23,7 @@
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/sb-admin.css">
+        <link rel="stylesheet" href="CSS/dataTables.bootstrap4.css">
         <link rel="stylesheet" href="CSS/sweetalert2.min.css">
         <link rel="stylesheet" href="CSS/main.css">
 
