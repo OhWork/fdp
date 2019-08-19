@@ -153,12 +153,12 @@
 			$this->runStmSql($val);
 			return $this;
 		}
-		public function findAll($table){
+		function findAll($table){
 			$this->createStement('SELECT * FROM '.$table);
 			$this->runStmSql(array());
 			return $this;
 			}
-        function conditions($table,$condition){
+                                function conditions($table,$condition){
 			$this->createStement("SELECT * FROM $table WHERE $condition");
 			$this->runStmSql(array());
 			return $this;
