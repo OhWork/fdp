@@ -56,9 +56,10 @@
             <div class="col-12 mt-5">
                 <div class="row">
                     <div class="col-6"></div>
-                    <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
-                    <input type="hidden" name="sale_sale_id" value="<?=$sale_id?>"/>
+                    <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                    <input type="hidden" name="sale_sale_id" value="<?php ?>"/>
                     <div class="col-6">
+                        <?php echo date("Y-m-d H:i"); ?>
                         <div class="row">
                             <div class="col-12 pr-0">
                                 <?php echo $submit; ?>

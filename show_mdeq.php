@@ -16,13 +16,9 @@
 </script>
 <?php
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('customer_code','customer_name','customer_tel');
+    $columns = array('mdeq_name','emp_tel');
     $form = new form();
-    $rs = $db->findByPK(array(
-		'customer'
-		),array(
-                                                           'emp_emp_id' => "1"
-                                                           ));
+    $rs = $db->findAll('mdeq');
                  
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
@@ -30,10 +26,10 @@
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
                         <div class="row">
                                 <div class="col-11">
-                                        <h4>รายชื่อผู้ติดต่อ</h4>
+                                        <h4>รายการสินค้า</h4>
                                 </div>
                                 <div class="col-1">
-                                        <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_customer.php">
+                                    <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_mdeq.php">
                                                 <i class="fas fa-plus"></i>
                                         </a>
                                 </div>
@@ -43,11 +39,9 @@
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'customer_id';
-				$grid->header = array('<b><center>รหัสผู้ติดต่อ</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-				$grid->width = array('30%','30%','20%','10%','10%');
+				$grid->header = array('<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>');
+				$grid->width = array('40%','40%','20%');
 				$grid->edit = 'main.php?url=add_customer.php';
-                                                                $grid->view = '#';
-				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);

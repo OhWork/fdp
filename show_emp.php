@@ -16,7 +16,7 @@
 </script>
 <?php
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('emp_name','emp_tel');
+    $columns = array('emp_code','emp_name','emp_tel');
     $form = new form();
     $rs = $db->findAll('emp');
                  
@@ -38,10 +38,12 @@
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">
 			<?php
 				$grid = new gridView();
-				$grid->pr = 'customer_id';
-				$grid->header = array('<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>');
-				$grid->width = array('40%','40%','20%');
+				$grid->pr = 'emp_id';
+				$grid->header = array('<b><center>รหัสพนักงาน</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
+				$grid->width = array('30%','30%','30%','10%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
+                                                                $grid->view = '#';
+				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);
