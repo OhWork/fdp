@@ -5,12 +5,32 @@
     $lbunit= new label('หน่วย');
     $lbprice = new label('ราคา'); 
     $lbcomment = new label('หมายเหตุ');
-    $lbmdeqtype = new label('ชนิดอุปกรณ์การแพทย์');
+    $lbtypemdeq = new label('ชนิดอุปกรณ์การแพทย์');
     $txtname = new textfield('mdeq_name','','form-control','','');
     $txtprice = new textfield('mdeq_price','','form-control','','');
+    $radiomdeqenable = new radioGroup();
+    $radiomdeqenable->name = 'mdeq_enable';
+  if(empty($id)){
+    	$radiomdeqenable->add('ใช้งานได้',1,'','');
+    	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
+    	}
+  $selecttypemdeq = new SelectFromDB();
+  $selecttypemdeq->name = 'typemdeq_typemdeq_id';
+  $selecttypemdeq->lists = 'โปรดระบุ ชนิดของอุปกรณ์';
     $submit = new buttonok('บันทึก ลูกค้า','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
+     if(!empty($_GET['id'])){
+	//$r = $db->findByPK('mdeq','mdeq_id',$id)->executeRow();
+	//$txtmdeq->value = $r['mdeq_name'];
+  if($r["mdeq_enable"] == 1){
+    	$radiomdeqenable->add('ใช้งานได้',1,'checked','');
+    	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
+    	}else if($r['mdeq_enable'] == 0){
+        $radiomdeqenable->add('ใช้งานได้',1,'','');
+        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
+    	}
+    }
    echo $form->open("","","col-12","insert_typemdeq.php","");
    ?>
 <div class="row">
@@ -20,6 +40,17 @@
             <div class="col-12">
                 <div class="row">
                     <h3>เพิ่มชนิดอุปกรณ์การแพทย์</h3>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+                <div class="row">
+                        <?php echo $lbtypemdeq;  ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                        <?php
+                        echo $selecttypemdeq->selectFromTB('typemdeq','typemdeq_id','typemdeq_name',$r['typemdeq_tymdeq_id']); ?>
                 </div>
             </div>
             <div class="col-12 mt-4">
@@ -56,10 +87,11 @@
             <div class="col-12 mt-5">
                 <div class="row">
                     <div class="col-6"></div>
+                    <input type="hidden" name="mdeq_date" value="<?php echo date("Y-m-d H:i"); ?>"/>
                     <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     <input type="hidden" name="sale_sale_id" value="<?php ?>"/>
                     <div class="col-6">
-                        <?php echo date("Y-m-d H:i"); ?>
+                        <?php echo $radiomdeqenable; ?>
                         <div class="row">
                             <div class="col-12 pr-0">
                                 <?php echo $submit; ?>

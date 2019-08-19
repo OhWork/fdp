@@ -340,22 +340,24 @@ class labeladdday{
 	class SelectFromDB{
 	public $name,$lists,$idtf,$value = null;
 	function selectFromTB($table,$value,$label,$result){
-		include_once 'database/db_tools.php';
-		$db = new db_tools();
-		$rs = $db->findAll($table)->execute();
+//		include_once '../tools/db_tools.php';
+//                                include_once '../connect.php';
+		//$db = new db_tools();
+		//$rs = $db->findAll($table)->execute();
+                               
 		$html = "<select id='{$this->idtf}' class='form-control css-require' name='{$this->name}' >
 			<option value='$this->value'>
 			-----{$this->lists}-----
 			</option>
 			";
-
-		while($r = mysqli_fetch_array($rs,MYSQLI_ASSOC)){
-			$html.="<option value= '{$r[$value]}'";
-		if($r[$value]==$result){
+                                 $db->findAll($table);
+                                        while($cols = $db->moveNext_getRow('assoc')){
+			$html.="<option value= '{$cols['$value']}'";
+                                                    if($cols[$value]==$result){
 				$html.='selected';
-			};
+                                                    };
 			$html.=">
-			{$r[$label]}
+			{$cols[$label]}
 			</option>";
 			}
 		$html.="</select>";
@@ -365,7 +367,7 @@ class labeladdday{
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
 		include_once 'tools/db_tools.php';
 		$db = new db_tools();
-		$rs = $db->findbyPK($table,$type,$id)->execute();
+		//$rs = $db->findbyPK($table,$type,$id)->execute();
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
 			<option value=''>
 			-----{$this->lists}-----
