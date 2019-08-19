@@ -1,48 +1,7 @@
 <?php
 	ob_start();
-    include_once 'database/db_tools.php';
-    include_once 'connect.php';
 	require_once 'vendor/autoload.php';
 	error_reporting(0);
-
-	$id = $_GET['id'];
-
-	$rs = $db->findByPK55('eventconfer','conferroom','subzoo','zoo','headncf','confer_confer_id','conferroom_id','subzoo_subzoo_id','subzoo_id','subzoo_zoo_zoo_id','zoo_id','headncf_headncf_id','headncf_id','eventconfer_id',$id)->executeAssoc();
-	$datestart = $rs['eventconfer_start'];
-	$datestartshow = substr($datestart, 0,10);
-	$timestart = $rs['eventconfer_start'];
-	$timestartshow = substr($timestart, 11);
-	$dateend = $rs['eventconfer_end'];
-	$dateendshow = substr($dateend, 0,10);
-	$timeend = $rs['eventconfer_end'];
-	$timeendshow = substr($timeend, 11);
-	$dateshow = substr($datestart,8,2);
-	$montshow = substr($datestart,5,2);
-	$yearshow = substr($datestart,0,4);
-	  switch($montshow){
-        case 01: $monthtxt = "มกราคม"; break;
-        case 02: $monthtxt = "กุมภาพันธ์"; break;
-        case 03: $monthtxt = "มีนาคม"; break;
-        case 04: $monthtxt = "เมษายน"; break;
-        case 05: $monthtxt = "พฤษภาคม"; break;
-        case 06: $monthtxt = "มิถุนายน"; break;
-        case 07: $monthtxt = "กรกฏาคม"; break;
-        case '08': $monthtxt = "สิงหาคม"; break;
-        case '09': $monthtxt = "กันยายน"; break;
-        case 10: $monthtxt = "ตุลาคม"; break;
-        case 11: $monthtxt = "พฤศจิกายน"; break;
-        case 12: $monthtxt = "ธันวาคม"; break;
-    }
-    $dayOfWeek = date("l", strtotime($datestart));
-    switch($dayOfWeek){
-        case 'Monday': $daytxt = "จันทร์"; break;
-        case 'Tuesday': $daytxt = "อังคาร"; break;
-		case 'Wednesday': $daytxt = "พุธ"; break;
-		case 'Thursday': $daytxt = "พฤหัส"; break;
-		case 'Friday': $daytxt = "ศุกร์"; break;
-		case 'Saturday': $daytxt = "เสาร์"; break;
-		case 'Sunday': $daytxt = "อาทิตย์"; break;
-	}
     ?>
 
 <html>
