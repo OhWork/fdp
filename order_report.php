@@ -5,472 +5,159 @@
     ?>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	</head>
-    <body style="margin:0; margin-top:-20px;">
-		<table style="">
-			<!--บรรทัดที่ 1-->
-				<tr>
-					<td><img src='images/Logo/ZPO.png'/ style="width:75px; height: 75px;"></td>
-					<td style="padding-top: 37px;">แบบฟอร์มการขอใช้ระบบประชุมทางไกลองค์การสวนสัตว์ (Video Conference)</td>
-					<td>ที่............/................</td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 2-->
-				<tr>
-					<td><b>เรื่อง ขอความร่วมมือจัดประชุม Video Conference</b></td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 3-->
-				<tr>
-					<td><b>เรียน ผู้อำนวยการองค์การสวนสัตว์</b></td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 4-->
-				<tr>
-					<td>สำนัก/สวนสัตว์</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:400px;padding-left:8px;"><?php echo $rs['zoo_name'];?></td>
-					<td>ขอให้จัดประชุม Video Conference</td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 5-->
-				<tr>
-					<td><b>หัวข้อการประชุม</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:270px;padding-left:8px;"><?php echo $rs['headncf_name']." ".$rs['eventconfer_story'];?></td>
-					<td><b>วาระ</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:280px;padding-left:8px;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 5-->
-				<tr>
-					<td><b>ประธานที่ประชุม</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:150px;padding-left:8px;"><?php echo $rs['eventconfer_psname'];?></td>
-					<td><b>ตำแหน่ง</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:155px;padding-left:8px;"><?php echo $rs['eventconfer_psclass'];?></td>
-					<td><b>ห้องประชุม</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:160px;padding-left:8px;"><?php echo $rs['conferroom_name'];?></td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 6-->
-				<tr>
-					<td>วัน</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:50px;"><center><?php echo $daytxt;?></center></td>
-					<td>ที่</td>
-					<td style="width:45px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><center><?php echo $dateshow;?></center></td>
-					<td>เดือน</td>
-					<td style="width:80px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><center><?php echo $monthtxt;?></center></td>
-					<td>พ.ศ.</td>
-					<td style="width:70px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><center><?php echo $yearshow;?></center></td>
-					<td>เวลาเริ่ม</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:110px;"><center><?php echo $timestartshow; ?></center></td>
-					<td>น. เวลาเลิก</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:110px;"><center><?php echo $timeendshow;?></center></td>
-					<td>น.</td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 7-->
-				<tr>
-					<td><b>ผู้เข้าร่วมประชุม</b> ประกอบด้วย</td>
-				</tr>
-		</table>
-		<table  style="margin-left: 150px;">
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_iszpo'] == 1){
-							echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "."สำนักตวจสอบ" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักตรวจสอบ";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_ds'] == 1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "."สวนสัตว์ดุสิต";
-							}
-						else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์ดุสิต";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_cazpo']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สำนักบริหารกลาง" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักบริหารกลาง";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_kkoz']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สวนสัตว์เปิดเขาเขียว" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "."สวนสัตว์เปิดเขาเขียว";
-							}
-							?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_fpzpo']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สำนักการเงินและทรัพย์สิน" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักการเงินและทรัพย์สิน";
-							}
-							?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_cm']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สวนสัตว์เชียงใหม่" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์เชียงใหม่";
-							}
-							?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_spzpo']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สำนักยุทธศาสตร์และแผน" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักยุทธศาสตร์และแผน";
-							}
-							?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_nm']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สวนสัตว์นครราชสีมา" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์นครราชสีมา";
-							}
-							?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_lzpo']==1){
-								echo "<img src='images/icons/checked.png' style='width:18px; height: 18px;'/>"." "." สำนักกฏหมาย" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักกฏหมาย";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_sk']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "." สวนสัตว์สงขลา" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์สงขลา";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_crzpo']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "." สำนักอนุรักษ์ และ วิจัย" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักอนุรักษ์ และ วิจัย";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_ub']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สวนสัตว์อุบลราชธานี" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์อุบลราชธานี";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_bdzpo']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สำนักพัฒนาธุรกิจ" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักพัฒนาธุรกิจ";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_kk']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สวนสัตว์ขอนแก่น" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สวนสัตว์ขอนแก่น";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_itzpo']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สำนักเทคโนโลยีสารสนเทศ" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักเทคโนโลยีสารสนเทศ";
-							}
-						?>
-					</td>
-					<td style="padding-left: 50px;">
-						<?php
-							if($rs['eventconfer_status_sr']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  โครงการคชอาณาจักร จ.สุรินทร์" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." โครงการคชอาณาจักร จ.สุรินทร์";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_hrzpo']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สำนักบริหารทรัพยากรบุคคล" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สำนักบริหารทรัพยากรบุคคล";
-							}
-						?>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<?php
-							if($rs['eventconfer_status_zmizpo']==1){
-								echo "<img src='images/icons/checked.png' / style='width:18px; height: 18px;'/>"." "."  สถาบันบริหารจัดการสวนสัตว์" ;
-							}
-							else{
-								echo "<img src='images/icons/unchecked.png' style='width:15px; height: 15px;'>"." "." สถาบันบริหารจัดการสวนสัตว์";
-							}
-						?>
-					</td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 9-->
-				<tr>
-					<td><b>ผู้ประสานงาน</b></td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:270px;padding-left:8px;"><?php echo $rs['eventconferroom_namers'];?></td>
-					<td>เบอร์โทร</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:270px;"><center><?php echo $rs['eventconfer_tel'];?></center></td>
-				</tr>
-		</table>
-		<table style="margin-left:150px;">
-			<!--บรรทัดที่ 9-->
-				<tr>
-					<td>จึงเรียนมาเพื่อโปรดพิจารณา</td>
-				</tr>
-		</table>
-		<table style="margin-left:450px;">
-			<!--บรรทัดที่ 9-->
-				<tr>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:200px;height:23px;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="margin-left:430px;">
-			<!--บรรทัดที่ 9-->
-				<tr>
-					<td>(</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:260px;height:23px;"><!--ใส่CODEตรงนี้--></td>
-					<td>)</td>
-				</tr>
-		</table>
-		<table style="margin-left:370px;">
-			<!--บรรทัดที่ 9-->
-				<tr>
-					<td>ตำแหน่ง</td>
-					<td style="border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;width:260px;height:23px;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="margin-top:10px;border-left: solid 1px #000;border-top: solid 1px #000;border-right: solid 1px #000;">
-			<!--บรรทัดที่ 10-->
-				<tr>
-					<td style="width:300px; height:21px;border-right: solid 1px #000;"><b>(1.) ผู้อำนวยการสำนัก / ผู้อำนวยการสวนสัตว์</b></td>
-					<td><b>(2.) ผู้อำนวยการองค์การสวนสัตว์/รองผู้อำนวยการองค์การสวนสัตว์</b></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-4px;">
-				<tr>
-					<td style="width:300px;padding-left: 10px; border-right: solid 1px #000;"><b>(ผู้ขอใช้งานระบบ Video Conference)</b></td>
-					<td style="padding-left: 100px;"><img src="images/icons/unchecked.png" / style="width:20px; height: 20px;"> อนุมัติ</td>
-					<td style="padding-left: 50px;padding-right: 93px;"><img src="images/icons/unchecked.png" / style="width:20px; height: 20px;"> ไม่อนุมัติ</td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-4px;">
-				<tr>
-					<td style="height:10px;width:300px;border-bottom: 1.5px;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="height:10px;width:371px;border-bottom: 1.5px;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-4px;">
-				<tr>
-					<td style="padding-left: 9.7px;">ลงชื่อ</td>
-					<td style="width:260px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">ลงชื่อ</td>
-					<td style="width:290.5px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px;">
-				<tr>
-					<td style="padding-left: 9.5px;">ตำแหน่ง</td>
-					<td style="width:245.5px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">ตำแหน่ง</td>
-					<td style="width:275.5px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px;">
-				<tr>
-					<td style="padding-left: 10px;">วันที่</td>
-					<td style="width:30px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">เดือน</td>
-					<td style="width:100px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">พ.ศ.</td>
-					<td style="width:59px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">วันที่</td>
-					<td style="width:30px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">เดือน</td>
-					<td style="width:100px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 9.9px;">พ.ศ.</td>
-					<td style="width:90px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000;border-bottom: solid 1px #000;margin-top:-7.2px;">
-				<tr>
-					<td style="width:300px;height:7px; border-right: solid 1px #000;"></td>
-					<td style="width:371px;height:7px;"></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-2.5px">
-			<!--บรรทัดที่ 14-->
-				<tr>
-					<td style="width:300px;border-right: solid 1px #000;"><b>(3.) เจ้าหน้าที่สำนักเทคโนโลยีสารสนเทศ</b></td>
-					<td style="width:371px;"><b>(4.) ผู้อำนวยการสำนักเทคโนโลยีสารสนเทศ</b></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="border-right: solid 1px #000;padding-left: 9.8px;padding-right: 155px;"><img src="images/icons/unchecked.png" / style="width:20px; height: 20px;"> ดำเนินการได้ตามที่ขอ</td>
-					<td style="padding-right: 367.5px;"></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="border-right: solid 1px #000;padding-left: 9.7px;padding-right: 54.5px;"><img src="images/icons/unchecked.png" / style="width:20px; height: 20px;"> ไม่สามารถดำเนินการได้ตามที่ขอ เนื่องจาก</td>
-					<td style="padding-right: 367.5px;"></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="height:15px;width:300px;border-bottom: dotted 1.5px #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="height:15px;padding-right: 367.5px;"></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="padding-left: 9.8px;">ลงชื่อ</td>
-					<td style="width:260px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">ลงชื่อ</td>
-					<td style="width:290.3px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="padding-left: 9.8px;">ตำแหน่ง</td>
-					<td style="width:245.2px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">ตำแหน่ง</td>
-					<td style="width:275.5px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="padding-left: 10px;">วันที่</td>
-					<td style="width:30px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">เดือน</td>
-					<td style="width:100px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">พ.ศ.</td>
-					<td style="width:59px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;border-right: solid 1px #000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left:50px;">วันที่</td>
-					<td style="width:30px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">เดือน</td>
-					<td style="width:100px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-					<td style="padding-left: 10px;">พ.ศ.</td>
-					<td style="width:90px;border-bottom: 1.5px;border-bottom-style: dotted;border-bottom-color: #000000;"><!--ใส่CODEตรงนี้--></td>
-				</tr>
-		</table>
-		<table style="border-left: solid 1px #000;border-right: solid 1px #000;border-bottom: solid 1px #000; margin-top:-5.2px">
-				<tr>
-					<td style="width:300px;height:7px; border-right: solid 1px #000;"></td>
-					<td style="width:371px;height:7px;"></td>
-				</tr>
-		</table>
-		<table>
-			<!--บรรทัดที่ 19-->
-				<tr>
-					<td style="padding-left: 8px;"><u><b>**หมายเหตุ**</b></u></td>
-				</tr>
-		</table>
-		<table style="margin-top: -5px;">
-			<!--บรรทัดที่ 20-->
-				<tr>
-					<td style="padding-left: 20px;">1. เพื่อความถูกต้อง ผู้ขอใช้ระบบประชุมทางไกล (Video Conference) ต้องแจ้งผู้ประสานหน่วยงานที่จะเข้าร่วมประชุมด้วยตัวท่านเอง</td>
-				</tr>
-		</table>
-		<table style="margin-top: -5px;">
-			<!--บรรทัดที่ 20-->
-				<tr>
-					<td style="padding-left: 20px;">2. สำนักเทคโนโลยีสารสนเทศจะจัดเตรียมอุปกรณ์พร้อมติดตั้งระบบและประสานเจ้าหน้าที่ในการติดตั้งระบบของหน่วยงานเกี่ยวข้อง</td>
-				</tr>
-		</table>
-		<table style="margin-top: -5px;">
-			<!--บรรทัดที่ 20-->
-				<tr>
-					<td style="padding-left: 20px;">3. กรุณาประสานงาน<u>ล่วงหน้าไม่น้อยกว่า 3 วันทำการ</u> เพื่อให้ IT จะได้เตรียมความพร้อม เมื่อส่งเรืองแล้ว ติดตามผลได้ที่ เบอร์โทรศัพท์ 02-280-7697 IP Phone: 1040 email:it@zoothailand.org</td>
-				</tr>
-		</table>
-		<table style="margin-left:580px;">
-			<!--บรรทัดที่ 20-->
-				<tr>
-					<td style="border: solid 1px #000;padding-left: 5px;padding-right: 5px;">FM-IT-06 / 0</u></td>
-				</tr>
-		</table>
-    </body>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        </head>
+        <body style="margin:0; margin-top:-20px;">
+                <!--บรรทัดที่ 1-->
+                <table style="">
+                        <tr>
+                                <td style="font-size:18px;">ใบเสนอราคา</td>
+		<td><img height="20px" src="images/fdp.png" style="padding-left:520px;" /></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 2-->
+                <table style="">
+                        <tr>
+                                <td style="font-size:18px;">QUOTATION</td>
+		<td>(ต้นฉบับ/original)</td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 3-->
+                <table style="font-size:14px;margin-top:32px;">
+                        <tr>
+                                <td style="width:110px;">ลูกค้า/Customer</td>
+		<td style="width:410px;"><!--ใส่ชื่อสถานประกอบการ--></td>
+                                <td style="width:90px;">เลขที่/No.</td>
+		<td>O<!--ใส่เลข ORDER--></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 4-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:110px;">ที่อยู่/Address</td>
+		<td style="width:410px;"><!--ใส่ที่อยู่ลูกค้า--></td>
+                                <td style="width:90px;">วันที่/Issue</td>
+		<td><!--ใส่วันที่--></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 5-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:110px;">ผู้ติดต่อ/Contact</td>
+		<td style="width:410px;"><!--ใส่ชื่อผู้ติดต่อ--></td>
+                                <td style="width:90px;">ยอมรับ/Valid</td>
+		<td><!--ใส่วันที่ confirm--></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 6-->
+                <table style="font-size:14px;border-bottom: 1px;border-bottom-style: dotted;border-bottom-color: #000000;">
+                        <tr>
+                                <td style="width:110px;"></td>
+                                <td style="width:40px;">Tel :</td>
+		<td style="width:110px;"><!--ใส่ เบอร์ติดต่อ--></td>
+                                <td style="width:60px;">E-mail :</td>410
+		<td style="width:200px;"><!--ใส่ E-mail--></td>
+                                <td style="width:90px;">อ้างอิง/Ref.</td>
+		<td style="width:60px;"><!--ใส่เลขที่อ้างอิง--></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 7-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:110px;">ผู้ออก/Issuer</td>
+                                <td style="">FdP</td>
+                        </tr>
+                </table>
+                <!--บรรทัดที่ 8-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:110px;">จัดเตรียมโดย</td>
+                                <td style=""><!--ใส่ชื่อ เซล์ล--></td>
+                        </tr>
+	</table>
+                <!--บรรทัดที่ 9-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:110px;"></td>
+                                <td style="width:40px;">Tel :</td>
+		<td style="width:110px;"><!--ใส่ เบอร์ติดต่อ--></td>
+                                <td style="width:60px;">E-mail :</td>410
+		<td style=""><!--ใส่ E-mail--></td>
+                        </tr>
+	</table>
+                <!--ส่วนของตาราง-->
+                <!--หัวตาราง-->
+                <table style="font-size:12px;border-top: solid 1px #000;margin-top:16px;text-align: center;">
+                        <tr>
+                                <td style="width:50px;height:50px;border-right: solid 1px #000;">รหัส</td>
+                                <td style="width:370px;border-right: solid 1px #000;">คำอธิบายรายการ</td>
+                                <td style="width:50px;border-right: solid 1px #000;">จำนวน</td>
+                                <td style="width:100px;border-right: solid 1px #000;">หน่วย</td>
+                                <td style="width:100px;">มูลค่ารวม</td>
+                        </tr>
+                        <tr style="magin-top:px;">
+                                <td style="width:50px;height:400px;border-right: solid 1px #000;text-align: center;"><!--ใส่รหัสสินค้า--></td>
+                                <td style="width:370px;border-right: solid 1px #000;"><!--ใส่ชื่อสินค้า--></td>
+                                <td style="width:50px;border-right: solid 1px #000;text-align: center;"><!--ใส่ชื่อสินค้า--></td>
+                                <td style="width:100px;border-right: solid 1px #000;text-align: right;"></td>
+                                <td style="width:100px;text-align: right;"></td>
+                        </tr>
+	</table>
+                <!--รายละเอียดจำนวนเงินทั้งสิ้นตาราง-->
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:70px;padding-top:10px;">หมายเหตุ</td>
+                                <td style="width:500px;border-right: solid 1px #000;text-align: right;padding-top:10px;">จำนวนเงินรวม</td>
+                                <td style="width:100px;text-align: right;border-bottom: solid 1px #000;"></td>
+                        </tr>
+                </table>
+                <table>
+                        <tr>
+                                <td style="width:570px;"></td>
+                                <td style="width:100px;border-bottom: solid 3px #000;"></td>
+                        </tr>
+	</table>
+                <table style="font-size:14px;">
+                        <tr>
+                                <td style="width:270px;padding-top:5px;"></td>
+                                <td style="width:150px;text-align: right;padding-top:5px;">จำนวนเงินรวมทั้งสิ้น</td>
+                                <td style="width:250px;">(หนึ่งพันบาทถ้วน)</td>
+                        </tr>
+	</table>
+                <table style="font-size:14px;border-bottom: solid 1px #000;">
+                        <tr>
+                                <td style="height:50px; width:670px;"></td>
+                        </tr>
+	</table>
+                <!--ส่วนของผู้ลงนาม-->
+                <table style="font-size:12px;">
+                        <tr>
+                                <td style="width:360px;"></td>
+                                <td style="width:150px;">อนุมัติโดย</td>
+                                <td style="width:10px;"></td>
+                                <td style="width:150px;">ยอมรับใบเสนอราคา</td>
+                        </tr>
+                </table>
+                <table style="font-size:12px;margin-top:60px;">
+                        <tr>
+                                <td style="width:360px;"></td>
+                                <td style="width:150px;border-bottom: dotted 1px #000;"></td>
+                                <td style="width:10px;"></td>
+                                <td style="width:150px;border-bottom: dotted 1px #000;"></td>
+                        </tr>
+	</table>
+                <table style="font-size:12px;">
+                        <tr>
+                                <td style="width:360px;"></td>
+                                <td style="width:80px;">วันที่อนุมัติ</td>
+                                <td style="width:70px;"></td>
+                                <td style="width:10px;"></td>
+                                <td style="width:80px;">วันที่ยอมรับ</td>
+                                <td style="width:70px;"></td>
+                        </tr>
+	</table>
+        </body>
 </html>
 <?php
 $html = ob_get_contents();
