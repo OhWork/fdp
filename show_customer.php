@@ -18,11 +18,7 @@
     if (!empty($_SESSION['emp_name'])):
     $columns = array('customer_code','customer_name','customer_tel');
     $form = new form();
-    $rs = $db->findByPK(array(
-		'customer'
-		),array(
-                                                           'emp_emp_id' => "1"
-                                                           ));
+    $rs = $db->findByPK(array('customer'),array('emp_emp_id' => "1"));
                  
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
@@ -44,7 +40,7 @@
 				$grid = new gridView();
 				$grid->pr = 'customer_id';
 				$grid->header = array('<b><center>รหัสผู้ติดต่อ</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-				$grid->width = array('30%','30%','20%','10%','10%');
+				$grid->width = array('10%','35%','35%','10%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
                                                                 $grid->view = '#';
 				$grid->viewtxt =' รายละเอียด';
