@@ -50,7 +50,7 @@
             <div class="col-12">
                 <div class="row">
                         <?php
-                        echo $selecttypemdeq->selectFromTB('typemdeq','typemdeq_id','typemdeq_name',$r['typemdeq_tymdeq_id']); ?>
+                        echo $selecttypemdeq->selectFromTB('typemdeq','typemdeq_id','typemdeq_name',''); ?>
                 </div>
             </div>
             <div class="col-12 mt-4">

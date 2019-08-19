@@ -340,8 +340,8 @@ class labeladdday{
 	class SelectFromDB{
 	public $name,$lists,$idtf,$value = null;
 	function selectFromTB($table,$value,$label,$result){
-//		include_once '../tools/db_tools.php';
-//                                include_once '../connect.php';
+            //include  'tools/db_tools.php';
+            //require_once  'connect.php';
 		//$db = new db_tools();
 		//$rs = $db->findAll($table)->execute();
                                
