@@ -136,9 +136,9 @@
                 <table style="font-size:12px;margin-top: 8px;">
                         <tr>
                                 <td style="width:360px;"></td>
-                                <td style="width:150px;">อนุมัติโดย</td>
+                                <td style="width:150px;">ผู้ส่ง</td>
                                 <td style="width:10px;"></td>
-                                <td style="width:150px;">ผู้รับใบแจ้งหนี้</td>
+                                <td style="width:150px;">ผู้รับ</td>
                         </tr>
                 </table>
                 <table style="font-size:12px;margin-top:60px;">
