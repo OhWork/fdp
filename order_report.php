@@ -51,7 +51,7 @@
                         </tr>
 	</table>
                 <!--บรรทัดที่ 6-->
-                <table style="font-size:14px;border-bottom: 1px;border-bottom-style: dotted;border-bottom-color: #000000;">
+                <table style="font-size:14px;border-bottom: 1px;border-bottom-style: dotted;border-bottom-color: #000000;border-spacing: 0;">
                         <tr>
                                 <td style="width:110px;"></td>
                                 <td style="width:40px;">Tel :</td>
@@ -88,14 +88,16 @@
 	</table>
                 <!--ส่วนของตาราง-->
                 <!--หัวตาราง-->
-                <table style="font-size:12px;border-top: solid 1px #000;margin-top:16px;text-align: center;">
+                <table style="font-size:12px;border-top: solid 1px #000;margin-top:16px;text-align: center;border-spacing: 0;">
                         <tr>
                                 <td style="width:50px;height:50px;border-right: solid 1px #000;">รหัส</td>
-                                <td style="width:370px;border-right: solid 1px #000;">คำอธิบายรายการ</td>
+                                <td style="width:370px;border-right: solid 1px #000;">รายการ</td>
                                 <td style="width:50px;border-right: solid 1px #000;">จำนวน</td>
-                                <td style="width:100px;border-right: solid 1px #000;">หน่วย</td>
+                                <td style="width:100px;border-right: solid 1px #000;">ราคา/หน่วย</td>
                                 <td style="width:100px;">มูลค่ารวม</td>
                         </tr>
+                </table>
+                <table style="font-size:12px;border-top: solid 1px #000;border-bottom: solid 1px #000;text-align: center;border-spacing: 0;">       
                         <tr style="magin-top:px;">
                                 <td style="width:50px;height:400px;border-right: solid 1px #000;text-align: center;"><!--ใส่รหัสสินค้า--></td>
                                 <td style="width:370px;border-right: solid 1px #000;"><!--ใส่ชื่อสินค้า--></td>
@@ -105,7 +107,7 @@
                         </tr>
 	</table>
                 <!--รายละเอียดจำนวนเงินทั้งสิ้นตาราง-->
-                <table style="font-size:14px;">
+                <table style="font-size:14px;border-spacing: 0;">
                         <tr>
                                 <td style="width:70px;padding-top:10px;">หมายเหตุ</td>
                                 <td style="width:500px;border-right: solid 1px #000;text-align: right;padding-top:10px;">จำนวนเงินรวม</td>
