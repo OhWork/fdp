@@ -1,5 +1,5 @@
 <?php
- 	error_reporting(0);
+// 	error_reporting(0);
     class db_tools{
         private  $dsn = "mysql:host=localhost;dbname=friendship_db;charset=utf8";
         private  $user = "root";
@@ -55,7 +55,11 @@
 				$field[] = $k;
 				$val[":$v"] =$v;
 				$colon[] =":$v";
-				 if(!preg_match('/[A-Za-z0-9]/', $val[":$v"])){
+				if($val[":$v"] == ""){
+					$val[":"] = " ";
+
+				}
+				 if($val[":$v"] != ""){
 					$keys = array_keys($val);
 					$index = array_search($keys[$j], $keys);
 				    if ($index !== false) {
@@ -64,7 +68,6 @@
 				        $array2+=$array;
 				        unset($val[":$v"]);
 				        $i++;
-				        continue;
 				    }
 				}
 				$newarray = array_merge($array2 , $val);
@@ -79,7 +82,6 @@
 						$vnlist = join($keyadd,",");
 					}
 					$this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
-					print_r($this);
 					$this->runStmSql($newarray);
 					return $this;
 
@@ -153,12 +155,12 @@
 			$this->runStmSql($val);
 			return $this;
 		}
-		function findAll($table){
+		public function findAll($table){
 			$this->createStement("SELECT * FROM $table");
 			$this->runStmSql(array());
 			return $this;
 			}
-                                function conditions($table,$condition){
+        function conditions($table,$condition){
 			$this->createStement("SELECT * FROM $table WHERE $condition");
 			$this->runStmSql(array());
 			return $this;
