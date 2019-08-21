@@ -90,7 +90,6 @@
                     <div class="col-6"></div>
                     <input type="hidden" name="mdeq_date" value="<?php echo date("Y-m-d H:i"); ?>"/>
                     <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
-                    <input type="hidden" name="sale_sale_id" value="<?php ?>"/>
                     <div class="col-6">
                         <?php echo $radiomdeqenable; ?>
                         <div class="row">
