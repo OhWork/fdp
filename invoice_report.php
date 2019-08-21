@@ -12,14 +12,14 @@
                 <!--บรรทัดที่ 1-->
                 <table style="">
                         <tr>
-                                <td style="font-size:18px;">ใบเสนอราคา</td>
+                                <td style="font-size:18px;">ใบแจ้งหนี้</td>
 		<td><img height="20px" src="images/fdp.png" style="padding-left:520px;" /></td>
                         </tr>
 	</table>
                 <!--บรรทัดที่ 2-->
                 <table style="">
                         <tr>
-                                <td style="font-size:18px;">QUOTATION</td>
+                                <td style="font-size:18px;">INVOICE</td>
 		<td>(ต้นฉบับ/original)</td>
                         </tr>
 	</table>
@@ -136,9 +136,9 @@
                 <table style="font-size:12px;margin-top: 8px;">
                         <tr>
                                 <td style="width:360px;"></td>
-                                <td style="width:150px;">อนุมัติโดย</td>
+                                <td style="width:150px;">ผู้ส่ง</td>
                                 <td style="width:10px;"></td>
-                                <td style="width:150px;">ยอมรับใบเสนอราคา</td>
+                                <td style="width:150px;">ผู้รับ</td>
                         </tr>
                 </table>
                 <table style="font-size:12px;margin-top:60px;">
@@ -155,7 +155,7 @@
                                 <td style="width:80px;">วันที่อนุมัติ</td>
                                 <td style="width:70px;"></td>
                                 <td style="width:10px;"></td>
-                                <td style="width:80px;">วันที่ยอมรับ</td>
+                                <td style="width:80px;">วันที่รับ</td>
                                 <td style="width:70px;"></td>
                         </tr>
 	</table>
