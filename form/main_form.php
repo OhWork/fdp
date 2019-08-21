@@ -240,7 +240,7 @@ class textfieldcalendarreadonly{
 		function __toString(){
 			$html ='';
 			foreach($this->items as $item){
-			$html.="<div style='float:left;padding-right: 20px;'><input type='radio'
+			$html.="<div class='pl-3'><input class='mr-1' type='radio'
 					name='$this->name'
 					$item[checked]
 					value='$item[value]'";

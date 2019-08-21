@@ -17,7 +17,7 @@
   $selecttypemdeq = new SelectFromDB();
   $selecttypemdeq->name = 'typemdeq_typemdeq_id';
   $selecttypemdeq->lists = 'โปรดระบุ ชนิดของอุปกรณ์';
-    $submit = new buttonok('บันทึก ลูกค้า','btnSubmit','btn btn-success col-12','');
+    $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
      if(!empty($_GET['id'])){
@@ -31,76 +31,60 @@
         $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
     	}
     }
-   echo $form->open("","","col-12","insert_typemdeq.php","");
-   ?>
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6 mt-5">
+ ?>
+<div class="col-12">
         <div class="row">
-            <div class="col-12">
-                <div class="row">
-                    <h3>เพิ่มชนิดอุปกรณ์การแพทย์</h3>
-                </div>
-            </div>
-            <div class="col-12 mt-4">
-                <div class="row">
-                        <?php echo $lbtypemdeq;  ?>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                        <?php
-                        $rs =  $db->findAll('typemdeq');
-                        echo $selecttypemdeq->selectFromTB($rs,'typemdeq_id','typemdeq_name','mdeq_id'); ?>
-                </div>
-            </div>
-            <div class="col-12 mt-4">
-                <div class="row">
-                        <?php echo $lbname;  ?>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                        <?php echo $txtname;  ?>
-                </div>
-            </div>
-            <div class="col-12 pb-5">
-                <div class="row">
-                    <div class="col-6 mt-2">
+                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
+                <div class="col-xl-6 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $lbprice;  ?>
+                                <div class="col-12 pt-3 tx3">
+                                        <div class="row">
+                                            <h2 class="pl-3">เพิ่มชนิดอุปกรณ์การแพทย์</h2>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <?php echo $txtprice;  ?>
-                                </div>
-                            </div>
+<?php echo $form->open("","","col-12","insert_typemdeq.php",""); ?>
+                                        <div class="col-12 mt-4 tx2">
+                                                <?php echo $lbtypemdeq;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php
+                                                $rs =  $db->findAll('typemdeq');
+                                                echo $selecttypemdeq->selectFromTB($rs,'typemdeq_id','typemdeq_name','mdeq_id'); ?>
+                                        </div>
+                                        <div class="col-12 mt-2 tx2">
+                                                <?php echo $lbname;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php echo $txtname;  ?>
+                                        </div>
+                                        <div class="col-12 mt-2 tx2">
+                                                <?php echo $lbprice;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php echo $txtprice;  ?>
+                                        </div>
+                                        <div class="col-12 mt-3 tx2">
+                                            <div class="row">
+                                                <?php echo $radiomdeqenable; ?>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3 mb-3">
+                                                <div class="row">
+                                                        <div class="col-9"></div>
+                                                        <input type="hidden" name="mdeq_date" value="<?php echo date("Y-m-d H:i"); ?>"/>
+                                                        <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                                                        <div class="col-3">
+                                                                <div class="row">
+                                                                        <div class="col-12 pl-0">
+                                                                            <?php echo $submit; ?>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
                         </div>
-                    </div>
                 </div>
-            </div>
-
- 
-
-            <div class="col-12 mt-5">
-                <div class="row">
-                    <div class="col-6"></div>
-                    <input type="hidden" name="mdeq_date" value="<?php echo date("Y-m-d H:i"); ?>"/>
-                    <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
-                    <div class="col-6">
-                        <?php echo $radiomdeqenable; ?>
-                        <div class="row">
-                            <div class="col-12 pr-0">
-                                <?php echo $submit; ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <?php echo $form->close(); ?>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
         </div>
-    </div>
-    <div class="col-3"></div>
 </div>
