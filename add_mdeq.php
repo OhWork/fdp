@@ -50,7 +50,8 @@
             <div class="col-12">
                 <div class="row">
                         <?php
-                        echo $selecttypemdeq->selectFromTB('typemdeq','typemdeq_id','typemdeq_name',''); ?>
+                        $rs =  $db->findAll('typemdeq');
+                        echo $selecttypemdeq->selectFromTB($rs,'typemdeq_id','typemdeq_name','mdeq_id'); ?>
                 </div>
             </div>
             <div class="col-12 mt-4">

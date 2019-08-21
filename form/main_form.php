@@ -1,4 +1,4 @@
-<?php
+<?php 
 	class form{
 		public $method = "POST";
 		function open($id,$name,$cass=null,$url,$java){
@@ -339,20 +339,15 @@ class labeladdday{
 
 	class SelectFromDB{
 	public $name,$lists,$idtf,$value = null;
-	function selectFromTB($table,$value,$label,$result){
-            //include  'tools/db_tools.php';
-            //require_once  'connect.php';
-		//$db = new db_tools();
-		//$rs = $db->findAll($table)->execute();
-                               
+	function selectFromTB($rs,$value,$label,$result){
 		$html = "<select id='{$this->idtf}' class='form-control css-require' name='{$this->name}' >
 			<option value='$this->value'>
 			-----{$this->lists}-----
 			</option>
 			";
-                                 $db->findAll($table);
-                                        while($cols = $db->moveNext_getRow('assoc')){
-			$html.="<option value= '{$cols['$value']}'";
+                                
+                                        while($cols = $rs->moveNext_getRow('assoc')){
+			$html.="<option value= '{$cols[$value]}'";
                                                     if($cols[$value]==$result){
 				$html.='selected';
                                                     };
@@ -365,9 +360,7 @@ class labeladdday{
 		}
 
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
-		include_once 'tools/db_tools.php';
-		$db = new db_tools();
-		//$rs = $db->findbyPK($table,$type,$id)->execute();
+		
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
 			<option value=''>
 			-----{$this->lists}-----
