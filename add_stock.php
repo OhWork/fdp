@@ -32,6 +32,16 @@
                         <?php echo $txtname; ?>
                 </div>
             </div>
+            <div class="col-12 mt-4">
+                <div class="row">
+                        <?php echo $lbamount;  ?>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                        <?php echo $txtamount; ?>
+                </div>
+            </div>
 
  
 
@@ -80,5 +90,17 @@
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
             }
+        });
+        
+                $(".showAll_btn").click(function(){
+            // ตรวจสอบถ้ามีการแสดงรายการทั้งหมดอยู่แล้ว
+            if ($( "#mdeq_name" ).autocomplete( "widget" ).is( ":visible" ) ) {
+                $( "#mdeq_name" ).autocomplete( "close" ); // ปิดการแสดงรายการทั้งหมด
+                return;
+            }
+            // ส่งค่าว่างปล่าวไปทำการค้นหา จะได้ผลลัพธ์เป็นรายการทั้งหมด
+            $( "#mdeq_name" ).autocomplete( "search", "" );
+
+            $( "#mdeq_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
         </script>
