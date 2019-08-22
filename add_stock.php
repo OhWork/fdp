@@ -43,7 +43,7 @@
                 </div>
             </div>
 
- 
+
 
             <div class="col-12 mt-5">
                 <div class="row">
@@ -91,7 +91,7 @@
            //},500);
             }
         });
-        
+
                 $(".showAll_btn").click(function(){
             // ตรวจสอบถ้ามีการแสดงรายการทั้งหมดอยู่แล้ว
             if ($( "#mdeq_name" ).autocomplete( "widget" ).is( ":visible" ) ) {
@@ -103,4 +103,5 @@
 
             $( "#mdeq_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
+         });
         </script>
