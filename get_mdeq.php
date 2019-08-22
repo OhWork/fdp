@@ -5,7 +5,6 @@
     $q = $_GET["term"];
 
 $pagesize = 10; // จำนวนรายการที่ต้องการแสดง
-$table_db="ipzpo"; // ตารางที่ต้องการค้นหา
 $find_field="mdeq_name"; // ฟิลที่ต้องการค้นหา
 $rs = $db->conditions('mdeq',"locate('$q', $find_field ,mdeq_enable = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize");
 //$rs = $db->specifytable("*",$table_db,"locate('$q', $find_field ,status_status_id = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize")->execute();
