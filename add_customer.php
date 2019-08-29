@@ -36,7 +36,7 @@
            </div>
         </div>
     <?php
-    echo $form->open("","","col-12 tx1","insert_customer.php","");
+    echo $form->open("form_reg","","col-12 tx1","insert_customer.php","");
     ?>
         <div class="col-12">
             <div class="row">
@@ -190,6 +190,7 @@
 </div>
 <script>
 $(document).ready(function () {
+/*
     $('#bs').on('click', function () {
 			Swal.fire({
 			   type: 'success',
@@ -197,6 +198,24 @@ $(document).ready(function () {
 			  text: 'Something went Correct!',
 			  timer: 1500
 			})
+	});
+*/
+	jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	$( "#form_reg" ).validate({
+		rules: {
+		    customer_name: "required",
+		    customer_nickname: "required",
+		    customer_address: "required",
+		    customer_shop: "required",
+		    customer_tel: "required",
+		    customer_email: "required",
+		    customer_subdistricts: "required",
+		    customer_districts: "required",
+		    customer_provinces: "required",
+  		}
 	});
 });
 </script>

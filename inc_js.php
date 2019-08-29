@@ -21,6 +21,7 @@
   <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="vendor/datatables/jquery.dataTables.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="vendor/validate/jquery.validate.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="jquery/sb-admin.min.js"></script>

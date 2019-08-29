@@ -40,7 +40,7 @@
                                                 <h2 class="pl-3">เพิ่มพนักงาน</h2>
                                         </div>
                                 </div>
-<?php echo $form->open("","","col-12","insert_emp.php",""); ?>
+<?php echo $form->open("form_reg","","col-12","insert_emp.php",""); ?>
                                 <div class="col-12 pt-3 pb-2 tx5 fs1">
                                         <div class="row">
                                             <i class="fas fa-sign-in-alt pt-1 tx5"></i>&nbsp<span>ข้อมูลเข้าสู่ระบบ</span>
@@ -215,40 +215,46 @@
 <script>
     $('#emp_email').keyup(function(){
 		console.log($('#emp_email').val().length);
-		//if($('#user_email').val().length >= 8 &&  $('#emp_email').val().length <= 16){
 		$.ajax({
 	            url: "check_emp.php",
 	            data: {user_user : $('#user_user').val()},
 	            type: "POST",
 	            success: function(data) {
-// 		            console.log($('#user_user').val());
 		           	$('#msg').show();
 	                if((data > '0')) {
-//    	                    $("#btnSubmit").attr("disabled", true);
-	                     $("#msg").html('<span class="text-danger">ชื่อผู้ใช้ไม่สามารถใช้งานได้</span>');
+	                    $("#msg").html('<span class="text-danger">ชื่อผู้ใช้ไม่สามารถใช้งานได้</span>');
 	                } else {
 		                $("#msg").html('<span class="text-success">ชื่อผู้ใช้นี้สามารถใช้ได้</span>');
-//  	                    $("#btnSubmit").attr("disabled", false);
 	                }
 	            },
 	           error: function(XMLHttpRequest, textStatus, errorThrown) {
 			   alert("some error");
 	  		   }
 	     });
-	    //}
     });
-    $('#emp_pass_confirm').focusout(function(){
-                    var pass = $('#emp_pass').val();
-	    var passcon =  $('#emp_pass_confirm').val();
-	    //var passconmd5 = $.md5($.md5($.md5(passcon)));
-	    //var passmd5 =$.md5($.md5($.md5(pass)));
-	    if(pass == passcon){
-		   $("#msg2").html('<span class="text-success">รหัสผ่านตรงกัน</span>');
- 		   $("#btnSubmit").attr("disabled", false);
-	    }
-	    else{
-		   $("#msg2").html('<span class="text-danger">รหัสผ่านไม่ตรงกัน</span>');
- 		   $("#btnSubmit").attr("disabled", true);
-	    }
-    });
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#form_reg" ).validate({
+  rules: {
+    emp_email: {
+      required: true,
+      email: true
+    },
+    emp_password: "required",
+    emp_passcon: {
+	  required: true,
+      equalTo: "#emp_pass"
+    },
+    emp_name: "required",
+    emp_address: "required",
+    emp_tel: "required",
+    emp_idcard: "required",
+    emp_subdistricts: "required",
+    emp_districts: "required",
+    emp_provinces: "required",
+    emp_bd: "required",
+  }
+});
  </script>
