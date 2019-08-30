@@ -14,23 +14,55 @@
    $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
-    $txtcomment = new textArea('order_comment', '', '', '', 3, 2,' ');
+    $txtcomment = new textArea('order_comment', 'col-12', '', '', 3, 2,' ');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
-
-   echo $form->open("","","col-12","??.php","");
-   echo $lbnamecustomer,$txtnamecustomer;
-   echo $lbdate,$txtdate;
-   echo $lbdateexp,$txtdateexp;
-   echo $lbocode,$txtocode;
-   echo $lbaddress,$txtaddress ;
-   echo $lbtel,$txttel;
-   include 'add_orderlist.php';
-   echo $lbcomment,$txtcomment;
-   echo $submit;
-    echo $form->close();
-    ?>
+?>
+<div class="col-12">
+        <div class="row">
+                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
+                <div class="col-xl-6 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
+                        <div class="row">
+                                <div class="col-12 pt-3 tx3">
+                                        <div class="row">
+                                            <h2 class="pl-3">เพิ่มใบเสนอราคา</h2>
+                                        </div>
+                                </div>
+<?php echo $form->open("","","col-12","??.php",""); ?>
+                                <div class="col-12 mt-4 tx2"><?php echo $lbnamecustomer; ?></div>
+                                <div class="col-12"><?php echo $txtnamecustomer; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php echo $lbdate; ?></div>
+                                <div class="col-12"><?php echo $txtdate; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php echo $lbdateexp; ?></div>
+                                <div class="col-12"><?php echo $txtdateexp; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php echo $lbocode; ?></div> 
+                                <div class="col-12"><?php echo $txtocode; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php echo $lbaddress; ?></div> 
+                                <div class="col-12"><?php echo $txtaddress ; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php echo $lbtel; ?></div> 
+                                <div class="col-12"><?php echo $txttel; ?></div>
+                                <div class="col-12 mt-2 tx2"><?php include 'add_orderlist.php'; ?></div>
+                                <div class="col-12 mt-2 pl-4 pr-4 tx2"><?php echo $lbcomment; ?></div> 
+                                <div class="col-12 pl-4 pr-4"><?php echo $txtcomment; ?></div>
+                                <div class="col-12 mt-3 mb-3">
+                                        <div class="row">
+                                                <div class="col-9"></div>
+                                                <div class="col-3">
+                                                        <div class="row">
+                                                                <div class="col-12 pl-0 pr-4">
+                                                                        <?php echo $submit; ?>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+    <?php echo $form->close();?>
+                        </div>
+                </div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
+        </div>
+</div>
 
 
 <script>
