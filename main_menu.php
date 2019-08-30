@@ -14,7 +14,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 <!--          <h6 class="dropdown-header">Login Screens:</h6>-->
-          <a class="dropdown-item" href="#">ใบเสนอราคา</a>
+          <a class="dropdown-item" href="main.php?url=add_order.php">ใบเสนอราคา</a>
           <a class="dropdown-item" href="#">ใบแจ้งหนี้</a>
           <a class="dropdown-item" href="#">ใบส่งของ</a>
 <!--          <div class="dropdown-divider"></div>
