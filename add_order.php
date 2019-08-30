@@ -14,7 +14,7 @@
    $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
-    $txtcomment = new textArea('order_comment', '', '', '', 3, 2,' ')
+    $txtcomment = new textArea('order_comment', '', '', '', 3, 2,' ');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
