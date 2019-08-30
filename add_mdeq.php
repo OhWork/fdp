@@ -31,6 +31,11 @@
         $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
     	}
     }
+              $Count="Customer";
+              $rs = $db->findAll('mdeq');
+          $SelectCount=Select("ecom_count","WHERE CountName='".$Count."'");
+           $Count=mysql_fetch_array($SelectCount);
+        echo "C".substr("0000000".$Count['Count'],-5);
  ?>
 <div class="col-12">
         <div class="row">
