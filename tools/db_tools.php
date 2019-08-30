@@ -82,6 +82,7 @@
 						$vnlist = join($keyadd,",");
 					}
 					$this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
+					print_r($this);
 					$this->runStmSql($newarray);
 					return $this;
 
@@ -89,6 +90,7 @@
 
 				$vnlist = join($colon,",");
 					$this->createStement("INSERT INTO $table($fnlist) VALUES ($vnlist) ");
+					print_r($this);
 					$this->runStmSql($val);
 					return $this;
 				}

@@ -61,11 +61,12 @@ if(isset($_POST['Submit'])){
 ?>
 <div style="margin:auto;">
     <?php
-    echo $form->open("form_reg","","col-12 tx1","#","");
+//     echo $form->open("form_reg","","col-12 tx1","#","");
     ?>
 <table id="myTbl" border="1" cellspacing="2" cellpadding="0">
     <tr>
     <th>เพิ่ม</th>
+    <th>รหัสสินค้า</th>
     <th>อุปกรณ์การแพทย์</th>
     <th>จำนวน</th>
     <th>ราคา</th>
@@ -106,20 +107,20 @@ if(isset($result) && $result->num_rows>0){
     <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
     </td>
     <td>
-    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="" />
-    <input type="text" class="text_data inputautofill" name="" id="data2[]" />
+    <input type="text" class="text_data inputautofill" name="code" id="mdeqcode" />
     </td>
     <td>
-    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="" />
-    <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" />
+    <input type="text" class="text_data inputautofill" name="name" id="name" />
     </td>
     <td>
-    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="" />
-    <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" />
+    <input type="text" class="text_data inputautofill" name="num" id="num" />
     </td>
     <td>
-    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="" />
-    <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" />
+    <input type="text" class="text_data inputautofill" name="price" id="price" />
+    </td>
+    <td>
+    <input type="text" class="text_data inputautofill" name="fakeprice" id="fakeprice" />
+    <input type="hidden" class="text_data inputautofill" name="mdeqid" id="mdeqid" />
     </td>
        <td>
             <button id="removeRow" type="button"><i class="fas fa-minus"></i></button>
@@ -131,9 +132,7 @@ if(isset($result) && $result->num_rows>0){
 <table width="" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-
-    <input name="h_all_id_data" type="hidden" id="h_all_id_data" value="<?=implode(",",$all_id_data)?>" />
-<!--     <input type="submit" name="Submit" id="Submit" value="Submit" /></td> -->
+    <input type="submit" name="Submit" id="Submit" value="Submit" /></td>
   </tr>
 </table>
 </form>
@@ -158,11 +157,13 @@ $(function(){
         var lastIndex=$(".inputautofill").size()-1; // หา index ของตัว input ล่าสุด
         // สร้าง input element เพื่อที่จะไปแทนที่ตัวเก่า
         $($(".inputautofill:eq("+lastIndex+")")[0].outerHTML)
-        .insertAfter($(".inputautofill:eq("+lastIndex+")"))
+        .insertAfter($(".inputautofill:eq("+lastIndex+")"));
+/*
         .autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
             minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
             source: "get_suggest.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
-        });;
+        });
+*/
         $(".inputautofill:eq("+lastIndex+")").remove(); // ลบตัวเดิมออก หลังจากแทนที่ตัวใหม่แล้ว
     });
     $("#removeRow").click(function(){
@@ -176,15 +177,37 @@ $(function(){
         }
     });
 
-     $( ".inputautofill" ).autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
+     $( "#mdeqcode" ).autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
         minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
-        source: "get_suggest.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
-    });
+        source: "get_mdeqfororderlist.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
+         select: function( event, ui ) {
+                // สำหรับทดสอบแสดงค่า เมื่อเลือกรายการ
+              console.log( ui.item );
+               //   "Selected: " + ui.item.label :
+                //  "Nothing selected, input was " + this.value);
+                $("#name").val(ui.item.name);
+//                  $("#num").val(ui.item.unit);
+                  $("#price").val(ui.item.price);
+                  $("#mdeqid").val(ui.item.id);
+                 $("#mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
+                //setTimeout(function(){
+                 // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
+           //},500);
+            }
+        });
 
 
 });
 </script>
 
 <?php
-
+if($_POST){
+	print_r($_POST);
+ 	$rs = $db->insert('orderlist',array(
+//                 'orderlist_amourt' => $_POST['num'],
+                'orderlist_cost' => $_POST['price'],
+                'orderlist_costfake' => $_POST['fakeprice'],
+                'mdeq_mdeq_id' => $_POST['mdeqid'],
+    ) );
+}
 ?>
