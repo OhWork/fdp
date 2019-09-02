@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                                                         <div class="row">
                                                                 <div class="col-12">
                                                                         <?php echo $lbpass;  ?><span class="tx4">*</span>
@@ -64,7 +64,7 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                                                         <div class="row">
                                                                 <div class="col-12">
                                                                         <?php echo $lbpasscon;  ?><span class="tx4">*</span>
@@ -89,7 +89,7 @@
                                 </div>
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                                                         <div class="row">
                                                                 <div class="col-12">
                                                                         <?php echo $lbidcard;  ?><span class="tx4">*</span>
@@ -99,7 +99,7 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                                                         <div class="row">
                                                                 <div class="col-12">
                                                                         <?php echo $lbbd;  ?><span class="tx4">*</span>
@@ -119,12 +119,12 @@
                                 </div>
                                 <div class="col-12">
                                         <div class="row">
-                                                <div class="col-4 mt-2">
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                                                         <div class="row">
-                                                                <div class="col-12 pr-0 tx2">
+                                                                <div class="col-12 prn tx2">
                                                                     <?php echo $lbprovince;  ?><span class="tx4">*</span>
                                                                 </div>
-                                                                <div class="col-12 pr-0">
+                                                                <div class="col-12 prn">
                                                                     <select id="selProvince" name="emp_provinces" class="form-control">
                                                                     <option value=""> ----- เลือก ----- </option>
                                                             <?php
@@ -137,7 +137,7 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-4 mt-2">
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                                                         <div class="row">
                                                                 <div class="col-12 tx2">
                                                                         <?php echo $lbdistrict;  ?><span class="tx4">*</span>
@@ -149,12 +149,12 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-4 mt-2">
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                                                         <div class="row">
-                                                                <div class="col-12 pl-0 tx2">
+                                                                <div class="col-12 pln tx2">
                                                                     <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
                                                                 </div>
-                                                                <div class="col-12 pl-0">
+                                                                <div class="col-12 pln">
                                                                     <select id="selSubdistricts" name="emp_subdistricts" class="form-control">
                                                                     <option value=""> ----- เลือก ----- </option>
                                                                     </select><span id="waitSubdistricts"></span>
