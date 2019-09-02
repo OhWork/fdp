@@ -59,12 +59,12 @@
                 </div>
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-4 mt-2">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                             <div class="row">
-                                <div class="col-12 pr-0 tx2">
+                                <div class="col-12 prn tx2">
                                     <?php echo $lbprovince;  ?><span class="tx4">*</span>
                                 </div>
-                                <div class="col-12 pr-0">
+                                <div class="col-12 prn">
                                     <select id="selProvince" name="customer_provinces" class="form-control">
                                     <option value=""> ----- เลือก ----- </option>
                             <?php
@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 mt-2">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                             <div class="row">
                                 <div class="col-12 tx2">
                                         <?php echo $lbdistrict;  ?><span class="tx4">*</span>
@@ -89,12 +89,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4 mt-2">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-12 mt-2">
                             <div class="row">
-                                <div class="col-12 pl-0 tx2">
+                                <div class="col-12 pln tx2">
                                     <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
                                 </div>
-                                <div class="col-12 pl-0">
+                                <div class="col-12 pln">
                                     <select id="selSubdistricts" name="customer_subdistricts" class="form-control">
                                     <option value=""> ----- เลือก ----- </option>
                                     </select><span id="waitSubdistricts"></span>
@@ -168,10 +168,10 @@
                 </div>-->
                 <div class="col-12 mt-3 mb-3">
                     <div class="row">
-                        <div class="col-9"></div>
+                        <div class="col-xl-10 col-lg-10 col-md-10 col-9"></div>
                         <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
                         <input type="hidden" name="emp_emp_id" value="<?=$_SESSION['emp_id']?>"/>
-                        <div class="col-3">
+                        <div class="col-xl-2 col-lg-2 col-md-2 col-3">
                             <div class="row">
                                 <div class="col-12 pl-0">
                                     <?php echo $submit; ?>

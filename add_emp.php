@@ -194,12 +194,12 @@
                                 </div>
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
-                                                <div class="col-9"></div>
+                                                <div class="col-xl-9 col-lg-9 col-md-8 col-7"></div>
                                                 <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
                                                 <input type="hidden" name="emp_emp_id" value="<?=$_SESSION['emp_id']?>"/>
-                                                <div class="col-3">
+                                                <div class="col-xl-3 col-lg-3 col-md-4 col-5">
                                                         <div class="row">
-                                                                <div class="col-12 pl-0">
+                                                                <div class="col-12">
                                                                     <?php echo $submit; ?>
                                                                 </div>
                                                         </div>
