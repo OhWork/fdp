@@ -58,6 +58,9 @@
             </footer>
         </div>
     </div><!-- /#wrapper -->
+    <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
+            <i class="fas fa-angle-up"></i>
+    </a>
     
   
 
