@@ -14,37 +14,84 @@
    $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
-    $txtcomment = new textArea('order_comment', 'col-12', '', '', 3, 2,' ');
+    $txtcomment = new textArea('order_comment', 'form-control col-12', '', '', 3, 2,' ');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
 ?>
 <div class="col-12">
         <div class="row">
-                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
-                <div class="col-xl-6 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
+                <div class="col-xl-1 col-lg-2 col-md-2 col-xs-1"></div>
+                <div class="col-xl-10 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
                         <div class="row">
-                                <div class="col-12 pt-3 tx3">
+                                <div class="col-12 pt-3 tx3" style="text-align: center;">
                                         <div class="row">
-                                            <h2 class="pl-3">เพิ่มใบเสนอราคา</h2>
+                                            <h5 class="pl-3 w-100">สร้างใบเสนอราคา</h5>
                                         </div>
                                 </div>
 <?php echo $form->open("","","col-12","??.php",""); ?>
-                                <div class="col-12 mt-4 tx2"><?php echo $lbnamecustomer; ?></div>
-                                <div class="col-12"><?php echo $txtnamecustomer; ?></div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbdate; ?></div>
-                                <div class="col-12"><?php echo $txtdate; ?></div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbdateexp; ?></div>
-                                <div class="col-12"><?php echo $txtdateexp; ?></div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbocode; ?></div> 
-                                <div class="col-12"><?php echo $txtocode; ?></div>
+                                <div class="col-12 mt-4 ">
+                                        <div class="row">
+                                                <div class="col-3">
+                                                        <div class="row">
+                                                                <div class="col-12 tx2"><?php echo $lbnamecustomer; ?></div>
+                                                                <div class="col-12"><?php echo $txtnamecustomer; ?></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-2">
+                                                        <div class="row">
+                                                                <div class="col-12 tx2 pl-0"><?php echo $lbdate; ?></div>
+                                                                <div class="col-12 pl-0"><?php echo $txtdate; ?></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-2">
+                                                        <div class="row">
+                                                                <div class="col-12 tx2 pl-0"><?php echo $lbdateexp; ?></div>
+                                                                <div class="col-12 pl-0"><?php echo $txtdateexp; ?></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-2"></div>
+                                                <div class="col-3">
+                                                        <div class="row">
+                                                                <div class="col-12 tx2 pl-0"><?php echo $lbocode; ?></div> 
+                                                                <div class="col-12 pl-0"><?php echo $txtocode; ?></div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
                                 <div class="col-12 mt-2 tx2"><?php echo $lbaddress; ?></div> 
                                 <div class="col-12"><?php echo $txtaddress ; ?></div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbtel; ?></div> 
-                                <div class="col-12"><?php echo $txttel; ?></div>
+                                <div class="col-12 mt-2 ">
+                                        <div class="row">
+                                                <div class="col-6">
+                                                        <div class="row">
+                                                                <div class="col-12 tx2"><?php echo $lbtel; ?></div> 
+                                                                <div class="col-12"><?php echo $txttel; ?></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-6"></div>
+                                        </div>
+                                </div>
                                 <div class="col-12 mt-2 tx2"><?php include 'add_orderlist.php'; ?></div>
-                                <div class="col-12 mt-2 pl-4 pr-4 tx2"><?php echo $lbcomment; ?></div> 
-                                <div class="col-12 pl-4 pr-4"><?php echo $txtcomment; ?></div>
+                                <div class="col-12 mt-2 ">
+                                        <div class="row">
+                                                <div class="col-6">
+                                                        <div class="col-12 mt-2 tx2"><?php echo $lbcomment; ?></div> 
+                                                        <div class="col-12"><?php echo $txtcomment; ?></div>
+                                                </div>
+                                                <div class="col-2"></div>
+                                                <div class="col-4">
+                                                        <div class="col-12">
+                                                                <div class="col-12" style="margin-top: 38px;border-top: solid 1px #8e8e8e;border-bottom: double 5px #8e8e8e;">
+                                                                        <div class="row">
+                                                                                <div class="col-6 tx2 mt-3"><p style="text-align: right;"><b>ยอดรวมสุทธิ</b></p></div>
+                                                                                <div class="col-6 mt-2 form-control"><span><!-- ใสยอดรวม--></span></div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
                                                 <div class="col-9"></div>
@@ -60,7 +107,7 @@
     <?php echo $form->close();?>
                         </div>
                 </div>
-                <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
+                <div class="col-xl-1 col-lg-2 col-md-2 col-xs-1"></div>
         </div>
 </div>
 

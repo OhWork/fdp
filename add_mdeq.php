@@ -1,13 +1,24 @@
 <?php
     include "tools/ddd.php";
+    $sql = "SELECT Max(mdeq_id)+1 as MaxID FROM mdeq";
+    $db->createStement($sql); 
+    $db->runStmSql(array());
+    $Count = $db->moveNext_getRow('assoc');
+    $total = $Count["MaxID"];
+    $code =  sprintf("P%'05d",$total); 
     $form = new form();
+    $lbmdeqcode= new label('รหัสสินค้า');
     $lbname = new label('ชื่ออุปกรณ์การแพทย์');
     $lbunit= new label('หน่วย');
     $lbprice = new label('ราคา'); 
     $lbcomment = new label('หมายเหตุ');
     $lbtypemdeq = new label('ชนิดอุปกรณ์การแพทย์');
+    $txtmdeqcode = new textfield('mdeq_code','','form-control','','');
+    $txtmdeqcode->value = $code;
     $txtname = new textfield('mdeq_name','','form-control','','');
     $txtprice = new textfield('mdeq_price','','form-control','','');
+    $txtunit = new textfield('mdeq_unit','','form-control','','');
+    $txtcomment = new textfield('mdeq_comment','','form-control','','');
     $radiomdeqenable = new radioGroup();
     $radiomdeqenable->name = 'mdeq_enable';
   if(empty($id)){
@@ -27,8 +38,8 @@
     	$radiomdeqenable->add('ใช้งานได้',1,'checked','');
     	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
     	}else if($r['mdeq_enable'] == 0){
-        $radiomdeqenable->add('ใช้งานได้',1,'','');
-        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
+        $radiomdeqenable->add('ใช้งานได้',1,'','checked');
+        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
     	}
     }
  ?>
@@ -42,7 +53,7 @@
                                             <h2 class="pl-3">เพิ่มชนิดอุปกรณ์การแพทย์</h2>
                                         </div>
                                 </div>
-<?php echo $form->open("","","col-12","insert_typemdeq.php",""); ?>
+<?php echo $form->open("","","col-12","insert_mdeq.php",""); ?>
                                         <div class="col-12 mt-4 tx2">
                                                 <?php echo $lbtypemdeq;  ?>
                                         </div>
@@ -50,6 +61,12 @@
                                                 <?php
                                                 $rs =  $db->findAll('typemdeq');
                                                 echo $selecttypemdeq->selectFromTB($rs,'typemdeq_id','typemdeq_name','mdeq_id'); ?>
+                                        </div>
+                                        <div class="col-12 mt-2 tx2">
+                                                <?php echo $lbmdeqcode;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php echo $txtmdeqcode;  ?>
                                         </div>
                                         <div class="col-12 mt-2 tx2">
                                                 <?php echo $lbname;  ?>
@@ -62,6 +79,18 @@
                                         </div>
                                         <div class="col-12">
                                                 <?php echo $txtprice;  ?>
+                                        </div>
+                                        <div class="col-12 mt-2 tx2">
+                                                <?php echo $lbunit;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php echo $txtunit;  ?>
+                                        </div>
+                                        <div class="col-12 mt-2 tx2">
+                                                <?php echo $lbcomment;  ?>
+                                        </div>
+                                        <div class="col-12">
+                                                <?php echo $txtcomment;  ?>
                                         </div>
                                         <div class="col-12 mt-3 tx2">
                                             <div class="row">
