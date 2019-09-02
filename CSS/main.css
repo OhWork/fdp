@@ -102,3 +102,9 @@ input[type="text"]:focus {
 .ch{
     height:96px;
 }
+.form-control {
+    height: calc(1.5em + 0.25rem + 2px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #e0e0e0;
+}
