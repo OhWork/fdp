@@ -61,7 +61,7 @@ if(isset($_POST['Submit'])){
 ?>
 <div style="margin:auto;">
     <?php
-//     echo $form->open("form_reg","","col-12 tx1","#","");
+    echo $form->open("form_reg","","col-12 tx1","#","");
     ?>
 <table id="myTbl" border="1" cellspacing="2" cellpadding="0">
     <tr>
@@ -204,7 +204,7 @@ $(function(){
 if($_POST){
 	print_r($_POST);
  	$rs = $db->insert('orderlist',array(
-//                 'orderlist_amourt' => $_POST['num'],
+                'orderlist_amourt' => $_POST['num'],
                 'orderlist_cost' => $_POST['price'],
                 'orderlist_costfake' => $_POST['fakeprice'],
                 'mdeq_mdeq_id' => $_POST['mdeqid'],

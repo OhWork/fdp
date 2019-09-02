@@ -73,7 +73,7 @@
 				$newarray = array_merge($array2 , $val);
 				$fnlist = join($field,",");
 			}
-				if(in_array(preg_match('/[^A-Za-z0-9]/', $val[":$v"]), $newarray)){
+// 				if(in_array(preg_match('/[^A-Za-z0-9]/', $val[":$v"]), $newarray)){
 					$keyadd =array();
 
 					foreach($newarray as $k2 => $v2){
@@ -86,6 +86,7 @@
 					$this->runStmSql($newarray);
 					return $this;
 
+/*
 				}else{
 
 				$vnlist = join($colon,",");
@@ -94,6 +95,7 @@
 					$this->runStmSql($val);
 					return $this;
 				}
+*/
 
 		}
 		function update($table, $data, $field, $value){
