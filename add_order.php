@@ -29,7 +29,7 @@
                                             <h5 class="pl-3 w-100">สร้างใบเสนอราคา</h5>
                                         </div>
                                 </div>
-<?php echo $form->open("","","col-12","??.php",""); ?>
+<?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
                                 <div class="col-12 mt-4 ">
                                         <div class="row">
                                                 <div class="col-3">
@@ -53,19 +53,19 @@
                                                 <div class="col-2"></div>
                                                 <div class="col-3">
                                                         <div class="row">
-                                                                <div class="col-12 tx2 pl-0"><?php echo $lbocode; ?></div> 
+                                                                <div class="col-12 tx2 pl-0"><?php echo $lbocode; ?></div>
                                                                 <div class="col-12 pl-0"><?php echo $txtocode; ?></div>
                                                         </div>
                                                 </div>
                                         </div>
                                 </div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbaddress; ?></div> 
+                                <div class="col-12 mt-2 tx2"><?php echo $lbaddress; ?></div>
                                 <div class="col-12"><?php echo $txtaddress ; ?></div>
                                 <div class="col-12 mt-2 ">
                                         <div class="row">
                                                 <div class="col-6">
                                                         <div class="row">
-                                                                <div class="col-12 tx2"><?php echo $lbtel; ?></div> 
+                                                                <div class="col-12 tx2"><?php echo $lbtel; ?></div>
                                                                 <div class="col-12"><?php echo $txttel; ?></div>
                                                         </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                 <div class="col-12 mt-2 ">
                                         <div class="row">
                                                 <div class="col-6">
-                                                        <div class="col-12 mt-2 tx2"><?php echo $lbcomment; ?></div> 
+                                                        <div class="col-12 mt-2 tx2"><?php echo $lbcomment; ?></div>
                                                         <div class="col-12"><?php echo $txtcomment; ?></div>
                                                 </div>
                                                 <div class="col-2"></div>
@@ -94,11 +94,14 @@
                                 </div>
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
-                                                <div class="col-9"></div>
+                                                <div class="col-9">
+													<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                    							</div>
                                                 <div class="col-3">
                                                         <div class="row">
                                                                 <div class="col-12 pl-0 pr-4">
                                                                         <?php echo $submit; ?>
+
                                                                 </div>
                                                         </div>
                                                 </div>
