@@ -14,20 +14,20 @@
     <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="field[1][code]" id="mdeqcode" />
+    <input type="text" class="text_data inputautofill" name="field[0][code]" id="mdeqcode" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="field[1][name]" id="name" />
+    <input type="text" class="text_data inputautofill" name="field[0][name]" id="name" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="field[1][num]" id="num" />
+    <input type="text" class="text_data inputautofill" name="field[0][num]" id="num" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="field[1][price]" id="price" />
+    <input type="text" class="text_data inputautofill" name="field[0][price]" id="price" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="field[1][fakeprice]" id="fakeprice" />
-    <input type="text" class="text_data inputautofill" name="field[1][mdeqid]" id="mdeqid" />
+    <input type="text" class="text_data inputautofill" name="field[0][fakeprice]" id="fakeprice" />
+    <input type="text" class="text_data inputautofill" name="field[0][mdeqid]" id="mdeqid" />
     </td>
        <td>
             <button id="removeRow" type="button"><i class="fas fa-minus"></i></button>
@@ -61,7 +61,13 @@ $(function(){
         .find("input").attr("value","").end()
         .find("select").attr("value","").end()
         .appendTo($("#myTbl"));
-        console.log($(".firstTr:eq(0)").children().children());
+        i++;
+        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][code]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][name]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][num]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][price]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][fakeprice]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(6).attr("name","field[" + i + "][mdeqid]");
         var lastIndex=$(".inputautofill").size()-1; // หา index ของตัว input ล่าสุด
         // สร้าง input element เพื่อที่จะไปแทนที่ตัวเก่า
         $($(".inputautofill:eq("+lastIndex+")")[0].outerHTML)
