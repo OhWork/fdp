@@ -23,5 +23,5 @@ echo $form->open('','','','check_login.php','');
                  <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
 <!--        <button class="btn btn-primary btn-block mt-3 btc" type="submit">เข้าสู่ระบบ</button>-->
 </div>
-   <?php echo $form->close();?>
 <button class="btn btn-primary btn-block mt-3 btn-circle pt-2 bton" type="submit" title="เข้าสู่ระบบ"><i class="fas fa-sign-in-alt"></i></button>
+   <?php echo $form->close();?>
