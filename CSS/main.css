@@ -34,9 +34,15 @@
     height:100px;
     width:250px;
 }
-.us {
-    width:80%;
-    margin-bottom: 0rem;
+.bton {
+    position: absolute;
+    top: 292px;
+    right: 40.5%;
+    width: 52px;
+    border:solid 6px #fafafa;
+}
+.bton:hover {
+    border-color: #fafafa;
 }
 .imb {
     border-top: 1px solid #ced4da;
