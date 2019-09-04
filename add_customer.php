@@ -190,16 +190,7 @@
 </div>
 <script>
 $(document).ready(function () {
-/*
-    $('#bs').on('click', function () {
-			Swal.fire({
-			   type: 'success',
-			  title: 'Correct...',
-			  text: 'Something went Correct!',
-			  timer: 1500
-			})
-	});
-*/
+
 	jQuery.validator.setDefaults({
 		debug: true,
 		success: "valid"
@@ -217,5 +208,5 @@ $(document).ready(function () {
 		    customer_provinces: "required",
   		}
 	});
-});
+ });
 </script>
