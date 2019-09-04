@@ -8,7 +8,13 @@
  
 }
 @media (min-width: 992px){
-	
+/*padding*/
+.pln{
+    padding-left: 0px;
+}
+.prn{
+    padding-right: 0px;
+}	
 }
 @media (min-width: 1200px){
 	
@@ -28,9 +34,15 @@
     height:100px;
     width:250px;
 }
-.us {
-    width:80%;
-    margin-bottom: 0rem;
+.bton {
+    position: absolute;
+    top: 292px;
+    right: 40.5%;
+    width: 52px;
+    border:solid 6px #fafafa;
+}
+.bton:hover {
+    border-color: #fafafa;
 }
 .imb {
     border-top: 1px solid #ced4da;
@@ -101,4 +113,10 @@ input[type="text"]:focus {
 }
 .ch{
     height:96px;
+}
+.form-control {
+    height: calc(1.5em + 0.25rem + 2px);
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #e0e0e0;
 }

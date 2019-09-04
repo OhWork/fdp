@@ -1,68 +1,4 @@
-<?php
-/// ส่วนของการเพิ่ม ลบ แก้ไข ข้อมูล
-/*
-if(isset($_POST['Submit'])){
-
-    // ตรวจสอบค่า id หลักของข้อมูล ว่ามีข้อมูลหรือไม่
-    if(isset($_POST['h_item_id']) && count($_POST['h_item_id'])>0){
-        // แยกค่า id หลักของข้อมูลเดิม ถ้ามี เก็บเป็นตัวแปร array
-        $h_data_id_arr=explode(",",$_POST['h_all_id_data']);
-        foreach($_POST['h_item_id'] as $key_data=>$value_data){// วนลูป จัดการกับค่า id หลัก
-            if($value_data==""){ // ถ้าไม่มีค่า แสดงว่า จะเป็นการเพิ่มข้อมูลใหม่
-                $rs = $db->insert('orderlist',array(
-                'orderlist_mdeqcode' => $_POST['orderlist_mdeqcode'],
-                'emp_email' => $_POST['emp_email'],
-                'emp_password' => $_POST['emp_password'],
-                'emp_idcard' => $_POST['emp_idcard'],
-            ) );
-                $sql = "
-                    INSERT INTO tbl_data (
-                        data_id,
-                        data_text,
-                        data_select
-                    )
-                    VALUES (
-                        NULL ,
-                          '".$_POST['orderlist_mdeqcode'][$key_data]."',
-                            '".$_POST['data1'][$key_data]."'
-                    );
-                ";
-                $mysqli->query($sql);
-            }else{ // ถ้ามีค่าอยู่แล้ว ให้อัพเดท รายการข้อมูลเดิม โดยใช้ ค่า id หลัก
-                $sql = "
-                    UPDATE  tbl_data SET
-                    data_text =  '".$_POST['data2'][$key_data]."',
-                    data_select =  '".$_POST['data1'][$key_data]."'
-                    WHERE data_id='".$value_data."' ;
-                ";
-                $mysqli->query($sql);
-            }
-        }
-
-        // ตรวจสอบ id หลัก ค่าเดิม และค่าใหม่ เพื่อหาค่าที่ถูกลบออกไป
-        $h_data_id_arr_del = array_diff($h_data_id_arr, $_POST['h_item_id']);
-        if(count($h_data_id_arr_del)>0){ // ถ้ามี array ค่า id หลัก ที่จะถูกลบ
-            foreach($h_data_id_arr_del as $key_data=>$value_data){// วนลูป ลบรายการที่ไม่ต้องการ
-                $sql = "
-                    DELETE FROM tbl_data WHERE data_id='".$value_data."' ;
-                ";
-                $mysqli->query($sql);
-            }
-        }
-
-
-    }
-}
-*/
-	include_once('tools/db_tools.php');
-    $form = new form();
-    $token = new tokens();
-    $tk = $token->openToken();
-?>
 <div style="margin:auto;">
-    <?php
-//     echo $form->open("form_reg","","col-12 tx1","#","");
-    ?>
 <table id="myTbl" border="1" cellspacing="2" cellpadding="0">
     <tr>
     <th>เพิ่ม</th>
@@ -73,76 +9,47 @@ if(isset($_POST['Submit'])){
     <th>ราคาปลอม</th>
     <th>ลบ</th>
     </tr>
-<?php
-$all_id_data = array();
-
-if(isset($result) && $result->num_rows>0){
-?>
-<?php
-    while($row = $result->fetch_assoc()){
-        $all_id_data[].=$row['data_id'];
-?>
-  <tr class="firstTr">
-    <td>
-        <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" value="<?=$row['data_text']?>" />
-    </td>
-    <td>
-        <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" value="<?=$row['data_text']?>" />
-    </td>
-    <td>
-        <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" value="<?=$row['data_text']?>" />
-    </td>
-    <td>
-        <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" value="<?=$row['data_text']?>" />
-    </td>
-    <td>
-    <input name="h_item_id[]" type="hidden" id="h_item_id[]" value="<?=$row['data_id']?>" />
-    <input type="text" class="text_data inputautofill" name="data2[]" id="data2[]" value="<?=$row['data_text']?>" />
-    </td>
-    </tr>
-<?php } ?>
-<?php }else{ ?>
   <tr class="firstTr">
     <td>
     <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="code" id="mdeqcode" />
+    <input type="text" class="text_data inputautofill" name="field[0][code]" id="mdeqcode" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="name" id="name" />
+    <input type="text" class="text_data inputautofill" name="field[0][name]" id="name" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="num" id="num" />
+    <input type="text" class="text_data inputautofill" name="field[0][num]" id="num" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="price" id="price" />
+    <input type="text" class="text_data inputautofill" name="field[0][price]" id="price" />
     </td>
     <td>
-    <input type="text" class="text_data inputautofill" name="fakeprice" id="fakeprice" />
-    <input type="hidden" class="text_data inputautofill" name="mdeqid" id="mdeqid" />
+    <input type="text" class="text_data inputautofill" name="field[0][fakeprice]" id="fakeprice" />
+    <input type="text" class="text_data inputautofill" name="field[0][mdeqid]" id="mdeqid" />
     </td>
        <td>
             <button id="removeRow" type="button"><i class="fas fa-minus"></i></button>
     </td>
     </tr>
- <?php } ?>
 </table>
 <br />
 <table width="" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td>
-    <input type="submit" name="Submit" id="Submit" value="Submit" /></td>
+<!--     <input type="submit" name="Submit" id="Submit" value="Submit" /></td> -->
   </tr>
 </table>
-</form>
 
 
 
 <br />
 </div>
+<!--
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+-->
 <script type="text/javascript">
 $(function(){
 	var i = 0;
@@ -154,6 +61,13 @@ $(function(){
         .find("input").attr("value","").end()
         .find("select").attr("value","").end()
         .appendTo($("#myTbl"));
+        i++;
+        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][code]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][name]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][num]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][price]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][fakeprice]");
+        $(".firstTr:eq(" + i + ")").children().children().eq(6).attr("name","field[" + i + "][mdeqid]");
         var lastIndex=$(".inputautofill").size()-1; // หา index ของตัว input ล่าสุด
         // สร้าง input element เพื่อที่จะไปแทนที่ตัวเก่า
         $($(".inputautofill:eq("+lastIndex+")")[0].outerHTML)
@@ -204,7 +118,7 @@ $(function(){
 if($_POST){
 	print_r($_POST);
  	$rs = $db->insert('orderlist',array(
-//                 'orderlist_amourt' => $_POST['num'],
+                'orderlist_amourt' => $_POST['num'],
                 'orderlist_cost' => $_POST['price'],
                 'orderlist_costfake' => $_POST['fakeprice'],
                 'mdeq_mdeq_id' => $_POST['mdeqid'],
