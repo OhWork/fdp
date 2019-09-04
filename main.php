@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-         <?php 
+         <?php
                 include 'inc_js.php';
                 include 'tools/db_tools.php';
                 include 'tools/genToken.php';
@@ -24,10 +24,11 @@
         <link rel="stylesheet" href="CSS/jquery-ui.css">
         <link rel="stylesheet" href="CSS/sb-admin.css">
         <link rel="stylesheet" href="CSS/dataTables.bootstrap4.css">
+        <link rel="stylesheet" href="vendor/datetime/datetime-boostrap4.css">
         <link rel="stylesheet" href="CSS/sweetalert2.min.css">
         <link rel="stylesheet" href="CSS/main.css">
 
-    </head>	
+    </head>
 <?php
                 session_start();
 	ob_start();
@@ -41,7 +42,7 @@
     <a href="index.php?url=add_customer.php" class="">เพิ่มข้อมูลลูกค้า</a>
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
-<body id="page-top" class="bg1"> 
+<body id="page-top" class="bg1">
 <?php  include_once 'menutop.php'; ?>
     <div id="wrapper">
         <?php  include_once 'main_menu.php'; ?>
@@ -61,8 +62,8 @@
     <a class="scroll-to-top rounded" href="#page-top" style="display: none;">
             <i class="fas fa-angle-up"></i>
     </a>
-    
-  
+
+
 
   <!-- Scroll to Top Button-->
 <!--  <a class="scroll-to-top rounded" href="#page-top">
