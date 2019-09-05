@@ -8,7 +8,7 @@
     $lbdateexp = new label('หมดอายุ');
     $lbocode = new label('เอกสารเลขที่');
     $lbcomment = new label('หมายเหตุ');
-    $txtnamecustomer = new textfield('customer_customer_id','customer_name','form-control','','');
+    $txtnamecustomer = new textfield('','customer_name','form-control','','');
     $txtaddress = new textfieldreadonly('', 'customer_address', '');
    $txttel = new textfieldreadonly('', 'customer_tel', '');
    $txtdate = new textfield('order_date','','form-control','','');
@@ -41,13 +41,27 @@
                                                 <div class="col-2">
                                                         <div class="row">
                                                                 <div class="col-12 tx2 pl-0"><?php echo $lbdate; ?></div>
-                                                                <div class="col-12 pl-0"><?php echo $txtdate; ?></div>
+                                                                <div class="col-12 pl-0">
+	                                                                <div class='input-group date' id ="datetimepicker1" data-target-input="nearest">
+																		<input type='text' class="form-control datetimepicker-input" name="order_date" id='date1' readonly/>
+																		<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+													                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+													                    </div>
+																	</div>
+																	</div>
                                                         </div>
                                                 </div>
                                                 <div class="col-2">
                                                         <div class="row">
                                                                 <div class="col-12 tx2 pl-0"><?php echo $lbdateexp; ?></div>
-                                                                <div class="col-12 pl-0"><?php echo $txtdateexp; ?></div>
+                                                                <div class="col-12 pl-0">
+																	<div class='input-group date' id ="datetimepicker2" data-target-input="nearest">
+																		<input type='text' class="form-control datetimepicker-input" name="order_dateexp" id='date2' readonly/>
+																			<div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+														                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+														                    </div>
+																	</div>
+                                                                </div>
                                                         </div>
                                                 </div>
                                                 <div class="col-2"></div>
@@ -95,6 +109,7 @@
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
                                                 <div class="col-9">
+													<input type="hidden" id ="customer_id" name="customer_id" value=""/>
 													<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     							</div>
                                                 <div class="col-3">
@@ -117,6 +132,36 @@
 
 <script>
  $(function() {
+        $('#datetimepicker1').datetimepicker({
+	        format:'YYYY-MM-DD HH:mm',
+	        useCurrent: false,
+	        ignoreReadonly: true,
+            sideBySide: true,
+            allowInputToggle: true,
+	        locale:moment.locale('th'),
+	        stepping: 30
+        });
+        $('#datetimepicker2').datetimepicker({
+	        format:'YYYY-MM-DD HH:mm',
+            useCurrent: false,
+            ignoreReadonly: true,
+            sideBySide: true,
+            allowInputToggle: true,
+            locale:moment.locale('th'),
+            stepping: 30
+        });
+         $("#datetimepicker1").on("change.datetimepicker", function (e) {
+            $('#datetimepicker2').datetimepicker('minDate', e.date);
+             var widget = $(this).find(".bootstrap-datetimepicker-widget");
+        });
+        $("#datetimepicker2").on("change.datetimepicker", function (e) {
+            $('#datetimepicker1').datetimepicker('maxDate', e.date);
+            var widget = $(this).find(".bootstrap-datetimepicker-widget");
+        });
+		$("#content-wrapper").on("click", function (e) {
+		 		var widget = $(this).find(".bootstrap-datetimepicker-widget");
+                    widget.hide();
+		});
 
         $( "#customer_name" ).autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
             minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
@@ -137,8 +182,10 @@
               //console.log( ui.item ?
                //   "Selected: " + ui.item.label :
                 //  "Nothing selected, input was " + this.value);
-                $("#customer_address").val(ui.item.id); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
-                $("#customer_tel").val(ui.item.id);
+                console.log(ui);
+                $("#customer_address").val(ui.item.add); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
+                $("#customer_tel").val(ui.item.tel);
+                $("#customer_id").val(ui.item.id);
                 //setTimeout(function(){
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
@@ -157,5 +204,23 @@
             $( "#customer_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
          });
+         jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	$( "#form_reg" ).validate({
+		rules: {
+		    customer_name: "required",
+		    customer_address: "required",
+		    customer_tel: "required",
+		    order_date: "required",
+		    order_dateexp: "required",
+		    order_code: "required",
+		    name: "required",
+		    num: "required",
+		    price: "required",
+		    fakeprice: "required",
+  		}
+	});
         </script>
 
