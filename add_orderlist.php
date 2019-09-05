@@ -1,38 +1,33 @@
-<table id="myTbl" border="1" cellspacing="2" cellpadding="0">
-    <tr>
-    <th>เพิ่ม</th>
-    <th>ชื่ออุปกรณ์การแพทย์</th>
-    <th>จำนวน</th>
-    <th>ราคา</th>
-    <th>ราคาปลอม</th>
-    <th>ลบ</th>
-    </tr>
- <tr class="firstTr">
-    <td>
-    <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
-    </td>
-    <td>
-    <input type="text" class="text_data inputautofill" name="field[0][name]" id="name" />
-    </td>
-    <td>
-    <input type="text" class="text_data inputautofill" name="field[0][price]" id="num" />
-    </td>
-    <td>
-    <input type="text" class="text_data inputautofill" name="field[0][price]" id="price" />
-    </td>
-    <td>
-    <input type="text" class="text_data inputautofill" name="field[0][fakeprice]" id="fakeprice" />
-    <input type="hidden" class="text_data inputautofill" name="field[0][mdeqid]" id="mdeqid" />
-    </td>
-       <td>
-            <button id="removeRow" type="button"><i class="fas fa-minus"></i></button>
-    </td>
-    </tr>
-</table>
-
-
-
-<br />
+<div class="card">
+        <div class="card-body">
+                <div class="table-responsive">
+                        <div id="table_wraper" class="dataTables_wrapper dt-bootstrap4">
+                                <table id="myTbl" class="table table-hover table-striped table-bordered dataTable" border="1" cellspacing="2" cellpadding="0">
+                                        <thead>
+                                                <tr>
+                                                        <td>เพิ่ม</td>
+                                                        <td>ชื่ออุปกรณ์การแพทย์</td>
+                                                        <td>จำนวน</td>
+                                                        <td>ราคา</td>
+                                                        <td>ราคาปลอม</td>
+                                                        <td>ลบ</td>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr class="firstTr">
+                                                        <td><button id="addRow" type="button"><i class="fas fa-plus"></i></button></td>
+                                                        <td><input type="text" class="text_data inputautofill w-100" name="field[0][name]" id="name" /></td>
+                                                        <td><input type="text" class="text_data inputautofill w-100" name="field[0][price]" id="num" /></td>
+                                                        <td><input type="text" class="text_data inputautofill w-100" name="field[0][price]" id="price" /></td>
+                                                        <td><input type="text" class="text_data inputautofill w-100" name="field[0][fakeprice]" id="fakeprice" />
+                                                        <input type="hidden" class="text_data inputautofill w-100" name="field[0][mdeqid]" id="mdeqid" /></td>
+                                                        <td><button id="removeRow" type="button"><i class="fas fa-minus"></i></button></td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+        </div>
 </div>
 <script type="text/javascript">
 $(function(){
