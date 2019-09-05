@@ -1,16 +1,16 @@
 <?php
     include "tools/ddd.php";
     $sql = "SELECT Max(mdeq_id)+1 as MaxID FROM mdeq";
-    $db->createStement($sql); 
+    $db->createStement($sql);
     $db->runStmSql(array());
     $Count = $db->moveNext_getRow('assoc');
     $total = $Count["MaxID"];
-    $code =  sprintf("P%'05d",$total); 
+    $code =  sprintf("P%'05d",$total);
     $form = new form();
     $lbmdeqcode= new label('รหัสอุปกรณ์การแพทย์');
     $lbname = new label('ชื่ออุปกรณ์การแพทย์');
     $lbunit= new label('หน่วย');
-    $lbprice = new label('ราคา'); 
+    $lbprice = new label('ราคา');
     $lbcomment = new label('หมายเหตุ');
     $lbtypemdeq = new label('ชนิดอุปกรณ์การแพทย์');
     $txtmdeqcode = new textfield('mdeq_code','','form-control','','');
@@ -53,7 +53,7 @@
                                             <h2 class="pl-3">เพิ่มชนิดอุปกรณ์การแพทย์</h2>
                                         </div>
                                 </div>
-<?php echo $form->open("","","col-12","insert_mdeq.php",""); ?>
+<?php echo $form->open("form_reg","","col-12","insert_mdeq.php",""); ?>
                                         <div class="col-12 mt-4">
                                                 <div class="row">
                                                         <div class="col-xl-4 col-lg-4 col-md-5 col-12 pt-1 tx2">
@@ -126,3 +126,37 @@
                 <div class="col-xl-2 col-lg-1"></div>
         </div>
 </div>
+<script>
+    $('#emp_email').keyup(function(){
+		console.log($('#emp_email').val().length);
+		$.ajax({
+	            url: "check_emp.php",
+	            data: {user_user : $('#user_user').val()},
+	            type: "POST",
+	            success: function(data) {
+		           	$('#msg').show();
+	                if((data > '0')) {
+	                    $("#msg").html('<span class="text-danger">ชื่อผู้ใช้ไม่สามารถใช้งานได้</span>');
+	                } else {
+		                $("#msg").html('<span class="text-success">ชื่อผู้ใช้นี้สามารถใช้ได้</span>');
+	                }
+	            },
+	           error: function(XMLHttpRequest, textStatus, errorThrown) {
+			   alert("some error");
+	  		   }
+	     });
+    });
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#form_reg" ).validate({
+  rules: {
+    mdeq_code: "required",
+    mdeq_name: "required",
+    mdeq_price: "required",
+    mdeq_unit: "required",
+    mdeq_enable: "required",
+  }
+});
+ </script>

@@ -100,4 +100,14 @@
             $( "#mdeq_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
          });
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#form_reg" ).validate({
+  rules: {
+    mdeq_name: "required",
+    mdeq_amount: "required",
+  }
+});
         </script>

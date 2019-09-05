@@ -35,3 +35,14 @@
 <?php echo $form->close();
         endif;
         ?>
+        <script>
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$( "#form_reg" ).validate({
+  rules: {
+    typemdeq_name: "required",
+  }
+});
+        </script>
