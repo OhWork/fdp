@@ -16,7 +16,7 @@
 </script>
 <?php
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('mdeq_name','emp_tel');
+    $columns = array('mdeq_code','mdeq_name','mdeq_price','mdeq_unit');
     $form = new form();
     $rs = $db->findAll('mdeq');
                  
@@ -39,9 +39,9 @@
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'customer_id';
-				$grid->header = array('<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>');
-				$grid->width = array('40%','40%','20%');
-				$grid->edit = 'main.php?url=add_customer.php';
+				$grid->header = array('<b><center>รหัสสินค้า</center></b>','<b><center>ชื่อสินค้า</center></b>','<b><center>ราคา</center></b>','<b><center>หน่วย</center></b>','<b><center>#</center></b>');
+				$grid->width = array('5%','20%','10%','10%','5%');
+				$grid->edit = 'main.php?url=add_mdeq.php';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);

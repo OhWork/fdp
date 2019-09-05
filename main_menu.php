@@ -37,8 +37,8 @@
           <span>รายการสินค้า</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="main.php?url=add_mdeq.php" class="nav-link"><i class="fas fa-plus-circle"></i>
-          <span>เพิ่มชื่อสินค้า</span></a>
+          <a class="dropdown-item" href="main.php?url=show_mdeq.php" class="nav-link"><i class="fas fa-plus-circle"></i>
+          <span>รายการสินค้า</span></a>
           <a class="dropdown-item" href="main.php?url=add_stock.php" class="nav-link"><i class="fas fa-plus-circle"></i>
           <span>เพิ่มจำนวนสินค้า</span></a>
         </div>
