@@ -21,9 +21,11 @@ if( isset($_SESSION['token']) ){
     echo "Error : No Token";
     echo "ไม่มี",$_SESSION['token'];
 }
-   if($rs){
-       echo 'have';
-   }else{
-       echo 'don\'t';
-   }
+if ($rs) {
+    echo "data inserted";
+}
+else 
+{
+    echo "failed";
+}
 ?>
