@@ -204,5 +204,23 @@
             $( "#customer_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
          });
+         jQuery.validator.setDefaults({
+		debug: true,
+		success: "valid"
+	});
+	$( "#form_reg" ).validate({
+		rules: {
+		    customer_name: "required",
+		    customer_address: "required",
+		    customer_tel: "required",
+		    order_date: "required",
+		    order_dateexp: "required",
+		    order_code: "required",
+		    name: "required",
+		    num: "required",
+		    price: "required",
+		    fakeprice: "required",
+  		}
+	});
         </script>
 
