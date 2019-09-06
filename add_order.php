@@ -182,11 +182,9 @@
               //console.log( ui.item ?
                //   "Selected: " + ui.item.label :
                 //  "Nothing selected, input was " + this.value);
-                console.log(ui.item.price);
                 $("#customer_address").val(ui.item.add); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
                 $("#customer_tel").val(ui.item.tel);
                 $("#customer_id").val(ui.item.id);
-				$('#sumprice').val(ui.item.price);
                 //setTimeout(function(){
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
