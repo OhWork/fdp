@@ -2,7 +2,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav bg-dark">
         <li class="nav-item active">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="main.php?url=add_order.php">
               <i class="fas fa-plus-circle"></i>
               <span>เพิ่มใบเสนอราคา</span>
             </a>
@@ -14,9 +14,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
 <!--          <h6 class="dropdown-header">Login Screens:</h6>-->
-          <a class="dropdown-item" href="main.php?url=add_order.php">ใบเสนอราคา</a>
-          <a class="dropdown-item" href="#">ใบแจ้งหนี้</a>
-          <a class="dropdown-item" href="#">ใบส่งของ</a>
+          <a class="dropdown-item" href="main.php?url=show_quotation.php">ใบเสนอราคา</a>
+          <a class="dropdown-item" href="main.php?url=show_invoice.php">ใบแจ้งหนี้</a>
+          <a class="dropdown-item" href="main.php?url=show_waybill.php">ใบส่งของ</a>
 <!--          <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other Pages:</h6>
           <a class="dropdown-item" href="404.html">404 Page</a>

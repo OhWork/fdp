@@ -127,25 +127,6 @@
         </div>
 </div>
 <script>
-    $('#emp_email').keyup(function(){
-		console.log($('#emp_email').val().length);
-		$.ajax({
-	            url: "check_emp.php",
-	            data: {user_user : $('#user_user').val()},
-	            type: "POST",
-	            success: function(data) {
-		           	$('#msg').show();
-	                if((data > '0')) {
-	                    $("#msg").html('<span class="text-danger">ชื่อผู้ใช้ไม่สามารถใช้งานได้</span>');
-	                } else {
-		                $("#msg").html('<span class="text-success">ชื่อผู้ใช้นี้สามารถใช้ได้</span>');
-	                }
-	            },
-	           error: function(XMLHttpRequest, textStatus, errorThrown) {
-			   alert("some error");
-	  		   }
-	     });
-    });
 jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
