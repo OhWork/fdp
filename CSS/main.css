@@ -74,10 +74,10 @@ input[type="text"]:focus {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
 }
 .tx2{
-    color:#8e8e8e;
+    color:rgba(0,0,0,0.84);
 }
 .tx3{
-    color:#2a88d0;
+    color:rgba(52,58,64);
 }
 .tx4 {
     color:red;
@@ -93,23 +93,31 @@ input[type="text"]:focus {
     border: 1px solid #DDDDDD;
     border-radius: 5px;
 }
+.bdadd {
+     border: 16px solid rgba(52,58,64,0.45);
+     border-radius: 7px;
+}
 /*back-ground*/
 .bg1{
-    background-color: #fafafa;
+    background-color: rgba(225,225,225,100%);
     font-family: "CordiaUPC_1230459";
     font-size: 14px;
+}
+.bgadd {
+    background-color: rgba(52,58,64);
+}
+.bgadd2 {
+    background-color: rgba(0,0,0,0.15);
 }
 /*font-size*/
 .fs1{
     font-size: 18px;
 }
    /*footer*/
-.ft {
-    width: 100%;
-    height: 80px;
-    background-color: #e9ecef;
-    display: flex;
-    margin-top: auto;
+footer.ftfdp {
+    background-color: rgba(0,0,0,0.25);
+    border-top: solid 1px; 
+    border-top-color: rgba(255,255,255,0.15);
 }
 .ch{
     height:96px;
@@ -118,5 +126,5 @@ input[type="text"]:focus {
     height: calc(1.5em + 0.25rem + 2px);
     padding-top: 0px;
     padding-bottom: 0px;
-    background-color: #e0e0e0;
+    background-color: rgba(225,225,225,60%);
 }

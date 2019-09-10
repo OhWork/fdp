@@ -25,12 +25,9 @@
     $token = new tokens();
     $tk = $token->openToken();?>
 
-<div class="col-12">
+<div class="col-12 card bdadd">
   <div class="row">
-    <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
-    <div class="col-xl-6 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
-        <div class="row">
-        <div class="col-12 pt-3 tx3">
+        <div class="col-12 pt-3 tx3 card-header">
            <div class="row">
                <h2 class="pl-3">ลงทะเบียนรายชื่อผู้ติดต่อ</h2>
            </div>
@@ -40,16 +37,21 @@
     ?>
         <div class="col-12">
             <div class="row">
-                 <div class="col-12 pt-3 pb-2 tx5 fs1">
+                 <div class="col-12 pt-3 pb-2 tx3 fs1">
                     <div class="row">
-                        <i class="far fa-building pt-1 tx5"></i>&nbsp<span>ข้อมูลสถานประกอบการ</span>
+                        <i class="far fa-building pt-1 tx3"></i>&nbsp<span>ข้อมูลสถานประกอบการ</span>
                     </div>
                  </div>
                  <div class="col-12 mt-2 tx2">
-                        <?php echo $lbshop;  ?><span class="tx4">*</span>
+                     <div class="row">
+                         <div class="col-2 mt-2 tx2">
+                            <?php echo $lbshop;  ?><span class="tx4">*</span>
+                         </div>
+                            <?php echo $txtshop;  ?>
+                     </div>
                 </div>
                 <div class="col-12">
-                        <?php echo $txtshop;  ?>
+                        
                 </div>
                 <div class="col-12 mt-2 tx2">
                     <?php echo $lbaddress;  ?><span class="tx4">*</span>
@@ -105,9 +107,9 @@
                  </div>
                 <div class="col-12 mt-3 bdac">
                 </div>
-                <div class="col-12 pt-3 pb-2 tx5 fs1">
+                <div class="col-12 pt-3 pb-2 tx3 fs1">
                     <div class="row">
-                        <i class="fas fa-users pt-1 tx5"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
+                        <i class="fas fa-users pt-1 tx3"></i>&nbsp<span>ข้อมูลผู้ติดต่อ</span>
                     </div>
                  </div>
                 <div class="col-12 mt-3 tx2">
@@ -183,9 +185,6 @@
             </div>
         </div>
         <?php echo $form->close(); ?>
-    <div class="col-xl-3 col-lg-2 col-md-2 col-xs-1"></div>
-</div>
-</div>
 </div>
 </div>
 <script>

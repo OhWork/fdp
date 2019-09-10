@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="CSS/sticky-footer.css">
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="CSS/jquery-ui.css">
-        <link href="CSS/sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/sb-admin.css">
         <link rel="stylesheet" href="CSS/sweetalert2.min.css">
         <link rel="stylesheet" href="CSS/main.css">
 

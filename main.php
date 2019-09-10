@@ -50,7 +50,7 @@
             <div class="container-fluid mb-3">
                 <?php  include_once 'content.php'; ?>
             </div>
-        <footer class="sticky-footer">
+        <footer class="sticky-footer ftfdp">
                 <div class="container my-auto">
                   <div class="copyright text-center my-auto">
                     <span>Copyright © by Delicode.com 2019</span>

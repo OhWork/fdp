@@ -1,6 +1,6 @@
 
     <!-- Sidebar -->
-    <ul class="sidebar navbar-nav bg-dark">
+    <ul class="sidebar navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="main.php?url=add_order.php">
               <i class="fas fa-plus-circle"></i>
