@@ -1,11 +1,92 @@
 @media (max-width: 575px){
-	
+/*add_custom input*/
+.achf {
+    font-size: 1.3rem;
+}
+.actext3 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext4 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext5 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.acpt3 {
+    width: 100% !important;
+}
+.acpt1 {
+    width: 100% !important;
+}
+.acpb1 {
+    width: 100% !important;
+}
+.acpb2 {
+    width: 100% !important;
+}
 }
 @media (min-width: 576px){
-	
+/*add_custom input*/
+.achf {
+    font-size: 1.3rem;
+}
+.actext3 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext4 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext5 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.acpt3 {
+    width: 100% !important;
+}
+.acpt1 {
+    width: 100% !important;
+}
+.acpb1 {
+    width: 100% !important;
+}
+.acpb2 {
+    width: 100% !important;
+}
 }
 @media (min-width: 768px){
- 
+/*add_custom input*/
+.achf {
+    font-size: 1.5rem;
+}
+.actext3 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext4 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.actext5 {
+    width: 100% !important;
+    margin-top: 8px;
+}
+.acpt3 {
+    width: 100% !important;
+}
+.acpt1 {
+    width: 100% !important;
+}
+.acpb1 {
+    width: 100% !important;
+}
+.acpb2 {
+    width: 100% !important;
+}
 }
 @media (min-width: 992px){
 /*padding*/
@@ -14,10 +95,59 @@
 }
 .prn{
     padding-right: 0px;
-}	
+}
+/*add_custom input*/
+.achf {
+    font-size: 1.8rem;
+}
+.actext {
+    width: 80px !important;
+}
+.actext3 {
+    width: 100px !important;
+    margin-top: 0px;
+}
+.actext4 {
+    width: 100px !important;
+    margin-top: 0px;
+}
+.actext5 {
+    width: 70px !important;
+    margin-top: 0px;
+}
+.acpt1 {
+    width: 500px !important;
+}
+.acpt2 {
+    width: 550px !important;
+}
+.acpt3 {
+    width: 200px !important;
+}
+.acpb1 {
+    width: 300px !important;
+}
+.acpb2 {
+    width: 100px !important;
+}
+.acpb3 {
+    width: 200px !important;
+}
+.acpb4 {
+    width: 200px !important;
+}
 }
 @media (min-width: 1200px){
-	
+/*add_custom input*/
+.achf {
+    font-size: 2rem;
+}
+.acpb3 {
+    width: 300px !important;
+}
+.acpb4 {
+    width: 300px !important;
+}
 }
 @media (min-width: 1360px){
 	
@@ -128,3 +258,4 @@ footer.ftfdp {
     padding-bottom: 0px;
     background-color: rgba(225,225,225,60%);
 }
+/*add_custom input*/
