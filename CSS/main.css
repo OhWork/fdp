@@ -27,6 +27,9 @@
 .acpb2 {
     width: 100% !important;
 }
+.bdadd {
+     border: 0px;
+}
 }
 @media (min-width: 576px){
 /*add_custom input*/
@@ -57,6 +60,10 @@
 .acpb2 {
     width: 100% !important;
 }
+/*brd-addcustom*/
+.bdadd {
+     border: 0px;
+}
 }
 @media (min-width: 768px){
 /*add_custom input*/
@@ -86,6 +93,11 @@
 }
 .acpb2 {
     width: 100% !important;
+}
+/*brd-addcustom*/
+.bdadd {
+     border: 8px solid rgba(52,58,64,0.45);
+     border-radius: 7px;
 }
 }
 @media (min-width: 992px){
@@ -135,6 +147,11 @@
 }
 .acpb4 {
     width: 200px !important;
+}
+/*brd-addcustom*/
+.bdadd {
+     border: 16px solid rgba(52,58,64,0.45);
+     border-radius: 7px;
 }
 }
 @media (min-width: 1200px){
@@ -222,10 +239,6 @@ input[type="text"]:focus {
 .bdac1 {
     border: 1px solid #DDDDDD;
     border-radius: 5px;
-}
-.bdadd {
-     border: 16px solid rgba(52,58,64,0.45);
-     border-radius: 7px;
 }
 /*back-ground*/
 .bg1{
