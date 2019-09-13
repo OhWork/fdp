@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card w-100">
         <div class="card-body">
                 <div class="table-responsive">
                         <div id="table_wraper" class="dataTables_wrapper dt-bootstrap4">

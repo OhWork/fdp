@@ -5,8 +5,8 @@
     $lbdate = new label('วันที่สั่ง');
     $lbaddress = new label('ที่อยู่');
     $lbtel = new label('เบอร์โทรศัพท์');
-    $lbdateexp = new label('หมดอายุ');
-    $lbocode = new label('เอกสารเลขที่');
+    $lbdateexp = new label('วันที่หมดอายุ');
+    $lbocode = new label('เลขที่ใบเสนอราคา');
     $lbcomment = new label('หมายเหตุ');
     $txtnamecustomer = new textfield('','customer_name','form-control','','');
     $txtaddress = new textfieldreadonly('', 'customer_address', '');
@@ -19,83 +19,103 @@
     $token = new tokens();
     $tk = $token->openToken();
 ?>
-<div class="col-12">
+<div class="col-12 card bdadd">
         <div class="row">
-                <div class="col-xl-1 col-lg-2 col-md-2 col-xs-1"></div>
-                <div class="col-xl-10 col-lg-8 col-md-8 col-xs-10 col-12 bg-dark bdac1">
+                <div class="col-12 pt-3 tx3 card-header">
                         <div class="row">
-                                <div class="col-12 pt-3 tx3" style="text-align: center;">
+                                <span class="pl-2 achf">สร้างใบเสนอราคา</span>
+                        </div>
+                </div>
+<?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
+                <div class="col-12">
+                        <div class="row">
+                                <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                            <h5 class="pl-3 w-100">สร้างใบเสนอราคา</h5>
+                                                <div class="w-100 ml-auto pt-1 tx2 aodtext1">
+                                                        <?php echo $lbocode; ?>
+                                                </div>
+                                                <div class="w-100 tx2 aodinp1">
+                                                        <?php echo $txtocode; ?>
+                                                </div>
                                         </div>
                                 </div>
-<?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
-                                <div class="col-12 mt-4 ">
+                                <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <div class="col-3">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                                                         <div class="row">
-                                                                <div class="col-12 tx2"><?php echo $lbnamecustomer; ?></div>
-                                                                <div class="col-12"><?php echo $txtnamecustomer; ?></div>
+                                                                <div class="w-100 tx2 pt-1 aodtext">
+                                                                        <?php echo $lbnamecustomer; ?>
+                                                                </div>
+                                                                <div class="w-100 tx2 aodinp2">
+                                                                        <?php echo $txtnamecustomer; ?>
+                                                                </div>
+                                                                
                                                         </div>
                                                 </div>
-                                                <div class="col-2">
+                                                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                                                         <div class="row">
-                                                                <div class="col-12 tx2 pl-0"><?php echo $lbdate; ?></div>
-                                                                <div class="col-12 pl-0">
-	                                                                <div class='input-group date' id ="datetimepicker1" data-target-input="nearest">
-																		<input type='text' class="form-control datetimepicker-input" name="order_date" id='date1' readonly/>
-																		<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-													                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-													                    </div>
-																	</div>
-																	</div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-2">
-                                                        <div class="row">
-                                                                <div class="col-12 tx2 pl-0"><?php echo $lbdateexp; ?></div>
-                                                                <div class="col-12 pl-0">
-																	<div class='input-group date' id ="datetimepicker2" data-target-input="nearest">
-																		<input type='text' class="form-control datetimepicker-input" name="order_dateexp" id='date2' readonly/>
-																			<div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
-														                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-														                    </div>
-																	</div>
+                                                                <div class="w-100 tx2 pt-1 aodtext2 mgt">
+                                                                        <?php echo $lbdate; ?>
+                                                                </div>
+                                                                <div class="w-100 tx2 aoddate mgt">
+                                                                        <div class='input-group date' id ="datetimepicker1" data-target-input="nearest">
+                                                                        <input type='text' class="form-control datetimepicker-input" name="order_date" id='date1' readonly/>
+                                                                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="w-100 tx2 pt-1 aodtext3 mgt">
+                                                                        <?php echo $lbdateexp; ?>
+                                                                </div>
+                                                                <div class="w-100 tx2 aoddate mgt">
+                                                                        <div class='input-group date' id ="datetimepicker2" data-target-input="nearest">
+                                                                        <input type='text' class="form-control datetimepicker-input" name="order_dateexp" id='date2' readonly/>
+                                                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                                                </div>
+                                                                        </div>
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-2"></div>
-                                                <div class="col-3">
-                                                        <div class="row">
-                                                                <div class="col-12 tx2 pl-0"><?php echo $lbocode; ?></div>
-                                                                <div class="col-12 pl-0"><?php echo $txtocode; ?></div>
-                                                        </div>
+                                        </div>
+                                </div>
+                                <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 tx2 pt-1 aodtext">
+                                                        <?php echo $lbaddress; ?>
+                                                </div>
+                                                <div class="w-100 tx2 aodinp3">
+                                                        <?php echo $txtaddress ; ?>
                                                 </div>
                                         </div>
                                 </div>
-                                <div class="col-12 mt-2 tx2"><?php echo $lbaddress; ?></div>
-                                <div class="col-12"><?php echo $txtaddress ; ?></div>
-                                <div class="col-12 mt-2 ">
+                                <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <div class="col-6">
-                                                        <div class="row">
-                                                                <div class="col-12 tx2"><?php echo $lbtel; ?></div>
-                                                                <div class="col-12"><?php echo $txttel; ?></div>
-                                                        </div>
+                                                <div class="w-100 tx2 pt-1 aodtext">
+                                                        <?php echo $lbtel; ?>
                                                 </div>
-                                                <div class="col-6"></div>
+                                                <div class="w-100 tx2 aodinp4">
+                                                        <?php echo $txttel; ?>
+                                                </div>
                                         </div>
                                 </div>
-                                <div class="col-12 mt-2 tx2"><?php include 'add_orderlist.php'; ?></div>
+                                <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <?php include 'add_orderlist.php'; ?>
+                                        </div>
+                                </div>
                                 <div class="col-12 mt-2 ">
                                         <div class="row">
-                                                <div class="col-6">
-                                                        <div class="col-12 mt-2 tx2"><?php echo $lbcomment; ?></div>
-                                                        <div class="col-12"><?php echo $txtcomment; ?></div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                                                        <div class="row">
+                                                                <div class="col-12 mt-2 pl-0 pr-0 tx2"><?php echo $lbcomment; ?></div>
+                                                                <div class="col-12 pl-0 pr-0"><?php echo $txtcomment; ?></div>
+                                                        </div>
                                                 </div>
-                                                <div class="col-2"></div>
-                                                <div class="col-4">
-                                                        <div class="col-12">
+                                                <div class="col-xl-2 col-lg-1 col-md-12 col-12"></div>
+                                                <div class="col-xl-4 col-lg-5 col-md-12 col-12">
+                                                        <div class="row">
                                                                 <div class="col-12" style="margin-top: 38px;border-top: solid 1px #8e8e8e;border-bottom: double 5px #8e8e8e;">
                                                                         <div class="row">
                                                                                 <div class="col-6 tx2 mt-3"><p style="text-align: right;"><b>ยอดรวมสุทธิ</b></p></div>
@@ -108,13 +128,13 @@
                                 </div>
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
-                                                <div class="col-9">
-													<input type="hidden" id ="customer_id" name="customer_id" value=""/>
-													<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
-                    							</div>
-                                                <div class="col-3">
+                                                <div class="col-xl-11 col-lg-10 col-md-10 col-9">
+			<input type="hidden" id ="customer_id" name="customer_id" value=""/>
+			<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                    		</div>
+                                                <div class="col-xl-1 col-lg-2 col-md-2 col-3">
                                                         <div class="row">
-                                                                <div class="col-12 pl-0 pr-4">
+                                                                <div class="col-12 pl-0">
                                                                         <?php echo $submit; ?>
 
                                                                 </div>
