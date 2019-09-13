@@ -165,9 +165,11 @@
 }
 .aodinp2 {
     width: 550px !important;
+    overflow: hidden;
 }
 .aodinp3 {
     width: 560px !important;
+    overflow: hidden;
 }
 .aodinp4 {
     width: 300px !important;
