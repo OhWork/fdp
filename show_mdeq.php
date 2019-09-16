@@ -25,10 +25,10 @@
         <div class="row">
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
                         <div class="row">
-                                <div class="col-11">
+                                <div class="">
                                         <h4>รายการสินค้า</h4>
                                 </div>
-                                <div class="col-1">
+                                <div class="ml-auto">
                                     <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_mdeq.php">
                                                 <i class="fas fa-plus"></i>
                                         </a>

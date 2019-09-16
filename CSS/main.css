@@ -189,6 +189,45 @@
 .aoddate{
     width: 150px !important;
 }
+/*add-emp*/
+.adetext {
+    width: 100px !important;
+}
+.adeinp1{
+    width: 300px !important;
+}
+.adeinp2{
+    width: 150px !important;
+}
+.adeinp3{
+    width: 350px !important;
+}
+.adeinp4{
+    width: 450px !important;
+}
+.adeinp5{
+    width: 300px !important;
+}
+.adepic{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(225,225,225,60%);
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+/*add-mdeq*/
+.adeqtext {
+    width: 140px !important;
+}
+.adeqinp1{
+    width: 80px !important;
+}
+.adeqinp2{
+    width: 270px !important;
+}
+.adeqinp3{
+    width: 350px !important;
+}
 }
 @media (min-width: 1200px){
 /*add_custom input*/
