@@ -5,6 +5,7 @@
                                 <table id="myTbl" class="table table-hover table-striped table-bordered dataTable" border="1" cellspacing="2" cellpadding="0">
                                         <thead>
                                                 <tr>
+	                                                	<td>รหัสสินค้า</td>
                                                         <td>ชื่ออุปกรณ์การแพทย์</td>
                                                         <td>จำนวน</td>
                                                         <td>ราคา</td>
@@ -14,6 +15,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr class="firstTr">
+	                                                	<td><input type="text" class="text_data inputautofill w-100 mdeqcode" name="field[0][mdeqcode]" id="mdeqcode_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 num" name="field[0][price]" id="num_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" /></td>
@@ -40,11 +42,11 @@
 					selectFirst: false,
 			         select: function( event, ui ) {
 			                // สำหรับทดสอบแสดงค่า เมื่อเลือกรายการ
-			              console.log( ui.item );              //   "Selected: " + ui.item.label :
+			                //   "Selected: " + ui.item.label :
 			                //  "Nothing selected, input was " + this.value);
-							console.log( $(this).parent().parent());
 							var table = $(this).parent().parent()
 
+			                table.find(".mdeqcode").val(ui.item.name);
 			                table.find(".name").val(ui.item.name);
 			                table.find(".num").val(ui.item.unit);
 			                table.find(".price").val(ui.item.price);
@@ -56,7 +58,7 @@
 			     });
 
 	}
-	autocomplete($("#name_0"))
+	autocomplete($("#mdeqcode_0"))
     $("#addRow").click(function(){
         // ส่วนของการ clone ข้อมูลด้วย jquery clone() ค่า true คือ
         // การกำหนดให้ ไม่ต้องมีการ ดึงข้อมูลจากค่าเดิมมาใช้งาน
@@ -65,14 +67,14 @@
         .find("input").attr("value","").end()
         .appendTo($("#myTbl"));
                i++;
-        $(".firstTr:eq(" + i + ")").children().children().eq(0).attr("name","field[" + i + "][name]").attr("id","name_"+i);
-        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][num]").attr("id","num_"+i);
-        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][price]").attr("id","price_"+i);
-        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i);
-        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(0).attr("name","field[" + i + "][mdeqcode]").attr("id","mdeqcode_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][name]").attr("id","name_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][num]").attr("id","num_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][price]").attr("id","price_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i);
 
-        autocomplete($("#name_" + i))
-        console.log($("#name_" + i));
+        autocomplete($("#mdeqcode_" + i))
 /*
         var lastIndex=$(".inputautofill").length-1; // หา index ของตัว input ล่าสุด
         // สร้าง input element เพื่อที่จะไปแทนที่ตัวเก่า
