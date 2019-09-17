@@ -137,6 +137,7 @@
                                         <div class="row">
                                                 <div class="col-xl-11 col-lg-10 col-md-10 col-9">
 			<input type="hidden" id ="customer_id" name="customer_id" value=""/>
+                                                <input type="hidden" id ="customer_id" name="order_status" value="w"/>
 			<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     		</div>
                                                 <div class="col-xl-1 col-lg-2 col-md-2 col-3">
