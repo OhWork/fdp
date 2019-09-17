@@ -1,4 +1,10 @@
 <?php
+    $sql = "SELECT Max(order_id)+1 as MaxID FROM `order`";
+    $db->createStement($sql);
+    $db->runStmSql(array());
+    $Count = $db->moveNext_getRow('assoc');
+    $total = $Count["MaxID"];
+    $code =  sprintf("O%'05d",$total);
     $form = new form();
     $lbnamecustomer = new label('ลูกค้า');
     $lbnamessale = new label('ผู้ออก');
@@ -14,6 +20,7 @@
    $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
+    $txtocode->value = $code;
     $txtcomment = new textArea('order_comment', 'form-control col-12', '', '', 3, 2,' ');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
@@ -130,6 +137,7 @@
                                         <div class="row">
                                                 <div class="col-xl-11 col-lg-10 col-md-10 col-9">
 			<input type="hidden" id ="customer_id" name="customer_id" value=""/>
+                                                <input type="hidden" id ="customer_id" name="order_status" value="w"/>
 			<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     		</div>
                                                 <div class="col-xl-1 col-lg-2 col-md-2 col-3">

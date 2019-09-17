@@ -42,9 +42,9 @@
     <a href="index.php?url=add_customer.php" class="">เพิ่มข้อมูลลูกค้า</a>
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
-<body id="page-top" class="bg1">
+<body id="page-top">
 <?php  include_once 'menutop.php'; ?>
-    <div id="wrapper">
+    <div id="wrapper" class="bg1">
         <?php  include_once 'main_menu.php'; ?>
         <div id="content-wrapper">
             <div class="container-fluid mb-3">

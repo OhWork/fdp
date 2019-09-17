@@ -370,6 +370,11 @@ input[type="text"]:focus {
     border-radius: 5px;
 }
 /*back-ground*/
+.bg {
+     background-color: rgba(245,245,245,100%);
+     font-family: "CordiaUPC_1230459";
+     font-size: 14px;
+}
 .bg1{
     background-color: rgba(225,225,225,100%);
     font-family: "CordiaUPC_1230459";
@@ -390,6 +395,7 @@ footer.ftfdp {
     background-color: rgba(0,0,0,0.25);
     border-top: solid 1px; 
     border-top-color: rgba(255,255,255,0.15);
+    height: 40px;
 }
 .ch{
     height:96px;
@@ -400,4 +406,11 @@ footer.ftfdp {
     padding-bottom: 0px;
     background-color: rgba(225,225,225,60%);
 }
+.form-control[readonly]{
+     background-color: rgba(225,225,225,60%);
+}
+.input-group-text{
+     background-color: rgba(225,225,225,60%);
+}
+
 /*add_custom input*/
