@@ -27,7 +27,7 @@
 
     </head>
 
-    <body class="bg1">
+    <body class="bg">
         <?php
             include  'login.php';
         ?>
