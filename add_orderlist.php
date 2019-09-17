@@ -25,7 +25,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
+                            <button id="addRow" type="button" class="btn btn-primary"><i class="fas fa-plus mr-1"></i><span>เพิ่มรายการสินค้า</span></button>
                         </div>
                 </div>
         </div>

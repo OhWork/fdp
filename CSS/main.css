@@ -406,4 +406,11 @@ footer.ftfdp {
     padding-bottom: 0px;
     background-color: rgba(225,225,225,60%);
 }
+.form-control[readonly]{
+     background-color: rgba(225,225,225,60%);
+}
+.input-group-text{
+     background-color: rgba(225,225,225,60%);
+}
+
 /*add_custom input*/
