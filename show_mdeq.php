@@ -26,7 +26,7 @@
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
                         <div class="row">
                                 <div class="">
-                                        <h4>รายการสินค้า</h4>
+                                        <span class="pl-2 achf">รายการสินค้า</span>
                                 </div>
                                 <div class="ml-auto">
                                     <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_mdeq.php">
@@ -40,7 +40,7 @@
 				$grid = new gridView();
 				$grid->pr = 'customer_id';
 				$grid->header = array('<b><center>รหัสสินค้า</center></b>','<b><center>ชื่อสินค้า</center></b>','<b><center>ราคา</center></b>','<b><center>หน่วย</center></b>','<b><center>#</center></b>');
-				$grid->width = array('5%','20%','10%','10%','5%');
+				$grid->width = array('20%','40%','15%','15%','10%');
 				$grid->edit = 'main.php?url=add_mdeq.php';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';

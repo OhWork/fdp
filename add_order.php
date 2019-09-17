@@ -56,7 +56,7 @@
                                                                 <div class="w-100 tx2 aodinp2">
                                                                         <?php echo $txtnamecustomer; ?>
                                                                 </div>
-                                                                
+
                                                         </div>
                                                 </div>
                                                 <div class="col-xl-12 col-lg-12 col-md-12 col-12">
@@ -230,10 +230,6 @@
             $( "#customer_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
          });
-         jQuery.validator.setDefaults({
-		debug: true,
-		success: "valid"
-	});
 	$( "#form_reg" ).validate({
 		rules: {
 		    customer_name: "required",

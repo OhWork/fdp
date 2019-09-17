@@ -17,7 +17,7 @@
                                                 <tr class="firstTr">
 	                                                	<td><input type="text" class="text_data inputautofill w-100 mdeqcode" name="field[0][mdeqcode]" id="mdeqcode_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
-                                                        <td><input type="text" class="text_data inputautofill w-100 num" name="field[0][price]" id="num_0" /></td>
+                                                        <td><input type="text" class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" /></td>
                                                         <td><input type="text" class="text_data inputautofill w-100 fakepice" name="field[0][fakeprice]" id="fakeprice_0" />
                                                         <input type="hidden" class="text_data inputautofill w-100 mdeqid" name="field[0][mdeqid]" id="mdeqid_0" /></td>

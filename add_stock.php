@@ -12,41 +12,44 @@
 	//$txtmdeq->value = $r['mdeq_name'];
     }
 ?>
-<div class="col-12">
+<div class="col-12 card bdadd">
         <div class="row">
-                <div class="col-xl-2 col-lg-1"></div>
-                <div class="col-xl-8 col-lg-10 col-md-12 col-12 bg-dark bdac1">
+                <div class="col-12 pt-3 tx3 card-header">
                         <div class="row">
-                                <div class="col-12 pt-3 tx3">
+                                <span class="pl-2 achf">เพิ่มจำนวนสินค้า</span>
+                        </div>
+                </div>
+<?php   echo $form->open("","","col-12","insert_typemdeq.php",""); ?>
+                <div class="col-12">
+                        <div class="row">
+                                <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <h2 class="pl-3">เพิ่มจำนวนสินค้า</h2>
+                                                <div class="w-100 pt-1 tx2 adeqtext">
+                                                        <?php echo $lbname;  ?>
+                                                </div>
+                                                <div class="w-100 tx2 adeqinp3">
+                                                        <?php echo $txtname; ?>
+                                                </div>
                                         </div>
                                 </div>
-<?php   echo $form->open("","","col-12","insert_typemdeq.php",""); ?>
-                                <div class="col-12 mt-4 tx2">
-                                        <?php echo $lbname;  ?>
-                                </div>
-                                <div class="col-12">
-                                        <?php echo $txtname; ?>
-                                </div>
-                                <div class="col-12 mt-3 tx2">
-                                    <div class="row">
-                                            <div class="col-xl-1 col-lg-1 col-md-1 col-12 pt-1 tx2">
-                                                    <?php echo $lbamount;  ?>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-4 col-12">
-                                                    <?php echo $txtamount; ?>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mt-3 mb-3">
+                                <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <div class="col-xl-10 col-lg-10 col-md-10 col-9"></div>
-                                        <input type="hidden" name="stock_date" value="<?php echo date("Y-m-d"); ?>"/>
-                                        <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
-                                                <div class="col-xl-2 col-lg-2 col-md-2 col-3">
+                                                <div class="w-100 pt-1 tx2 adeqtext">
+                                                        <?php echo $lbamount;  ?>
+                                                </div>
+                                                <div class="w-100 tx2 adeqinp1">
+                                                        <?php echo $txtamount; ?>
+                                                </div>
+                                        </div>
+                                </div>
+                                 <div class="col-12 mt-3 mb-3">
+                                        <div class="row">
+                                                <div class="col-xl-11 col-lg-10 col-md-10 col-9"></div>
+                                                <input type="hidden" name="stock_date" value="<?php echo date("Y-m-d"); ?>"/>
+                                                <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                                                <div class="col-xl-1 col-lg-2 col-md-2 col-3">
                                                         <div class="row">
-                                                                <div class="col-12 pl-0">
+                                                                <div class="col-12 pl-0 pr-0">
                                                                         <?php echo $submit; ?>
                                                                 </div>
                                                         </div>
@@ -56,7 +59,6 @@
                          </div>
                 </div>
         <?php echo $form->close(); ?>
-                <div class="col-xl-2 col-lg-1"></div>
         </div>
 </div>
 <script>
