@@ -34,6 +34,7 @@
 	var i = 0;
 
    function autocomplete($els) {
+	   var sum = 0.0;
         $els.autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
 			        minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
 			        source: "get_mdeqfororderlist.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
@@ -51,8 +52,14 @@
 			                table.find(".price").val(ui.item.price);
 			                table.find(".mdeqid").val(ui.item.id);
 			                table.find(".mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
-			                var sumprice =
-							$('#sumprice').text(ui.item.price);
+			                $('#myTbl > tbody  > .firstTr').each(function() {
+			                var qty = table.find('.num').val();
+					        var price = table.find('.price').val();
+					        var amount = (qty*price);
+					        console.log(amount);
+					        sum+=amount;
+							$('#sumprice').text(sum);
+							});
 							return false;
 			            }
 			     });
@@ -74,7 +81,7 @@
         $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][price]").attr("id","price_"+i);
         $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i);
         $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i);
-		console.log($(".firstTr:eq(" + i + ")").children().children().eq(6).attr("id","removeRow"+i));
+		$(".firstTr:eq(" + i + ")").children().children().eq(6).attr("id","removeRow"+i);
         autocomplete($("#mdeqcode_" + i));
         deleterows("#removeRow" + i);
 /*
