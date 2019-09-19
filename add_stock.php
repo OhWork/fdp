@@ -1,8 +1,10 @@
 <?php
     $form = new form();
+     $lbcode = new label('รหัสอุปกรณ์การแพทย์');
     $lbname = new label('ชื่ออุปกรณ์การแพทย์');
     $lbamount = new label('จำนวน');
-    $txtname = new textfield('mdeq_name','mdeq_name','form-control','','');
+    $txtname = new textfieldreadonly('mdeq_name','mdeq_name','','','');
+    $txtcode = new textfield('mdeq_code','mdeq_code','form-control','','');
     $txtamount = new textfield('mdeq_amount','','form-control','','');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
@@ -23,6 +25,16 @@
                 <div class="col-12">
                         <div class="row">
                                 <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 pt-1 tx2 adeqtext">
+                                                        <?php echo $lbcode;  ?>
+                                                </div>
+                                                <div class="w-100 tx2 adeqinp3">
+                                                        <?php echo $txtcode; ?>
+                                                </div>
+                                        </div>
+                                </div>
+                            <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 pt-1 tx2 adeqtext">
                                                         <?php echo $lbname;  ?>
@@ -64,7 +76,7 @@
 <script>
  $(function() {
 
-        $( "#mdeq_name" ).autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
+        $( "#mdeq_code" ).autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
             minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
             source: "get_mdeq.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
             open:function(){ // เมื่อมีการแสดงรายการ autocomplete
@@ -80,10 +92,10 @@
             },
             select: function( event, ui ) {
                 // สำหรับทดสอบแสดงค่า เมื่อเลือกรายการ
-              //console.log( ui.item ?
-               //   "Selected: " + ui.item.label :
-                //  "Nothing selected, input was " + this.value);
-                $("#ipzpo_address").val(ui.item.id); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
+              console.log( ui.item ?
+                  "Selected: " + ui.item.label :
+                  "Nothing selected, input was " + this.value);
+                $("#mdeq_name").val(ui.item.id); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
                 //setTimeout(function(){
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
@@ -92,20 +104,16 @@
 
                 $(".showAll_btn").click(function(){
             // ตรวจสอบถ้ามีการแสดงรายการทั้งหมดอยู่แล้ว
-            if ($( "#mdeq_name" ).autocomplete( "widget" ).is( ":visible" ) ) {
-                $( "#mdeq_name" ).autocomplete( "close" ); // ปิดการแสดงรายการทั้งหมด
+            if ($( "#mdeq_code" ).autocomplete( "widget" ).is( ":visible" ) ) {
+                $( "#mdeq_code" ).autocomplete( "close" ); // ปิดการแสดงรายการทั้งหมด
                 return;
             }
             // ส่งค่าว่างปล่าวไปทำการค้นหา จะได้ผลลัพธ์เป็นรายการทั้งหมด
-            $( "#mdeq_name" ).autocomplete( "search", "" );
+            $( "#mdeq_code" ).autocomplete( "search", "" );
 
-            $( "#mdeq_name" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
+            $( "#mdeq_code" ).focus(); //ให้ cursor ไปอยู่ที่ input text id=tags
         });
          });
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
 $( "#form_reg" ).validate({
   rules: {
     mdeq_name: "required",
