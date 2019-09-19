@@ -21,7 +21,9 @@
                                                         <td>
 	                                                        <input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
                                                         <td>
-	                                                        <input type="text" class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" />
+	                                                     <select class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" />
+														 	<option value="0">-------กรุณาระบุจำนวน-------------</option>
+	                                                     </select>
 	                                                    </td>
                                                         <td>
 	                                                        <input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" />
@@ -59,22 +61,14 @@
 
 			                table.find(".mdeqcode").val(ui.item.name);
 			                table.find(".name").val(ui.item.name);
-			                table.find(".num").val(ui.item.unit);
+// 			                table.find(".num").val(ui.item.unit);
 			                table.find(".price").val(ui.item.price);
 			                table.find(".mdeqid").val(ui.item.id);
 			                table.find(".mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
-/*
-			                $('.amount').each(function() {
-							console.log($(".firstTr").length);
-			                var qty = table.find('.num').val();
-					        var price = table.find('.price').val();
-					        var amount = (qty*price);
-// 					        table.find('.amount').val(amount);
-					        sum+=amount;
-							});
+							for(var i = 1; i<=ui.item.unit; i++) {
+					           table.find(".num").append($('<option>').text(i).attr('value', i));
+					        }
 
-							$('#sumprice').text(sum);
-*/
 							return false;
 			            }
 			     });
@@ -89,7 +83,7 @@ function getTotal(){
     $('#sumprice').text(total);
 }
 function getamount(idinput){
-	$(idinput).on("keyup",function(){
+	$(idinput).on("change",function(){
 	    var parent = $(this).parents('tr');
 	    var price = $('.price', parent);
 	    var sum = $('.amount', parent);
