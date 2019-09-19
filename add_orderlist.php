@@ -15,13 +15,25 @@
                                         </thead>
                                         <tbody>
                                                 <tr class="firstTr">
-	                                                	<td><input type="text" class="text_data inputautofill w-100 mdeqcode" name="field[0][mdeqcode]" id="mdeqcode_0" /></td>
-                                                        <td><input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
-                                                        <td><input type="text" class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" /></td>
-                                                        <td><input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" /></td>
-                                                        <td><input type="text" class="text_data inputautofill w-100 fakepice" name="field[0][fakeprice]" id="fakeprice_0" />
-                                                        <input type="hidden" class="text_data inputautofill w-100 mdeqid" name="field[0][mdeqid]" id="mdeqid_0" /></td>
-                                                        <td><button id="removeRow0" type="button"><i class="fas fa-minus"></i></button></td>
+	                                                	<td>
+		                                                	<input type="text" class="text_data inputautofill w-100 mdeqcode" name="field[0][mdeqcode]" id="mdeqcode_0" />
+		                                                </td>
+                                                        <td>
+	                                                        <input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
+                                                        <td>
+	                                                        <input type="text" class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" />
+	                                                    </td>
+                                                        <td>
+	                                                        <input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" />
+	                                                        </td>
+                                                        <td>
+	                                                        <input type="text" class="text_data inputautofill w-100 fakepice" name="field[0][fakeprice]" id="fakeprice_0" />
+															<input type="hidden" class="text_data inputautofill w-100 mdeqid" name="field[0][mdeqid]" id="mdeqid_0" />
+															<input type="text" class="text_data inputautofill w-100 amount" name="field[0][amount]" id="amount_0" />
+                                                        </td>
+                                                        <td>
+	                                                        <button id="removeRow0" type="button"><i class="fas fa-minus"></i></button>
+	                                                    </td>
                                                 </tr>
                                         </tbody>
                                 </table>
@@ -34,7 +46,6 @@
 	var i = 0;
 
    function autocomplete($els) {
-	   var sum = 0.0;
         $els.autocomplete({ // ใช้งาน autocomplete กับ input text id=tags
 			        minLength: 0, // กำหนดค่าสำหรับค้นหาอย่างน้อยเป็น 0 สำหรับใช้กับปุ่ใแสดงทั้งหมด
 			        source: "get_mdeqfororderlist.php", // กำหนดให้ใช้ค่าจากการค้นหาในฐานข้อมูล
@@ -52,21 +63,47 @@
 			                table.find(".price").val(ui.item.price);
 			                table.find(".mdeqid").val(ui.item.id);
 			                table.find(".mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
-			                $('#myTbl > tbody  > .firstTr').each(function() {
+/*
+			                $('.amount').each(function() {
+							console.log($(".firstTr").length);
 			                var qty = table.find('.num').val();
 					        var price = table.find('.price').val();
 					        var amount = (qty*price);
-					        console.log(amount);
+// 					        table.find('.amount').val(amount);
 					        sum+=amount;
-							$('#sumprice').text(sum);
 							});
+
+							$('#sumprice').text(sum);
+*/
 							return false;
 			            }
 			     });
 
 	}
+
+function getTotal(){
+    var total = 0.0;
+    $('.amount').each(function(){
+        total += parseFloat(this.value)
+    });
+    $('#sumprice').text(total);
+}
+function getamount(idinput){
+	$(idinput).on("keyup",function(){
+	    var parent = $(this).parents('tr');
+	    var price = $('.price', parent);
+	    var sum = $('.amount', parent);
+	    console.log(price.get(0).value);
+	    var value = parseInt(this.value) * parseFloat(price.get(0).value);
+	    sum.val(value);
+	    console.log(value);
+	    getTotal();
+	});
+}
+
 	autocomplete($("#mdeqcode_0"));
-        deleterows("#removeRow0");
+    deleterows("#removeRow0");
+    getamount("#num_0");
     $("#addRow").click(function(){
         // ส่วนของการ clone ข้อมูลด้วย jquery clone() ค่า true คือ
         // การกำหนดให้ ไม่ต้องมีการ ดึงข้อมูลจากค่าเดิมมาใช้งาน
@@ -81,9 +118,11 @@
         $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][price]").attr("id","price_"+i);
         $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i);
         $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i);
-		$(".firstTr:eq(" + i + ")").children().children().eq(6).attr("id","removeRow"+i);
+        $(".firstTr:eq(" + i + ")").children().children().eq(6).attr("name","field[" + i + "][amount]").attr("id","amount_"+i);
+		$(".firstTr:eq(" + i + ")").children().children().eq(7).attr("id","removeRow"+i);
         autocomplete($("#mdeqcode_" + i));
         deleterows("#removeRow" + i);
+        getamount("#num_" + i);
 /*
         var lastIndex=$(".inputautofill").length-1; // หา index ของตัว input ล่าสุด
         // สร้าง input element เพื่อที่จะไปแทนที่ตัวเก่า
