@@ -21,10 +21,8 @@
                                                         <td>
 	                                                        <input type="text" class="text_data inputautofill w-100 name" name="field[0][name]" id="name_0" /></td>
                                                         <td>
-	                                                     <select class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" />
-														 	<option value="0">---- กรุณาระบุจำนวน ----</option>
-	                                                     </select>
-	                                                    </td>
+															<input type="text" class="text_data inputautofill w-100 num" name="field[0][num]" id="num_0" />
+														</td>
                                                         <td>
 	                                                        <input type="text" class="text_data inputautofill w-100 price" name="field[0][price]" id="price_0" />
 	                                                        </td>
@@ -65,9 +63,11 @@
 			                table.find(".price").val(ui.item.price);
 			                table.find(".mdeqid").val(ui.item.id);
 			                table.find(".mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
-							for(var i = 1; i<=ui.item.unit; i++) {
-					           table.find(".num").append($('<option>').text(i).attr('value', i));
-					        }
+							table.find(".num").change(function(){
+							     if(parseInt(this.value) > ui.item.unit){
+							        alert("ในคลังสินค้ามีจำนวนคงเหลือ" +ui.item.unit);
+							     }
+							})
 
 							return false;
 			            }
