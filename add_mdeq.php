@@ -146,13 +146,10 @@
         </div>
 </div>
 <script>
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
 $( "#form_reg" ).validate({
   rules: {
     mdeq_code: "required",
+    typemdeq_typemdeq_id: "required",
     mdeq_name: "required",
     mdeq_price: "required",
     mdeq_unit: "required",
