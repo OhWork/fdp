@@ -21,7 +21,7 @@
                                 <span class="pl-2 achf">เพิ่มจำนวนสินค้า</span>
                         </div>
                 </div>
-<?php   echo $form->open("","","col-12","insert_typemdeq.php",""); ?>
+<?php   echo $form->open("","","col-12","insert_stock.php",""); ?>
                 <div class="col-12">
                         <div class="row">
                                 <div class="col-12 mt-2 tx2">
@@ -59,6 +59,7 @@
                                                 <div class="col-xl-11 col-lg-10 col-md-10 col-9"></div>
                                                 <input type="hidden" name="stock_date" value="<?php echo date("Y-m-d"); ?>"/>
                                                 <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
+                                                <input type="hidden" name="mdeq_id" id="mdeq_id" value=""/>
                                                 <div class="col-xl-1 col-lg-2 col-md-2 col-3">
                                                         <div class="row">
                                                                 <div class="col-12 pl-0 pr-0">
@@ -95,7 +96,8 @@
               console.log( ui.item ?
                   "Selected: " + ui.item.label :
                   "Nothing selected, input was " + this.value);
-                $("#mdeq_name").val(ui.item.id); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
+                $("#mdeq_name").val(ui.item.name); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
+				$("#mdeq_id").val(ui.item.id);
                 //setTimeout(function(){
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
