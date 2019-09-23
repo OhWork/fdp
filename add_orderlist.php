@@ -32,12 +32,12 @@
 															<input type="hidden" class="text_data inputautofill w-100 amount" name="field[0][amount]" id="amount_0" />
                                                         </td>
                                                         <td>
-	                                                        <button id="removeRow0" type="button"><i class="fas fa-minus"></i></button>
+                                                            <button id="removeRow0" type="button" class="circle-plus minus"><i class="fas fa-minus"></i></button>
 	                                                    </td>
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <button id="addRow" type="button"><i class="fas fa-plus"></i></button>
+                                <button id="addRow" type="button" class="circle-plus"><i class="fas fa-plus"></i></button>
                         </div>
                 </div>
         </div>

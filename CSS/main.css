@@ -150,7 +150,7 @@
 }
 /*brd-addcustom*/
 .bdadd {
-     border: 16px solid rgba(52,58,64,0.45);
+     border: 8px solid rgba(52,58,64,0.45);
      border-radius: 7px;
 }
 /*add-order*/
@@ -339,6 +339,23 @@
 .btn-circle {
     padding: 6px 8px 8px 8px;
     border-radius: 50%;
+}
+.circle-plus {
+    color:rgba(52,58,64,0.45);
+    border-width: 1px;
+    border-color: rgba(52,58,64,0.45);
+    border-style: solid;
+    border-radius: 50%;
+}
+.circle-plus:hover {
+    color:#ffffff;
+    border-color: #32CD32;
+    background-color: #32CD32;
+}
+.minus:hover {
+    color:#ffffff;
+    border-color: #cd3232;
+    background-color: #cd3232;
 }
 input[type="text"]:focus {
   border-color: #2A88AD;
