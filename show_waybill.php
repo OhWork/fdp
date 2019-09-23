@@ -26,7 +26,7 @@
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card-header">
                         <div class="row">
                                 <div class="">
-                                        <h4>รายใบส่งของ</h4>
+                                        <span class="pl-2 achf">รายใบส่งของ</span>
                                 </div>
                                 <div class="ml-auto">
                                     <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_emp.php">
@@ -41,7 +41,7 @@
 				$grid = new gridView();
 				$grid->pr = 'emp_id';
 				$grid->header = array('<b><center>รหัสพนักงาน</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-				$grid->width = array('10%','35%','35%','10%','10%');
+				$grid->width = array('10%','30%','30%','20%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
                                                                 $grid->view = '#';
 				$grid->viewtxt =' รายละเอียด';

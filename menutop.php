@@ -28,7 +28,7 @@
           <a class="dropdown-item" href="#">ประวัติส่วนตัว</a>
           <a class="dropdown-item" href="#">แก้ไขรหัสผ่าน</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout.php" >ออกจากระบบ</a>
+          <a class="dropdown-item minus" href="logout.php" >ออกจากระบบ</a>
         </div>
       </li>
     </ul>
