@@ -15,11 +15,16 @@
 } );
 </script>
 <?php
+	//ชื่อร้านค้า คลิกแล้วเข้าสู่ร้านค้านั้น
+	//
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('emp_code','emp_name','emp_tel');
+    $columns = array('order_code','customer_shop','order_date','','');
     $form = new form();
-    $rs = $db->findAll('emp');
-                 
+    $rs = $db->findByPK(array('`order`,orderlist,customer'),
+    					array('customer_customer_id'=>"customer_id",
+							  'order_id'=> 'order_order_id',
+						));
+
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
         <div class="row">
@@ -39,12 +44,10 @@
                         <div class="table-responsive">
 			<?php
 				$grid = new gridView();
-				$grid->pr = 'emp_id';
+				$grid->pr = 'order_id';
 				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
 				$grid->width = array('10%','30%','30%','10%','10%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
-                                                                $grid->view = '#';
-				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);

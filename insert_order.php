@@ -11,8 +11,8 @@ if( isset($_SESSION['token']) ){
                 'order_date' => $_POST['order_date'],
                 'order_dateexp' => $_POST['order_dateexp'],
                 'order_comment' => $_POST['order_comment'],
-//                 'order_ref' => $_POST['fakeprice'],
-                'order_status' => 'NY',  // ใช้อะไรกันแน่ ?
+                'order_code' => $_POST['order_code'],
+                'order_status' => 'W',  // ใช้อะไรกันแน่ ?
                 ));
         if($rs){
 	        echo $datetime;
@@ -25,6 +25,7 @@ if( isset($_SESSION['token']) ){
 					while($cols = $rsselct->moveNext_getRow('assoc')){
 							for($i = 0 ; $i <sizeof($_POST['field']); $i++){
 								$rsorderilst = $db->insert('orderlist',array(
+					                'orderlist_mdeqcode' => $_POST['field'][$i]['mdeqcode'],
 					                'orderlist_amourt' => $_POST['field'][$i]['num'],
 					                'orderlist_cost' => $_POST['field'][$i]['price'],
 					                'orderlist_costfake' => $_POST['field'][$i]['fakeprice'],

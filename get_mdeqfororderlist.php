@@ -6,7 +6,7 @@
 
 $pagesize = 10; // จำนวนรายการที่ต้องการแสดง
 $find_field="mdeq_code"; // ฟิลที่ต้องการค้นหา
-$rs = $db->conditions('mdeq',"locate('$q', $find_field ,mdeq_enable = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize");
+$rs = $db->conditions('mdeq JOIN stock ON mdeq_id = mdeq_mdeq_id',"locate('$q', $find_field ,mdeq_enable = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize");
 //$rs = $db->specifytable("*",$table_db,"locate('$q', $find_field ,status_status_id = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize")->execute();
 //while($row=mysqli_fetch_array($rs)) {
 while( $row = $rs->moveNext_getRow('array')){
@@ -14,7 +14,7 @@ while( $row = $rs->moveNext_getRow('array')){
         "id"=>$row['mdeq_id'],
         "label"=>$row['mdeq_code']."(".$row['mdeq_name'].")",
         "name"=>$row['mdeq_name'],
-        "unit"=>$row['mdeq_unit'],
+        "unit"=>$row['stock_amount'],
         "price"=>$row['mdeq_price'],
         "code" =>$row['mdeq_code']
     );
@@ -22,4 +22,6 @@ while( $row = $rs->moveNext_getRow('array')){
 $json= json_encode($json_data);
 echo $json;
 exit;
+// validate หาก เยอะกว่าจำนวน
+
 ?>
