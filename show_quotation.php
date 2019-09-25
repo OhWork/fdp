@@ -40,8 +40,8 @@
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'emp_id';
-				$grid->header = array('<b><center>รหัสพนักงาน</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-				$grid->width = array('10%','30%','30%','20%','10%');
+				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
+				$grid->width = array('10%','30%','30%','10%','10%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
                                                                 $grid->view = '#';
 				$grid->viewtxt =' รายละเอียด';
