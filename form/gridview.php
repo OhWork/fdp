@@ -90,7 +90,7 @@ class gridView{
 
 			$footer.= "<td width='{$footerwidth}'>{$footertxt}</td>";
 		}
-                           
+
 		$columncount = count($fields);
 			while( $r = $result->moveNext_getRow('assoc')){
 
@@ -101,11 +101,11 @@ class gridView{
 				for($i =0; $i<$columncount; $i++){
     				//ส่วนนี้อาจกระทบทั้งระบบ
     				$body.="<td><center>";
-    				
+
     				    $fieldIndex = $fields[$i];
-                                                                    $columntxt = $r[$fieldIndex];
-                                                                    $body.= $columntxt;
-				    
+                        $columntxt = $r[$fieldIndex];
+                        $body.= $columntxt;
+
 
 				 $body.="</center></td>";
 				}
@@ -142,6 +142,14 @@ class gridView{
 				$this->span ='glyphicon glyphicon-question-sign';
 				$this->changetxt = '&nbsp;กำลังดำเนินการแก้ไข';
 			}
+			if(!empty($r)){
+				if($r['order_status'] == 'W'){
+					echo "รอการอนุมัติ";
+				}
+
+			}else {
+				echo" else";
+			}
 
 			if($this->imgpath !=""){
 
@@ -155,14 +163,14 @@ class gridView{
 			if($this->view !=""){
 				$body .="
 				<td>
-                                                                        <button type='button' class='btn btn-info w-100' data-toggle='modal' data-target='#Modal' data-whatever='{$id}'>{$this->viewtxt}</button>"
-                                . "                             </td>";
+                     <button type='button' class='btn btn-info w-100' data-toggle='modal' data-target='#Modal' data-whatever='{$id}'>{$this->viewtxt}</button>"
+                                . "</td>";
 			}
 /* 				add delete */
 			if($this->delete !=""){
 				$body.="
 					<td>
-                                                                                        <a href='{$this->delete}?id={$id}' class='btn btn-danger deletebox' OnClick='return chkdel();' >{$this->deletetxt}</a>
+                         <a href='{$this->delete}?id={$id}' class='btn btn-danger deletebox' OnClick='return chkdel();' >{$this->deletetxt}</a>
 					</td>";
 			}
 /* 				add edit */

@@ -27,6 +27,7 @@
         function createStement($textsql){
             $this->sql=$textsql;
             $this->stm = $this->con->prepare($this->sql);
+            return $this;
             }
         function Stement(){
             $this->stm = $this->con->prepare($this->sql);
@@ -165,6 +166,11 @@
 			}
         function conditions($table,$condition){
 			$this->createStement("SELECT * FROM $table WHERE $condition");
+			$this->runStmSql(array());
+			return $this;
+		}
+		function specifytable($tablemain,$table,$condition){
+			$this->createStement ("SELECT $tablemain FROM $table WHERE $condition");
 			$this->runStmSql(array());
 			return $this;
 		}

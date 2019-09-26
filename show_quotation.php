@@ -15,15 +15,14 @@
 } );
 </script>
 <?php
-	//ชื่อร้านค้า คลิกแล้วเข้าสู่ร้านค้านั้น
-	//
+
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('order_code','customer_shop','order_date','','');
+    $columns = array('order_code','customer_shop','order_date','order_sumshow','order_status');
     $form = new form();
-    $rs = $db->findByPK(array('`order`,orderlist,customer'),
+    $rs = $db->findByPK(array('`order`,customer'),
     					array('customer_customer_id'=>"customer_id",
-							  'order_id'=> 'order_order_id',
 						));
+
 
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">

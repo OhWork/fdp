@@ -13,6 +13,7 @@ if( isset($_SESSION['token']) ){
                 'order_comment' => $_POST['order_comment'],
                 'order_code' => $_POST['order_code'],
                 'order_status' => 'W',  // ใช้อะไรกันแน่ ?
+                'order_sumshow'=> $_POST['sumprice']
                 ));
         if($rs){
 	        echo $datetime;
@@ -36,9 +37,11 @@ if( isset($_SESSION['token']) ){
 					}
 		}
 
+
     }else{
         echo "Error : Token Data not match<br>";
     }//end chk token value
+
 }else{
     echo "Error : No Token";
     echo "ไม่มี",$_SESSION['token'];

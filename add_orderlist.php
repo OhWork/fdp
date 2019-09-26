@@ -101,7 +101,7 @@ function getTotal(){
     $('.amount').each(function(){
         total += parseFloat(this.value)
     });
-    $('#sumprice').text(total);
+    $('#sumprice').val(total);
 }
 function getamount(idinput){
 	$(idinput).on("change",function(){

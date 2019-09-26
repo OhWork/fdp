@@ -126,7 +126,7 @@
                                                                 <div class="col-12" style="margin-top: 38px;border-top: solid 1px #8e8e8e;border-bottom: double 5px #8e8e8e;">
                                                                         <div class="row">
                                                                                 <div class="col-6 tx2 mt-3"><p style="text-align: right;"><b>ยอดรวมสุทธิ</b></p></div>
-                                                                                <div class="col-6 mt-2 form-control"><span id="sumprice"><!-- ใสยอดรวม--></span></div>
+                                                                                <div class="col-6 mt-2"><input type="text"class= " form-control" id="sumprice" name ="sumprice" readonly><!-- ใสยอดรวม--></div>
                                                                         </div>
                                                                 </div>
                                                         </div>
