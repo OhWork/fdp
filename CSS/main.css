@@ -30,6 +30,16 @@
 .bdadd {
      border: 0px;
 }
+.bton {
+    position: absolute;
+    top: 24.5%;
+    right: 19.5%;
+    width: 52px;
+    border:solid 6px #fafafa;
+}
+.bton:hover {
+    border-color: #fafafa;
+}
 }
 @media (min-width: 576px){
 /*add_custom input*/
@@ -63,6 +73,13 @@
 /*brd-addcustom*/
 .bdadd {
      border: 0px;
+}
+.bton {
+    position: absolute;
+    top: 28.5%;
+    right: 30.5%;
+    width: 52px;
+    border:solid 6px #fafafa;
 }
 }
 @media (min-width: 768px){
@@ -310,15 +327,12 @@
     height:100px;
     width:250px;
 }
-.bton {
-    position: absolute;
-    top: 292px;
-    right: 40.5%;
-    width: 52px;
-    border:solid 6px #fafafa;
+.usb {
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
 }
-.bton:hover {
-    border-color: #fafafa;
+.btc {
+    background-color:#2a88d0;
 }
 .imb {
     border-top: 1px solid #ced4da;
@@ -328,13 +342,6 @@
     border-top-right-radius: 0rem;
     border-bottom-right-radius: 0rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.usb {
-    border-top-left-radius: 0rem;
-    border-bottom-left-radius: 0rem;
-}
-.btc {
-    background-color:#2a88d0;
 }
 .btn-circle {
     padding: 6px 8px 8px 8px;

@@ -21,7 +21,8 @@ echo $form->open('','','','check_login.php','');
                 </div>
         </div>
                  <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
-<!--        <button class="btn btn-primary btn-block mt-3 btc" type="submit">เข้าสู่ระบบ</button>-->
+        <div class="" style="display: flex; justify-content: center;">
+            <button class="btn btn-primary" type="submit" title="เข้าสู่ระบบ"><i class="fas fa-sign-in-alt mr-1"></i><span>เข้าสู่ระบบ</span></button>
+        </div>
 </div>
-<button class="btn btn-primary btn-block mt-3 btn-circle pt-2 bton" type="submit" title="เข้าสู่ระบบ"><i class="fas fa-sign-in-alt"></i></button>
    <?php echo $form->close();?>
