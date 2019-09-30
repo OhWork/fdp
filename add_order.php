@@ -16,8 +16,8 @@
     $lbcomment = new label('หมายเหตุ');
     $txtnamecustomer = new textfield('','customer_name','form-control','','');
     $txtaddress = new textfieldreadonly('', 'customer_address', '');
-   $txttel = new textfieldreadonly('', 'customer_tel', '');
-   $txtdate = new textfield('order_date','','form-control','','');
+    $txttel = new textfieldreadonly('', 'customer_tel', '');
+    $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
     $txtocode->value = $code;

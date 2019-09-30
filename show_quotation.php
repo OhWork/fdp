@@ -46,7 +46,7 @@
 				$grid->pr = 'order_id';
 				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
 				$grid->width = array('10%','30%','30%','10%','10%','10%');
-				$grid->edit = 'main.php?url=add_customer.php';
+				$grid->edit = 'main.php?url=add_order.php';
 				$grid->name = 'table';
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);

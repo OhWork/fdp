@@ -106,7 +106,18 @@ class gridView{
                         $columntxt = $r[$fieldIndex];
                         $body.= $columntxt;
 
+				if(!empty(@$r)){
+				if(@$r['order_status'] == 'W'){
+					 @$r['order_status'] = "รออนุมัติ";
+				}
+				if(@$r['order_status'] == 'N'){
+					 @$r['order_status'] = "ไม่อนุมัติ";
+				}
+				if(@$r['order_status'] == 'Y'){
+					 @$r['order_status'] = "อนุมัติแล้ว";
+				}
 
+			}
 				 $body.="</center></td>";
 				}
                 @$id = $r[$this->pr];
@@ -142,15 +153,6 @@ class gridView{
 				$this->span ='glyphicon glyphicon-question-sign';
 				$this->changetxt = '&nbsp;กำลังดำเนินการแก้ไข';
 			}
-			if(!empty($r)){
-				if($r['order_status'] == 'W'){
-					echo "รอการอนุมัติ";
-				}
-
-			}else {
-				echo" else";
-			}
-
 			if($this->imgpath !=""){
 
 				$body .="
