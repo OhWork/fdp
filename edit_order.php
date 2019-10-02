@@ -1,10 +1,4 @@
 <?php
-    $sql = "SELECT Max(order_id)+1 as MaxID FROM `order`";
-    $db->createStement($sql);
-    $db->runStmSql(array());
-    $Count = $db->moveNext_getRow('assoc');
-    $total = $Count["MaxID"];
-    $code =  sprintf("O%'05d",$total);
     $form = new form();
     $lbnamecustomer = new label('ลูกค้า');
     $lbnamessale = new label('ผู้ออก');
@@ -20,18 +14,38 @@
     $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
-    $txtocode->value = $code;
     $txtcomment = new textArea('order_comment', 'form-control col-12', '', '', 3, 2,' ');
+    $txtdatestart = new datetimepicker('order_date','datetimepicker1','','form-control datetimepicker-input','date-form dayinbox form-horizontal control-group controls input-group','input-group date','datetimepicker1','#datetimepicker1','','');
+    $txtdateend = new datetimepicker('order_dateexp','datetimepicker2','','form-control datetimepicker-input','date-form dayinbox form-horizontal control-group controls input-group','input-group date','datetimepicker2','#datetimepicker2','','');
+    $txtpricesum = new textfield('sumprice','','form-control','','');
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
+       if(!empty($_GET['id'])){
+	    $id = $_GET['id'];
+		$r = $db->findByPK(array(
+							'`order`','customer'
+						  ),array(
+							'customer_customer_id' => 'customer_id',
+							'order_id'=>$id,
+						  ));
+			while($cols = $r->moveNext_getRow('assoc')){
+							$txtocode =  $cols['order_code'];
+							$txtnamecustomer= $cols['customer_name'];
+							$txtdate= $cols['order_date'];
+							$txtdateexp= $cols['order_dateexp'];
+							$txtaddress= $cols['customer_address'];
+							$txttel= $cols['customer_tel'];
+							$txtcomment= $cols['order_comment'];
+							$txtpricesum= $cols['order_sumshow'];
+			}
+	}
 ?>
 <div class="col-12 card bdadd">
         <div class="row">
                 <div class="col-12 pt-3 tx3 card-header">
                         <div class="row">
                                 <span class="pl-2 achf">สร้างใบเสนอราคา</span>
-							<?php }?>
                         </div>
                 </div>
 <?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
@@ -66,23 +80,13 @@
                                                                         <?php echo $lbdate; ?>
                                                                 </div>
                                                                 <div class="w-100 tx2 aoddate mgt">
-                                                                        <div class='input-group date' id ="datetimepicker1" data-target-input="nearest">
-                                                                        <input type='text' class="form-control datetimepicker-input" name="order_date" id='date1' readonly/>
-                                                                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                                                </div>
-                                                                        </div>
+                                                                       <?php echo $txtdate; ?>
                                                                 </div>
                                                                 <div class="w-100 tx2 pt-1 aodtext3 mgt">
                                                                         <?php echo $lbdateexp; ?>
                                                                 </div>
                                                                 <div class="w-100 tx2 aoddate mgt">
-                                                                        <div class='input-group date' id ="datetimepicker2" data-target-input="nearest">
-                                                                        <input type='text' class="form-control datetimepicker-input" name="order_dateexp" id='date2' readonly/>
-                                                                                <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
-                                                                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                                                                </div>
-                                                                        </div>
+                                                                		<?php echo $txtdateexp;?>
                                                                 </div>
                                                         </div>
                                                 </div>
@@ -110,7 +114,7 @@
                                 </div>
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
-                                                <?php include 'add_orderlist.php'; ?>
+                                                <?php include 'edit_orderlist.php'; ?>
                                         </div>
                                 </div>
                                 <div class="col-12 mt-2 ">
@@ -127,7 +131,7 @@
                                                                 <div class="col-12" style="margin-top: 38px;border-top: solid 1px #8e8e8e;border-bottom: double 5px #8e8e8e;">
                                                                         <div class="row">
                                                                                 <div class="col-6 tx2 mt-3"><p style="text-align: right;"><b>ยอดรวมสุทธิ</b></p></div>
-                                                                                <div class="col-6 mt-2"><input type="text"class= " form-control" id="sumprice" name ="sumprice" readonly><!-- ใสยอดรวม--></div>
+                                                                                <div class="col-6 mt-2"> <?php echo $txtpricesum; ?></div>
                                                                         </div>
                                                                 </div>
                                                         </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	class form{
 		public $method = "POST";
 		function open($id,$name,$cass=null,$url,$java){
@@ -345,7 +345,7 @@ class labeladdday{
 			-----{$this->lists}-----
 			</option>
 			";
-                                
+
                                         while($cols = $rs->moveNext_getRow('assoc')){
 			$html.="<option value= '{$cols[$value]}'";
                                                     if($cols[$value]==$result){
@@ -360,7 +360,7 @@ class labeladdday{
 		}
 
      function selectFromTBinDB($table,$value,$label,$type,$id,$result){
-		
+
 		$html = "<select class='form-control css-require' name='{$this->name}' id='{$this->idtf}'>
 			<option value=''>
 			-----{$this->lists}-----
@@ -449,6 +449,34 @@ class labeladdday{
 		}
 		function __toString(){
 			return "<input type='button' class='{$this->cass}' name='{$this->value}'value='{$this->text}' onClick='{$this->onclick}'/>";
+		}
+	}
+	class datetimepicker{
+		public $nameinput,$id = null,$hold = null,$classinput=null,$classdivoutermost=null,$classdivsub=null,$iddivsub=null,$datatarget = null;
+		public $value=null,$functions=null;
+
+		function __construct($nameinput,$id,$hold,$classinput,$classdivoutermost,$classdivsub,$iddivsub,$datatarget,$labelfor,$value){
+			$this->nameinput = $nameinput;
+			$this->id = $id;
+			$this->hold = $hold;
+			$this->classinput = $classinput;
+			$this->classdivoutermost = $classdivoutermost;
+			$this->classdivsub = $classdivsub;
+			$this->iddivsub = $iddivsub;
+			$this->datatarget = $datatarget;
+			$this->value = $value;
+
+
+		}
+		function __toString(){
+			return "<div class='{$this->classdivoutermost}'>
+						<div class='{$this->classdivsub}' id ='{$this->iddivsub}' data-target-input='nearest'>
+							<input type='text' class='{$this->classinput}' name='{$this->nameinput}' id='{$this->id}' placeholder='{$this->hold}' value='{$this->value}' readonly/>
+							<div class='input-group-append' data-target='{$this->datatarget}' data-toggle='datetimepicker'>
+					            <div class='input-group-text'><i class='fa fa-calendar'></i></div>
+					        </div>
+						</div>
+					</div>";
 		}
 	}
 ?>
