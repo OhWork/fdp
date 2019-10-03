@@ -48,7 +48,7 @@
                                 <span class="pl-2 achf">สร้างใบเสนอราคา</span>
                         </div>
                 </div>
-<?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
+<?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_editorder.php",""); ?>
                 <div class="col-12">
                         <div class="row">
                                 <div class="col-12 mt-2 tx2">
@@ -145,10 +145,25 @@
                                                 <input type="hidden" id ="customer_id" name="order_status" value="w"/>
 			<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     		</div>
-                                                <div class="col-xl-1 col-lg-2 col-md-2 col-3">
+                                                <div class="col-xl-4 col-lg-5 col-md-5 col-4">
                                                         <div class="row">
                                                                 <div class="col-12 pl-0">
-                                                                        <?php echo $submit; ?>
+                                                                        <div class="btn-group btn-group-toggle col-12" data-toggle="buttons">
+											<label class="btn btn-success active col-6">
+												<input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked> อนุมัติใบเสนอราคา
+											</label>
+											<label class="btn btn-warning col-6">
+												<input type="radio" name="order_status" value="N" onchange="swapConfig(this)" id="nocomplete" autocomplete="off">
+												ไม่อนุมัติใบเสนอราคา
+											</label>
+										</div>
+                                                                </div>
+                                                                </div>
+                                                </div>
+										<div class="col-xl-1 col-lg-2 col-md-2 col-3">
+											<input type="hidden" name="order_id" value="<?php echo $_GET['id']; ?>">
+                                                        <?php echo $submit; ?>
+										</div>
 
                                                                 </div>
                                                         </div>
@@ -164,6 +179,14 @@
 
 
 <script>
+function swapConfig(x) {
+    var radioName = document.getElementsByName(x.name);
+    for(i = 0 ; i < radioName.length; i++){
+      document.getElementById(radioName[i].id.concat("Settings")).style.display="none";
+    }
+    document.getElementById(x.id.concat("Settings")).style.display="initial";
+
+  }
  $(function() {
         $('#datetimepicker1').datetimepicker({
 	        format:'YYYY-MM-DD',
