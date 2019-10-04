@@ -31,7 +31,7 @@
 	                                                    	<?php echo $cols['mdeq_name']; ?>
 	                                                    </td>
                                                         <td>
-															<?php echo $cols['stock_amount']; ?>
+															<?php echo $cols['orderlist_amourt']; ?>
 														</td>
                                                         <td>
 	                                                        <?php echo $cols['orderlist_cost']; ?>

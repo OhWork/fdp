@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 include "tools/db_tools.php";
 include "connect.php";
@@ -12,10 +12,10 @@ if( isset($_SESSION['token']) ){
                 'order_dateexp' => $_POST['order_dateexp'],
                 'order_comment' => $_POST['order_comment'],
                 'order_code' => $_POST['order_code'],
-                'order_status' => 'W',  // ใช้อะไรกันแน่ ?
+                'order_status' => 'W',
                 'order_sumshow'=> $_POST['sumprice']
                 ));
-        if($rs){
+        if(@$rs){
 	        echo $datetime;
 	       	        $rsselct = $db->findByPK(array(
 										'`order`'
@@ -36,7 +36,6 @@ if( isset($_SESSION['token']) ){
 							}
 					}
 		}
-
 
     }else{
         echo "Error : Token Data not match<br>";
