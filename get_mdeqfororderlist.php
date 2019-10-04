@@ -10,13 +10,13 @@ $rs = $db->conditions('mdeq JOIN stock ON mdeq_id = mdeq_mdeq_id',"locate('$q', 
 //$rs = $db->specifytable("*",$table_db,"locate('$q', $find_field ,status_status_id = '1') > 0 order by locate('$q', $find_field), $find_field limit $pagesize")->execute();
 //while($row=mysqli_fetch_array($rs)) {
 while( $row = $rs->moveNext_getRow('array')){
-    $json_data[]=array(
+  $json_data []=array(
         "id"=>$row['mdeq_id'],
         "label"=>$row['mdeq_code']."(".$row['mdeq_name'].")",
         "name"=>$row['mdeq_name'],
         "unit"=>$row['stock_amount'],
         "price"=>$row['mdeq_price'],
-        "code" =>$row['mdeq_code']
+        "code" =>$row['mdeq_code'],
     );
 }
 $json= json_encode($json_data);

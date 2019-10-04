@@ -31,7 +31,6 @@
                 <div class="col-12 pt-3 tx3 card-header">
                         <div class="row">
                                 <span class="pl-2 achf">สร้างใบเสนอราคา</span>
-							<?php }?>
                         </div>
                 </div>
 <?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
