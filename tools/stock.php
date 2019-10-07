@@ -8,6 +8,8 @@ function checkstock($mdeq_id){
 									));
 					while($cols = $rsselctstock->moveNext_getRow('assoc')){
 						print_r($cols);
+						$stock_amont += $cols2['stock_amount'];
+
 					}
 }
 function checkorderlist($mdeq_id){
