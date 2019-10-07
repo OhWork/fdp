@@ -28,8 +28,8 @@
 	                                                        </td>
                                                         <td>
 	                                                        <input type="text" class="text_data inputautofill w-100 fakepice" name="field[0][fakeprice]" id="fakeprice_0" />
-															<input type="hidden" class="text_data inputautofill w-100 mdeqid" name="field[0][mdeqid]" id="mdeqid_0" />
-															<input type="hidden" class="text_data inputautofill w-100 amount" name="field[0][amount]" id="amount_0" />
+															<input type="texts" class="text_data inputautofill w-100 mdeqid" name="field[0][mdeqid]" id="mdeqid_0" />
+															<input type="text" class="text_data inputautofill w-100 amount" name="field[0][amount]" id="amount_0" />
                                                         </td>
                                                         <td>
                                                             <button id="removeRow0" type="button" class="circle-plus minus"><i class="fas fa-minus"></i></button>

@@ -16,10 +16,14 @@
 </script>
 <?php
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('emp_code','emp_name','emp_tel');
+	$columns = array('order_code','customer_shop','order_date','order_sumshow');
     $form = new form();
-    $rs = $db->findAll('emp');
-                 
+     $rs = $db->findByPK(array('`order`,customer'),
+    					array(
+    					'customer_customer_id'=>"customer_id",
+						));
+						print_r($rs);
+
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
         <div class="row">
@@ -40,7 +44,7 @@
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'emp_id';
-				$grid->header = array('<b><center>รหัสพนักงาน</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
+				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
 				$grid->width = array('10%','30%','30%','20%','10%');
 				$grid->edit = 'main.php?url=add_customer.php';
                                                                 $grid->view = '#';

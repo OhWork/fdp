@@ -16,9 +16,12 @@
 </script>
 <?php
     if (!empty($_SESSION['emp_name'])):
-    $columns = array('mdeq_code','mdeq_name','mdeq_price','','mdeq_unit');
+    $columns = array('mdeq_code','mdeq_name','mdeq_price','stock_amount','mdeq_unit');
     $form = new form();
-    $rs = $db->findAll('mdeq');
+    $rs = $db->findByPK(array('mdeq','stock')
+    					,array(
+						'mdeq_id'=>"mdeq_mdeq_id",
+					));
 
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
