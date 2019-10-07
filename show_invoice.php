@@ -20,9 +20,9 @@
     $form = new form();
      $rs = $db->findByPK(array('`order`,customer'),
     					array(
+						'order_status'=>"'Y'",
     					'customer_customer_id'=>"customer_id",
 						));
-						print_r($rs);
 
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
