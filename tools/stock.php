@@ -5,8 +5,8 @@ function checkstock ($mdeq_id){
 									),array(
 										'mdeq_mdeq_id'=>$mdeq_id
 									));
-					while($cols = $rsselct->moveNext_getRow('assoc')){
-
+					while($cols = $rsselctstock->moveNext_getRow('assoc')){
+						print_r($cols);
 					}
 }
 function checkorderlist ($mdeq_id){
@@ -15,8 +15,8 @@ function checkorderlist ($mdeq_id){
 									),array(
 										'mdeq_mdeq_id'=>$mdeq_id
 									));
-					while($cols = $rsselct->moveNext_getRow('assoc')){
-
+					while($cols2 = $rsselctorder->moveNext_getRow('assoc')){
+						rint_r($cols)2;
 					}
 
 ?>
