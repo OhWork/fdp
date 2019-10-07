@@ -1,4 +1,6 @@
 <?php
+
+                include 'tools/stock.php';
     $sql = "SELECT Max(order_id)+1 as MaxID FROM `order`";
     $db->createStement($sql);
     $db->runStmSql(array());
@@ -33,6 +35,9 @@
                                 <span class="pl-2 achf">สร้างใบเสนอราคา</span>
                         </div>
                 </div>
+                <?php $rscheckstock->checkstock();
+	                print_r($rscheckstock);
+                ?>
 <?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
                 <div class="col-12">
                         <div class="row">

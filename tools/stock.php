@@ -1,5 +1,5 @@
 <?php
-function checkstock ($mdeq_id){
+function checkstock($mdeq_id){
  $rsselctstock = $db->findByPK(array(
 										'`stock`'
 									),array(
@@ -9,7 +9,7 @@ function checkstock ($mdeq_id){
 						print_r($cols);
 					}
 }
-function checkorderlist ($mdeq_id){
+function checkorderlist($mdeq_id){
  $rsselctorder = $db->findByPK(array(
 										'`ordeerlist`'
 									),array(
@@ -18,5 +18,6 @@ function checkorderlist ($mdeq_id){
 					while($cols2 = $rsselctorder->moveNext_getRow('assoc')){
 						rint_r($cols2);
 					}
+}
 
 ?>
