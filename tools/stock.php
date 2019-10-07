@@ -1,4 +1,5 @@
 <?php
+class checkall{
 function checkstock($mdeq_id){
  $rsselctstock = $db->findByPK(array(
 										'`stock`'
@@ -19,5 +20,5 @@ function checkorderlist($mdeq_id){
 						rint_r($cols2);
 					}
 }
-
+}
 ?>

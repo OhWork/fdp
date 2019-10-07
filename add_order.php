@@ -35,7 +35,10 @@
                                 <span class="pl-2 achf">สร้างใบเสนอราคา</span>
                         </div>
                 </div>
-                <?php $rscheckstock->checkstock();
+                <?php
+	                $check = new checkall();
+
+	                $rscheckstock = $check->checkstock(1);
 	                print_r($rscheckstock);
                 ?>
 <?php echo $form->open("form_reg","","typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3","insert_order.php",""); ?>
