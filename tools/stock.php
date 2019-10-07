@@ -16,7 +16,7 @@ function checkorderlist ($mdeq_id){
 										'mdeq_mdeq_id'=>$mdeq_id
 									));
 					while($cols2 = $rsselctorder->moveNext_getRow('assoc')){
-						rint_r($cols)2;
+						rint_r($cols2);
 					}
 
 ?>
