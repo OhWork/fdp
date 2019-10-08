@@ -32,7 +32,7 @@
                                         <span class="pl-2 achf">รายการสินค้า</span>
                                 </div>
                                 <div class="ml-auto">
-                                    <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_mdeq.php">
+                                    <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_mdeq.php" title="เพิ่มอุปกรณ์การแพทย์">
                                                 <i class="fas fa-plus"></i>
                                         </a>
                                 </div>
