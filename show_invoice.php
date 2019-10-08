@@ -1,5 +1,25 @@
 <script>
-            $(document).ready(function() {
+$(document).ready(function() {
+	$('#Modal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+		  	console.log(dataString);
+            $.ajax({
+                type: "GET",
+                url: "invoice_getdata.php",
+                data: dataString,
+//                 cache: false,
+                success: function (data) {
+//                     console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    });
 
                 $('#table').DataTable( {
                 "ordering": false,
@@ -43,18 +63,19 @@
                         <div class="table-responsive">
 			<?php
 				$grid = new gridView();
-				$grid->pr = 'emp_id';
-				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
-				$grid->width = array('10%','30%','30%','20%','10%');
-				$grid->edit = 'main.php?url=add_customer.php';
-                                                                $grid->view = '#';
+				$grid->pr = 'order_id';
+				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>#</center></b>');
+				$grid->width = array('10%','30%','30%','20%');
+                 $grid->view = '#';
 				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
-				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);
 			?>
                         </div>
 	</div>
         </div>
 </div>
-<?php endif; ?>
+<?php
+	include "invoice_showdetail.php";
+	endif;
+?>
