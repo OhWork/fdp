@@ -33,7 +33,7 @@
                                         <span class="pl-2 achf">รายการใบเสนอราคา</span>
                                 </div>
                                 <div class="ml-auto">
-                                        <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_customer.php">
+                                        <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_order.php">
                                                 <i class="fas fa-plus"></i>
                                         </a>
                                 </div>

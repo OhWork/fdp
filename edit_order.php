@@ -56,7 +56,7 @@
                                                 <div class="w-100 ml-auto pt-1 tx2 aodtext1">
                                                         <?php echo $lbocode; ?>
                                                 </div>
-                                                <div class="w-100 tx2 aodinp1">
+                                                <div class="w-100 pt-1 tx2 aodinp1">
                                                         <?php echo $txtocode; ?>
                                                 </div>
                                         </div>
@@ -68,7 +68,7 @@
                                                                 <div class="w-100 tx2 pt-1 aodtext">
                                                                         <?php echo $lbnamecustomer; ?>
                                                                 </div>
-                                                                <div class="w-100 tx2 aodinp2">
+                                                                <div class="w-100 pt-1 tx2 aodinp2">
                                                                         <?php echo $txtnamecustomer; ?>
                                                                 </div>
 
@@ -79,14 +79,14 @@
                                                                 <div class="w-100 tx2 pt-1 aodtext2 mgt">
                                                                         <?php echo $lbdate; ?>
                                                                 </div>
-                                                                <div class="w-100 tx2 aoddate mgt">
+                                                                <div class="w-100 pt-1 tx2 aoddate mgt">
                                                                        <?php echo $txtdate; ?>
                                                                 </div>
                                                                 <div class="w-100 tx2 pt-1 aodtext3 mgt">
                                                                         <?php echo $lbdateexp; ?>
                                                                 </div>
-                                                                <div class="w-100 tx2 aoddate mgt">
-                                                                		<?php echo $txtdateexp;?>
+                                                                <div class="w-100 pt-1 tx2 aoddate mgt">
+                                                                        <?php echo $txtdateexp;?>
                                                                 </div>
                                                         </div>
                                                 </div>
@@ -97,7 +97,7 @@
                                                 <div class="w-100 tx2 pt-1 aodtext">
                                                         <?php echo $lbaddress; ?>
                                                 </div>
-                                                <div class="w-100 tx2 aodinp3">
+                                                <div class="w-100 pt-1 tx2 aodinp3">
                                                         <?php echo $txtaddress ; ?>
                                                 </div>
                                         </div>
@@ -107,7 +107,7 @@
                                                 <div class="w-100 tx2 pt-1 aodtext">
                                                         <?php echo $lbtel; ?>
                                                 </div>
-                                                <div class="w-100 tx2 aodinp4">
+                                                <div class="w-100 pt-1 tx2 aodinp4">
                                                         <?php echo $txttel; ?>
                                                 </div>
                                         </div>
@@ -131,7 +131,7 @@
                                                                 <div class="col-12" style="margin-top: 38px;border-top: solid 1px #8e8e8e;border-bottom: double 5px #8e8e8e;">
                                                                         <div class="row">
                                                                                 <div class="col-6 tx2 mt-3"><p style="text-align: right;"><b>ยอดรวมสุทธิ</b></p></div>
-                                                                                <div class="col-6 mt-2"> <?php echo $txtpricesum; ?></div>
+                                                                                <div class="col-6 mt-3"><p style="text-align: center;"><?php echo $txtpricesum; ?></p></div>
                                                                         </div>
                                                                 </div>
                                                         </div>
@@ -145,29 +145,24 @@
                                                 <input type="hidden" id ="customer_id" name="order_status" value="w"/>
 			<input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>"/>
                     		</div>
-                                                <div class="col-xl-4 col-lg-5 col-md-5 col-4">
+                                                <div class="col-xl-6 col-lg-8 col-md-12 col-12">
                                                         <div class="row">
-                                                                <div class="col-12 pl-0">
-                                                                        <div class="btn-group btn-group-toggle col-12" data-toggle="buttons">
-											<label class="btn btn-success active col-6">
-												<input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked> อนุมัติใบเสนอราคา
-											</label>
-											<label class="btn btn-warning col-6">
-												<input type="radio" name="order_status" value="N" onchange="swapConfig(this)" id="nocomplete" autocomplete="off">
-												ไม่อนุมัติใบเสนอราคา
-											</label>
-										</div>
-                                                                </div>
-                                                                </div>
-                                                </div>
-										<div class="col-xl-1 col-lg-2 col-md-2 col-3">
-											<input type="hidden" name="order_id" value="<?php echo $_GET['id']; ?>">
-                                                        <?php echo $submit; ?>
-										</div>
-
+                                                                <div class="btn-group btn-group-toggle col-12" data-toggle="buttons">
+                                                                        <label class="btn btn-success active col-6">
+                                                                                <input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked> 
+                                                                                อนุมัติใบเสนอราคา
+                                                                        </label>
+                                                                        <label class="btn btn-warning col-6">
+                                                                                <input type="radio" name="order_status" value="N" onchange="swapConfig(this)" id="nocomplete" autocomplete="off">
+                                                                                ไม่อนุมัติใบเสนอราคา
+                                                                        </label>
                                                                 </div>
                                                         </div>
                                                 </div>
+			<div class="col-xl-2 col-lg-2 col-md-3 col-4 ml-auto allmt">
+			<input type="hidden" name="order_id" value="<?php echo $_GET['id']; ?>">
+                                                        <?php echo $submit; ?>
+			</div>
                                         </div>
                                 </div>
     <?php echo $form->close();?>

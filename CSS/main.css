@@ -40,6 +40,9 @@
 .bton:hover {
     border-color: #fafafa;
 }
+.allmt {
+    margin-top: 16px;
+}
 }
 @media (min-width: 576px){
 /*add_custom input*/
@@ -81,6 +84,9 @@
     width: 52px;
     border:solid 6px #fafafa;
 }
+.allmt {
+    margin-top: 16px;
+}
 }
 @media (min-width: 768px){
 /*add_custom input*/
@@ -115,6 +121,9 @@
 .bdadd {
      border: 8px solid rgba(52,58,64,0.45);
      border-radius: 7px;
+}
+.allmt {
+    margin-top: 16px;
 }
 }
 @media (min-width: 992px){
@@ -247,6 +256,9 @@
 }
 .adeqinp4{
     width: 350px !important;
+}
+.allmt {
+    margin-top: 0px;
 }
 }
 @media (min-width: 1200px){

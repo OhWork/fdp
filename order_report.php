@@ -35,7 +35,7 @@
                 <table style="font-size:14px;margin-top:32px;">
                         <tr>
                                 <td style="width:110px;">ลูกค้า/Customer</td>
-		<td style="width:410px;">
+		<td style="width:400px;">
 			<?php echo $row["customer_shop"]; ?>
 		</td>
                                 <td style="width:90px;">เลขที่/No.</td>
@@ -46,7 +46,7 @@
                 <table style="font-size:14px;">
                         <tr>
                                 <td style="width:110px;">ที่อยู่/Address</td>
-		<td style="width:410px;"><?php echo $row["customer_address"]; ?></td>
+		<td style="width:400px;"><?php echo $row["customer_address"]; ?></td>
                                 <td style="width:90px;">วันที่/Issue</td>
 		<td><?php echo $row["order_date"]; ?></td>
                         </tr>
@@ -55,7 +55,7 @@
                 <table style="font-size:14px;">
                         <tr>
                                 <td style="width:110px;">ผู้ติดต่อ/Contact</td>
-		<td style="width:410px;"><?php echo $row["customer_name"]; ?></td>
+		<td style="width:400px;"><?php echo $row["customer_name"]; ?></td>
                                 <td style="width:90px;">ยอมรับ/Valid</td>
 		<td><?php echo $row["order_confirm"]; ?></td>
                         </tr>
@@ -67,9 +67,7 @@
                                 <td style="width:40px;">Tel :</td>
 		<td style="width:110px;"><?php echo $row["customer_tel"]; ?></td>
                                 <td style="width:60px;">E-mail :</td>410
-		<td style="width:200px;"><?php echo $row["customer_email"]; ?></td>
-                                <td style="width:90px;">อ้างอิง/Ref.</td>
-		<td style="width:60px;"><!--ใส่เลขที่อ้างอิง--></td>
+		<td style="width:350px;"><?php echo $row["customer_email"]; ?></td>
                         </tr>
 	</table>
                 <!--บรรทัดที่ 7-->
@@ -116,7 +114,7 @@
 ?>
                         <tr style="magin-top:px;">
                                 <td style="width:50px;height:20px;border-right: solid 1px #000;text-align: center;"><?php echo $row2["orderlist_mdeqcode"]; ?></td>
-                                <td style="width:370px;border-right: solid 1px #000;"><?php echo $row2["mdeq_name"]; ?></td>
+                                <td style="width:370px;border-right: solid 1px #000;text-align: left;"><?php echo $row2["mdeq_name"]; ?></td>
                                 <td style="width:50px;border-right: solid 1px #000;text-align: center;"><?php echo $row2["orderlist_amourt"]; ?></td>
                                 <td style="width:100px;border-right: solid 1px #000;text-align: right;"><?php echo $row2["mdeq_price"]; ?></td>
                                 <td style="width:100px;text-align: right;">
