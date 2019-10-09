@@ -68,7 +68,7 @@
                                 <td style="width:60px;">E-mail :</td>410
 		<td style="width:192px;"><?php echo $row["customer_email"]; ?></td>
                                 <td style="width:90px;">อ้างอิง/Ref.</td>
-		<td style="width:60px;"><!--ใส่เลขที่อ้างอิง--></td>
+		<td style="width:60px;"><?php echo $row["order_code"]; ?></td>
                         </tr>
 	</table>
                 <!--บรรทัดที่ 7-->
