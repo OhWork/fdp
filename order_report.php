@@ -68,8 +68,10 @@
 		<td style="width:110px;"><?php echo $row["customer_tel"]; ?></td>
                                 <td style="width:60px;">E-mail :</td>410
 		<td style="width:200px;"><?php echo $row["customer_email"]; ?></td>
+<!--
                                 <td style="width:90px;">อ้างอิง/Ref.</td>
 		<td style="width:60px;"><!--ใส่เลขที่อ้างอิง--></td>
+-->
                         </tr>
 	</table>
                 <!--บรรทัดที่ 7-->
