@@ -5,7 +5,6 @@ $(document).ready(function() {
           var recipient = button.data('whatever') // Extract info from data-* attributes
           var modal = $(this);
           var dataString = 'id=' + recipient;
-		  	console.log(dataString);
             $.ajax({
                 type: "GET",
                 url: "invoice_getdata.php",

@@ -95,8 +95,7 @@ class gridView{
 			while( $r = $result->moveNext_getRow('assoc')){
 
     			@$id = $r[$this->pr];
-
-				$body.="<tr data-href=".$this->link."&id=".$id.">";
+				$body.="<tr data-toggle='modal' data-target='#Modal2' data-href=".$this->link."&id=".$r['mdeq_id'].">";
 
 				for($i =0; $i<$columncount; $i++){
     				//ส่วนนี้อาจกระทบทั้งระบบ

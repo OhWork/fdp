@@ -1,5 +1,32 @@
 <script>
-            $(document).ready(function() {
+$(document).ready(function() {
+/*
+	$('tr').on('click', function (e) {
+		console.log(e);
+*/
+	$('#Modal2').on('show.bs.modal', function (event) {
+	    console.log(event);
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('href') // Extract info from data-* attributes
+          console.log(button);
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+		  	console.log(dataString);
+            $.ajax({
+                type: "GET",
+                url: "mdeq_getdata.php",
+                data: dataString,
+//                 cache: false,
+                success: function (data) {
+//                     console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    });
+//     });
 
                 $('#table').DataTable( {
                 "ordering": false,
@@ -12,6 +39,9 @@
                     "infoFiltered": "(filtered from _MAX_ total records)"
                 }
     } );
+/*
+
+*/
 } );
 </script>
 <?php
@@ -41,7 +71,7 @@
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">
 			<?php
 				$grid = new gridView();
-				$grid->pr = 'customer_id';
+				$grid->pr = 'mdeq_id';
 				$grid->header = array('<b><center>รหัสสินค้า</center></b>','<b><center>ชื่อสินค้า</center></b>','<b><center>ราคา</center></b>','<b><center>จำคนวนคงเหลือ</center></b>','<b><center>หน่วย</center></b>','<b><center>#</center></b>');
 				$grid->width = array('20%','40%','10%','10%','10%','10%');
 				$grid->edit = 'main.php?url=add_mdeq.php';
@@ -52,4 +82,7 @@
 	</div>
         </div>
 </div>
-<?php endif; ?>
+<?php
+	include 'mdeq_viewdetail.php';
+	endif;
+?>
