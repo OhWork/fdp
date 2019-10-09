@@ -28,11 +28,6 @@
                                 <div class="">
                                         <span class="pl-2 achf">รายใบส่งของ</span>
                                 </div>
-                                <div class="ml-auto">
-                                    <a class="btn btn-link btn-success text-white ml-5" href="main.php?url=add_emp.php">
-                                                <i class="fas fa-plus"></i>
-                                        </a>
-                                </div>
                         </div>
 	</div>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">

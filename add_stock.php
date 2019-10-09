@@ -39,7 +39,7 @@
                                                 <div class="w-100 pt-1 tx2 adeqtext">
                                                         <?php echo $lbname;  ?>
                                                 </div>
-                                                <div class="w-100 tx2 adeqinp3">
+                                                <div class="w-100 tx2 adeqinp4">
                                                         <?php echo $txtname; ?>
                                                 </div>
                                         </div>
