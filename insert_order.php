@@ -16,7 +16,6 @@ if( isset($_SESSION['token']) ){
                 'order_sumshow'=> $_POST['sumprice']
                 ));
         if(@$rs){
-	        echo $datetime;
 	       	        $rsselct = $db->findByPK(array(
 										'`order`'
 									),array(

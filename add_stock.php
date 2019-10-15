@@ -21,7 +21,7 @@
                                 <span class="pl-2 achf">เพิ่มจำนวนสินค้า</span>
                         </div>
                 </div>
-<?php   echo $form->open("","","col-12","insert_stock.php",""); ?>
+<?php   echo $form->open("form_reg","","col-12","insert_stock.php",""); ?>
                 <div class="col-12">
                         <div class="row">
                                 <div class="col-12 mt-2 tx2">
@@ -118,6 +118,7 @@
          });
 $( "#form_reg" ).validate({
   rules: {
+    mdeq_code: "required",
     mdeq_name: "required",
     mdeq_amount: "required",
   }

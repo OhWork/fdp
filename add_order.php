@@ -14,9 +14,9 @@
     $lbdateexp = new label('วันที่หมดอายุ');
     $lbocode = new label('เลขที่ใบเสนอราคา');
     $lbcomment = new label('หมายเหตุ');
-    $txtnamecustomer = new textfield('','customer_name','form-control','','');
-    $txtaddress = new textfieldreadonly('', 'customer_address', '');
-    $txttel = new textfieldreadonly('', 'customer_tel', '');
+    $txtnamecustomer = new textfield('customer_name','customer_name','form-control','','');
+    $txtaddress = new textfieldreadonly('customer_address', 'customer_address', '');
+    $txttel = new textfieldreadonly('customer_tel', 'customer_tel', '');
     $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
     $txtocode = new textfield('order_code','','form-control','','');
