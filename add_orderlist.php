@@ -5,7 +5,7 @@
                                 <table id="myTbl" class="table table-hover table-striped table-bordered dataTable" border="1" cellspacing="2" cellpadding="0">
                                         <thead>
                                                 <tr>
-	                                                	<td>รหัสสินค้า</td>
+	                                        <td>รหัสสินค้า</td>
                                                         <td>ชื่ออุปกรณ์การแพทย์</td>
                                                         <td>จำนวน</td>
                                                         <td>ราคา</td>
@@ -43,24 +43,21 @@
         </div>
 </div>
 <div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">คุณกรอกจำนวนสินค้ามากกว่ายอดคงเหลือในคลังสินค้า</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      	<p id="numstock"></p>
-        <p>หากท่านต้องการเพิ่มจำนวนสินค้าในคลังสินค้า </p>
-        <p>>>>>>><a href="http://localhost/fdp/main.php?url=add_stock.php">คลิกที่นี้</a>&#60;&#60;&#60;&#60;&#60;&#60;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
+        <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h5 class="modal-title text-danger">คุณกรอกจำนวนสินค้ามากกว่ายอดคงเหลือในคลังสินค้า</h5>
+                        </div>
+                        <div class="modal-body">
+                                <p id="numstock"></p>
+                                <p>หากท่านต้องการเพิ่มจำนวนสินค้าในคลังสินค้า</p>
+                                <p>>>>>>><a href="http://localhost/fdp/main.php?url=add_stock.php">คลิกที่นี้</a>&#60;&#60;&#60;&#60;&#60;&#60;</p>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                        </div>
+                </div>
+        </div>
 </div>
 <script type="text/javascript">
 	var i = 0;
@@ -85,7 +82,7 @@
 			                table.find(".mdeqcode").val(ui.item.code); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
 							table.find(".num").change(function(){
 							     if(parseInt(this.value) > ui.item.unit){
-							        $("#numstock").text("ในคลังสินค้ามีจำนวนคงเหลือ"+ui.item.unit);
+							        $("#numstock").text("ในคลังสินค้ามีจำนวนคงเหลือ "+ui.item.unit);
 							        $(".modal").modal()
 							     }
 							})

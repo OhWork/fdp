@@ -5,7 +5,6 @@
     $rs = $db->findByPK(array('`order`,customer'),
                                    array('customer_customer_id'=>"customer_id",'order_id'=>$id));
 ?>
-
 <div class="modal-body col-12">
         <?php while( $row = $rs->moveNext_getRow('assoc')){  ?>
         <div class="col-12">
