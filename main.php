@@ -43,6 +43,8 @@
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
 <body id="page-top" onload="setDefault()">
+	<?php
+                print_r($_SESSION);?>
 <?php  include_once 'menutop.php'; ?>
     <div id="wrapper" class="bg1">
         <?php  include_once 'main_menu.php'; ?>

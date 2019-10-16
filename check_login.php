@@ -31,6 +31,7 @@ if( isset($_SESSION['token']) ){
                                                            ));
                  while( $col = $db->moveNext_getRow('assoc')){
                     $_SESSION['emp_name'] =  $col['emp_name'];
+                    $_SESSION['emp_permission'] = $col['emp_permission'];
          }
 	if($_SESSION['emp_name']){
 		?>

@@ -13,15 +13,12 @@
           <span>รายการ</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-<!--          <h6 class="dropdown-header">Login Screens:</h6>-->
           <a class="dropdown-item" href="main.php?url=show_quotation.php">ใบเสนอราคา</a>
           <a class="dropdown-item" href="main.php?url=show_invoice.php">ใบแจ้งหนี้/ใบส่งสินค้า</a>
-<!--          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>-->
+
         </div>
       </li>
+      <?php if($_SESSION['emp_permission'] == 0){?>
       <li class="nav-item">
           <a href="main.php?url=show_customer.php" class="nav-link"><i class="far fa-address-book"></i>
           <span>รายชื่อผู้ติดต่อ</span></a>
@@ -42,6 +39,7 @@
           <span>เพิ่มจำนวนสินค้า</span></a>
         </div>
       </li>
+      <?php } ?>
 <!--      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>

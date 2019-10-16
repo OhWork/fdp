@@ -140,12 +140,12 @@
                                                         <?php echo $lbprovince;  ?><span class="tx4">*</span>
                                                 </div>
                                                 <div class="w-100 ml-3 tx2 acpt3">
-                                                    <select id="selProvince" name="customer_provinces" class="form-control">
+                                                    <select id="selProvince" name="emp_provinces" class="form-control">
                                                     <option value=""> ----- เลือก ----- </option>
                                             <?php
                                                      $db->findAll("provinces");
                                                             while($cols = $db->moveNext_getRow('assoc')){
-                                                            echo '<option name="customer_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
+                                                            echo '<option name="emp_provinces" value="', $cols['provinces_id'], '">', $cols['provinces_name'],'</option>';
                                                             }
                                             ?>
                                                     </select>
@@ -158,12 +158,12 @@
                                                         <?php echo $lbdistrict;  ?><span class="tx4">*</span>
                                                 </div>
                                                 <div class="w-100 ml-3 tx2 acpt3">
-                                                        <select id="selDistricts" name="customer_districts"class="form-control">
+                                                        <select id="selDistricts" name="emp_districts"class="form-control">
                                                         <option value=""> ----- เลือก ----- </option>
                                                          <?php
                                                      $db->findAll("districts");
                                                             while($cols = $db->moveNext_getRow('assoc')){
-	                                                          echo '<option name="customer_districts" value="', $cols['districts_id'], '">', $cols['districts_name'],'</option>';
+	                                                          echo '<option name="emp_districts" value="', $cols['districts_id'], '">', $cols['districts_name'],'</option>';
                                                             }
                                             ?>
                                                         </select><span id="waitDistricts"></span>
@@ -176,12 +176,12 @@
                                                         <?php echo $lbsubdistrict;  ?><span class="tx4">*</span>
                                                 </div>
                                                 <div class="w-100 ml-3 tx2 acpt3">
-                                                        <select id="selSubdistricts" name="customer_subdistricts" class="form-control">
+                                                        <select id="selSubdistricts" name="emp_subdistricts" class="form-control">
                                                         <option value=""> ----- เลือก ----- </option>
                                                            <?php
                                                      $db->findAll("subdistricts");
                                                             while($cols = $db->moveNext_getRow('assoc')){
-	                                                          echo '<option name="customer_districts" value="', $cols['subdistricts_id'], '">', $cols['subdistricts_name'],'</option>';
+	                                                          echo '<option name="emp_subdistricts" value="', $cols['subdistricts_id'], '">', $cols['subdistricts_name'],'</option>';
                                                             }
 ?>
                                                         </select><span id="waitSubdistricts"></span>
@@ -255,10 +255,6 @@
 	  		   }
 	     });
     });
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
 $( "#form_reg" ).validate({
   rules: {
     emp_email: {
