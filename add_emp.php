@@ -14,6 +14,7 @@
     $lbdistrict = new label('เขต/อำเภอ');
     $lbprovince = new label('จังหวัด');
     $lbcomment = new label('หมายเหตุ');
+    $lbper = new label('ระดับของผู้ใช้');
     $txtname = new textfield('emp_name','','form-control','','');
     $txtaddress = new textfield('emp_address','','form-control','','');
     $txttel = new textfield('emp_tel','','form-control','','');
@@ -134,6 +135,7 @@
                                                 </div>
                                         </div>
                                 </div>
+<!--
                                  <div class="col-12 mt-2">
                                         <div class="row">
                                                 <div class="w-100 ml-3 pt-1 tx2 adetext">
@@ -188,6 +190,7 @@
                                                 </div>
                                         </div>
                                 </div>
+-->
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 ml-3 pt-1 tx2 adetext">
@@ -198,6 +201,7 @@
                                                 </div>
                                         </div>
                                 </div>
+<!--
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 ml-3 pt-1 tx2 adetext">
@@ -206,6 +210,7 @@
                                                 <div class="ml-3 adepic"></div>
                                         </div>
                                 </div>
+-->
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 ml-3 pt-1 tx2 adetext">
@@ -213,6 +218,48 @@
                                                 </div>
                                                 <div class="w-100 ml-3 tx2 adeinp4">
                                                         <?php echo $txtcomment;  ?>
+                                                </div>
+                                        </div>
+                                </div>
+                                 <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 ml-3 pt-1 tx2 adetext">
+                                                        <?php echo $lbper;  ?>
+                                                </div>
+                                                <div class="w-100 ml-3 tx2 adeinp4">
+	                                                <?php if(!empty($_GET['id'])){
+		                                                $rper = $db->findByPK(array('emp'),array('emp_id'=>$id));
+															while($cols2 = $rper->moveNext_getRow('assoc')){
+																if($cols2['emp_permission'] == 0){
+																?>
+																<select id="permission" name="emp_permission" class="form-control">
+																	<option value=""> ----- เลือก ----- </option>
+																	<option value="1"> พนักงาน </option>
+																	<option value="0" selected> ผู้ดูแลระบบ</option>
+                                            					</select>
+																<?php
+																}else{
+																	?>
+																	<select id="permission" name="emp_permission" class="form-control">
+																	<option value=""> ----- เลือก ----- </option>
+																	<option value="1" selected> พนักงาน </option>
+																	<option value="0"> ผู้ดูแลระบบ</option>
+                                            					</select
+																	<?php
+																}
+															}
+	                                                ?>
+<!--
+
+-->
+
+	                                                <?php }else{?>
+                                                       <select id="permission" name="emp_permission" class="form-control">
+													   		<option value=""> ----- เลือก ----- </option>
+													   		<option value="1"> พนักงาน </option>
+													   		<option value="0"> ผู้ดูแลระบบ</option>
+                                            			</select>
+														<?php } ?>
                                                 </div>
                                         </div>
                                 </div>
