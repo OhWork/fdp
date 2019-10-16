@@ -32,7 +32,7 @@
 <?php
                 session_start();
 	ob_start();
-	error_reporting(0);
+// 	error_reporting(0);
 	if(empty($_SESSION['emp_name'])){
 	  header( "Refresh: 0; index.php" );
 	}
@@ -42,7 +42,7 @@
     <a href="index.php?url=add_customer.php" class="">เพิ่มข้อมูลลูกค้า</a>
     <button class="btn btn-danger btn-circle ml-auto" title="ออกจากระบบ"><img src="images/power.png" /></button>
 </nav>-->
-<body id="page-top">
+<body id="page-top" onload="setDefault()">
 <?php  include_once 'menutop.php'; ?>
     <div id="wrapper" class="bg1">
         <?php  include_once 'main_menu.php'; ?>
@@ -96,4 +96,67 @@ $(document).ready(function () {
         $('.sidebar').toggleClass('toggled');
     });
 	});
+	function setDefault()
+		{
+			<?php
+				/*** ค่า Default ที่ได้จากการจัดเก็บ ***/
+				$r2 = $db->findByPK(array('customer'),array('customer_id'=>$id));
+				while($cols2 = $r2->moveNext_getRow('assoc')){
+				$strpro = $cols2['customer_provinces'];
+				$strdis = $cols2['customer_districts'];
+				$strSubdis = $cols2['customer_subdistricts'];
+			?>
+				<?php
+				/*** Default Zoo  ***/
+				if($strpro != "")
+				{
+				?>
+					var objZoo=document.frmMain.selProvince;
+					for (x=0;x<objZoo.length;x++)
+					{
+						if (objZoo.options[x].value=="<?php echo $strpro;?>")
+						{
+							objZoo.options[x].selected = true;
+							break;
+						}
+					}
+				<?php
+				}
+				?>
+				<?php
+				/*** Default Subzoo  ***/
+				if($strdis != "")
+
+				{
+				?>
+					var objSubZoo=document.frmMain.selDistricts;
+					for (x=0;x<objSubZoo.length;x++)
+					{
+						if (objSubZoo.options[x].value=="<?php echo $strdis;?>")
+						{
+							objSubZoo.options[x].selected = true;
+							break;
+						}
+					}
+				<?php
+				}
+				/*** Default Subzoo  ***/
+				if($strSubdis != "")
+
+				{
+				?>
+					var objSubZoo=document.frmMain.selSubdistricts;
+					for (x=0;x<objSubZoo.length;x++)
+					{
+						if (objSubZoo.options[x].value=="<?php echo $strSubdis;?>")
+						{
+							objSubZoo.options[x].selected = true;
+							break;
+						}
+					}
+				<?php
+					}
+				}
+				?>
+}
 </script>

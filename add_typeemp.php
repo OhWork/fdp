@@ -4,6 +4,13 @@
         $lbname = new label("เพิ่มประเภทพนักงาน :");
         $txtname = new textfield('typeemp_name','','form-control','');
         $button = new buttonok('บันทึก','','btn btn-success col-md-12','');
+		if(!empty($_GET['id'])){
+			$id=$_GET['id'];
+			$r = $db->findByPK(array('emp'),array('emp_id'=>$id));
+			while($cols = $r->moveNext_getRow('assoc')){
+				$txtname->value = $cols['emp_name'];
+		    }
+   }
         echo $form->open('','','typetoolbox col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3','insert_typeemp.php',''); ?>
 <div class='col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12'>
 	<div class='row'>

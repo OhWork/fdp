@@ -28,20 +28,26 @@
   $selecttypemdeq = new SelectFromDB();
   $selecttypemdeq->name = 'typemdeq_typemdeq_id';
   $selecttypemdeq->lists = 'โปรดระบุ ชนิดของอุปกรณ์';
-    $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
-    $token = new tokens();
-    $tk = $token->openToken();
-     if(!empty($_GET['id'])){
-	//$r = $db->findByPK('mdeq','mdeq_id',$id)->executeRow();
-	//$txtmdeq->value = $r['mdeq_name'];
-  if($r["mdeq_enable"] == 1){
-    	$radiomdeqenable->add('ใช้งานได้',1,'checked','');
-    	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
-    	}else if($r['mdeq_enable'] == 0){
-        $radiomdeqenable->add('ใช้งานได้',1,'','checked');
-        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
-    	}
+  $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
+  $token = new tokens();
+  $tk = $token->openToken();
+  if(!empty($_GET['id'])){
+	$id=$_GET['id'];
+	$r = $db->findByPK(array('mdeq'),array('mdeq_id'=>$id));
+	while($cols = $r->moveNext_getRow('assoc')){
+		$txtmdeqcode->value = $cols['mdeq_code'];
+		$txtname->value = $cols['mdeq_name'];
+		$txtprice->value = $cols['mdeq_price'];
+		$txtunit->value = $cols['mdeq_unit'];
+		if($cols["mdeq_enable"] == 1){
+	    	$radiomdeqenable->add('ใช้งานได้',1,'checked','');
+	    	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
+	    }else if($r['mdeq_enable'] == 0){
+	        $radiomdeqenable->add('ใช้งานได้',1,'','checked');
+	        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
+	    }
     }
+   }
  ?>
 <div class="col-12 card bdadd">
         <div class="row">

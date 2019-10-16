@@ -29,6 +29,20 @@
     $submit = new buttonok('บันทึก','btnSubmit','btn btn-success col-12','');
     $token = new tokens();
     $tk = $token->openToken();
+    if(!empty($_GET['id'])){
+			$id=$_GET['id'];
+			$r = $db->findByPK(array('emp'),array('emp_id'=>$id));
+			while($cols = $r->moveNext_getRow('assoc')){
+				$txtname->value = $cols['emp_name'];
+				$txtemail->value = $cols['emp_email'];
+				$txtpass->value = $cols['emp_password'];
+				$txtpasscon->value = $cols['emp_password'];
+				$txtidcard->value = $cols['emp_idcard'];
+				$txtbd->value = $cols['emp_bd'];
+				$txtaddress->value = $cols['emp_address'];
+				$txttel->value =$cols['emp_tel'];
+		    }
+   }
 ?>
 <div class="col-12 card bdadd">
         <div class="row">
@@ -37,7 +51,7 @@
                                 <span class="pl-2 achf">เพิ่มพนักงาน</span>
                         </div>
                 </div>
-<?php echo $form->open("form_reg","","col-12","insert_emp.php",""); ?>
+<?php echo $form->open("form_reg","frmMain","col-12","insert_emp.php",""); ?>
                 <div class="col-12">
                         <div class="row">
                                 <div class="col-12 pt-3 pb-2 tx3 fs1">
@@ -146,6 +160,12 @@
                                                 <div class="w-100 ml-3 tx2 acpt3">
                                                         <select id="selDistricts" name="customer_districts"class="form-control">
                                                         <option value=""> ----- เลือก ----- </option>
+                                                         <?php
+                                                     $db->findAll("districts");
+                                                            while($cols = $db->moveNext_getRow('assoc')){
+	                                                          echo '<option name="customer_districts" value="', $cols['districts_id'], '">', $cols['districts_name'],'</option>';
+                                                            }
+                                            ?>
                                                         </select><span id="waitDistricts"></span>
                                                 </div>
                                         </div>
@@ -158,6 +178,12 @@
                                                 <div class="w-100 ml-3 tx2 acpt3">
                                                         <select id="selSubdistricts" name="customer_subdistricts" class="form-control">
                                                         <option value=""> ----- เลือก ----- </option>
+                                                           <?php
+                                                     $db->findAll("subdistricts");
+                                                            while($cols = $db->moveNext_getRow('assoc')){
+	                                                          echo '<option name="customer_districts" value="', $cols['subdistricts_id'], '">', $cols['subdistricts_name'],'</option>';
+                                                            }
+?>
                                                         </select><span id="waitSubdistricts"></span>
                                                 </div>
                                         </div>

@@ -1,5 +1,24 @@
 <script>
             $(document).ready(function() {
+	       $('#Modal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+            $.ajax({
+                type: "GET",
+                url: "customer_getdata.php",
+                data: dataString,
+//                 cache: false,
+                success: function (data) {
+//                     console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    });
 
                 $('#table').DataTable( {
                 "ordering": false,
@@ -19,7 +38,7 @@
     $columns = array('customer_code','customer_name','customer_tel');
     $form = new form();
     $rs = $db->findByPK(array('customer'),array('emp_emp_id' => "1"));
-                 
+
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
         <div class="row">
@@ -53,4 +72,6 @@
 	</div>
         </div>
 </div>
-<?php endif; ?>
+<?php
+	include "customer_showdetail.php";
+	endif; ?>

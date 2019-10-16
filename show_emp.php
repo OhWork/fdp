@@ -1,5 +1,24 @@
 <script>
             $(document).ready(function() {
+	            $('#Modal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+            $.ajax({
+                type: "GET",
+                url: "emp_getdata.php",
+                data: dataString,
+//                 cache: false,
+                success: function (data) {
+//                     console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    });
 
                 $('#table').DataTable( {
                 "ordering": false,
@@ -19,7 +38,7 @@
     $columns = array('emp_code','emp_name','emp_tel');
     $form = new form();
     $rs = $db->findAll('emp');
-                 
+
 ?>
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 card">
         <div class="row">
@@ -42,7 +61,7 @@
 				$grid->pr = 'emp_id';
 				$grid->header = array('<b><center>รหัสพนักงาน</center></b>','<b><center>ชื่อ-นามสกุุล</center></b>','<b><center>เบอร์โทรศัพท์</center></b>','<b><center>#</center></b>','<b><center>#</center></b>');
 				$grid->width = array('10%','30%','30%','20%','10%');
-				$grid->edit = 'main.php?url=add_customer.php';
+				$grid->edit = 'main.php?url=add_emp.php';
                                                                 $grid->view = '#';
 				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
@@ -53,4 +72,6 @@
 	</div>
         </div>
 </div>
-<?php endif; ?>
+<?php
+	include "emp_showdetail.php";
+	endif; ?>
