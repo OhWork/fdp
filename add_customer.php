@@ -206,10 +206,6 @@
 <script>
 $(document).ready(function () {
 
-	jQuery.validator.setDefaults({
-		debug: true,
-		success: "valid"
-	});
 	$( "#form_reg" ).validate({
 		rules: {
 		    customer_name: "required",
