@@ -37,6 +37,7 @@
 				$txtshop->value =$cols['customer_shop'];
 		    }
 	}
+	print_r($_SESSION['emp_id']);
 ?>
 <script>
 
@@ -190,7 +191,7 @@
                         <div class="row">
                                 <div class="col-xl-11 col-lg-10 col-md-10 col-9"></div>
                                 <input type="hidden" name="token" value="<?=$_SESSION['token']?>"/>
-                                <input type="hidden" name="emp_emp_id" value="<?=$_SESSION['emp_id']?>"/>
+                                <input type="hidden" name="emp_emp_id" value="<?=$id?>"/>
                                 <div class="col-xl-1 col-lg-2 col-md-2 col-3">
                                         <div class="row">
                                                 <div class="col-12 pl-0">
