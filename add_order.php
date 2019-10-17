@@ -101,6 +101,42 @@
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 tx2 pt-1 aodtext">
+                                                    <?php echo $lbaddress; ?>
+                                                        <!-- Labal ตำบล -->
+                                                </div>
+                                                <div class="w-100 tx2 aodinp5">
+                                                    <?php echo $txtaddress ; ?>
+                                                        <!-- เรียก ตำบล -->
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 tx2 pt-1 aodtext">
+                                                    <?php echo $lbaddress; ?>
+                                                        <!-- Labal อำเภอ -->
+                                                </div>
+                                                <div class="w-100 tx2 aodinp5">
+                                                    <?php echo $txtaddress ; ?>
+                                                        <!-- เรียก อำเภอ -->
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 tx2 pt-1 aodtext">
+                                                    <?php echo $lbaddress; ?>
+                                                        <!-- Labal จังหวัด -->
+                                                </div>
+                                                <div class="w-100 tx2 aodinp5">
+                                                    <?php echo $txtaddress ; ?>
+                                                        <!-- เรียก จังหวัด -->
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-12 mt-2 tx2">
+                                        <div class="row">
+                                                <div class="w-100 tx2 pt-1 aodtext">
                                                         <?php echo $lbtel; ?>
                                                 </div>
                                                 <div class="w-100 tx2 aodinp4">
