@@ -148,14 +148,14 @@
                                                 <div class="col-xl-6 col-lg-8 col-md-12 col-12">
                                                         <div class="row">
                                                                 <div class="btn-group btn-group-toggle col-12" data-toggle="buttons">
-                                                                        <label class="btn btn-success active col-6">
+                                                                        <button class="btn btn-success active col-6">
                                                                                 <input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked> 
                                                                                 อนุมัติใบเสนอราคา
-                                                                        </label>
-                                                                        <label class="btn btn-warning col-6">
+                                                                        </button>
+                                                                        <button class="btn btn-warning col-6">
                                                                                 <input type="radio" name="order_status" value="N" onchange="swapConfig(this)" id="nocomplete" autocomplete="off">
                                                                                 ไม่อนุมัติใบเสนอราคา
-                                                                        </label>
+                                                                        </button>
                                                                 </div>
                                                         </div>
                                                 </div>
