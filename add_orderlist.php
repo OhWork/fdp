@@ -124,13 +124,13 @@ function getamount(idinput){
         .find("input").attr("value","").end()
         .appendTo($("#myTbl"));
                i++;
-        $(".firstTr:eq(" + i + ")").children().children().eq(0).attr("name","field[" + i + "][mdeqcode]").attr("id","mdeqcode_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][name]").attr("id","name_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][num]").attr("id","num_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][price]").attr("id","price_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i).val();
-        $(".firstTr:eq(" + i + ")").children().children().eq(6).attr("name","field[" + i + "][amount]").attr("id","amount_"+i).val();
+        $(".firstTr:eq(" + i + ")").children().children().eq(0).attr("name","field[" + i + "][mdeqcode]").attr("id","mdeqcode_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(1).attr("name","field[" + i + "][name]").attr("id","name_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(2).attr("name","field[" + i + "][num]").attr("id","num_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(3).attr("name","field[" + i + "][price]").attr("id","price_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(4).attr("name","field[" + i + "][fakeprice]").attr("id","fakeprice_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(5).attr("name","field[" + i + "][mdeqid]").attr("id","mdeqid_"+i).val("");
+        $(".firstTr:eq(" + i + ")").children().children().eq(6).attr("name","field[" + i + "][amount]").attr("id","amount_"+i).val("");
 		$(".firstTr:eq(" + i + ")").children().children().eq(7).attr("id","removeRow"+i);
         autocomplete($("#mdeqcode_" + i));
         deleterows("#removeRow" + i);

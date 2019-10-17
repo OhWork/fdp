@@ -55,7 +55,6 @@ $convert .= 'สตางค์';
 return $convert;
 }
 ?>
-    ?>
 
 <html>
         <head>
