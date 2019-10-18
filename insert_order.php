@@ -44,7 +44,7 @@ if( isset($_SESSION['token']) ){
     echo "Error : No Token";
     echo "ไม่มี",$_SESSION['token'];
 }
-   if($rs && $rsselct){
+   if($rs){
        echo 'have';
         $link = "main.php?url=main.php?url=show_quotation.php";
         header( "Refresh: 2; $link" );
