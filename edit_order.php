@@ -30,9 +30,12 @@
        if(!empty($_GET['id'])){
 	    $id = $_GET['id'];
 		$r = $db->findByPK(array(
-							'`order`','customer'
+							'`order`','customer','provinces','districts','subdistricts'
 						  ),array(
 							'customer_customer_id' => 'customer_id',
+							'customer_provinces'=>'provinces.provinces_id',
+	                        'customer_districts'=>'districts.districts_id',
+	                        'customer_subdistricts'=>'subdistricts.subdistricts_id',
 							'order_id'=>$id,
 						  ));
 			while($cols = $r->moveNext_getRow('assoc')){
@@ -41,6 +44,9 @@
 							$txtdate= $cols['order_date'];
 							$txtdateexp= $cols['order_dateexp'];
 							$txtaddress= $cols['customer_address'];
+							$txtsubdis= $cols['subdistricts_name'];
+							$txtdis= $cols['districts_name'];
+							$txtpro= $cols['provinces_name'];
 							$txttel= $cols['customer_tel'];
 							$txtcomment= $cols['order_comment'];
 							$txtpricesum= $cols['order_sumshow'];
