@@ -157,25 +157,25 @@ return $convert;
                 <table style="font-size:12px;border-top: solid 1px #000;border-bottom: solid 1px #000;text-align: center;border-spacing: 0;">
 <?php
 	$rs2 = $db->conditions(" `order` JOIN orderlist ON order.order_id = orderlist.order_order_id JOIN mdeq ON orderlist.mdeq_mdeq_id = mdeq.mdeq_id","order.order_id = $id");
-
+	$i=0;
 						while( $row2 = $rs2->moveNext_getRow('assoc')){
-
 ?>
                         <tr style="magin-top:px;">
                                 <td style="width:50px;height:20px;border-right: solid 1px #000;text-align: center;"><?php echo $row2["orderlist_mdeqcode"]; ?></td>
                                 <td style="width:370px;border-right: solid 1px #000;text-align: left;"><?php echo $row2["mdeq_name"]; ?></td>
                                 <td style="width:50px;border-right: solid 1px #000;text-align: center;"><?php echo $row2["orderlist_amourt"]; ?></td>
-                                <td style="width:100px;border-right: solid 1px #000;text-align: right;"><?php echo $row2["mdeq_price"]; ?></td>
+                                <td style="width:100px;border-right: solid 1px #000;text-align: right;"><?php echo $row2["orderlist_costfake"]; ?></td>
                                 <td style="width:100px;text-align: right;">
 	                            <?php
 		                            $amount = $row2["orderlist_amourt"];
-		                            $price = $row2["mdeq_price"];
+		                            $price = $row2["orderlist_costfake"];
 		                            $total = $amount * $price;
 		                            echo $total;
 	                            ?>
 	                            </td>
                         </tr>
                          <?php
+	                         $test += $total;
 						}
                         ?>
 	</table>
@@ -184,7 +184,7 @@ return $convert;
                         <tr>
                                 <td style="width:70px;padding-top:10px;">หมายเหตุ</td>
                                 <td style="width:500px;border-right: solid 1px #000;text-align: right;padding-top:10px;">จำนวนเงินรวม</td>
-                                <td style="width:100px;text-align: right;border-bottom: solid 1px #000;"><?php echo $row["order_sumshow"]; ?></td>
+                                <td style="width:100px;text-align: right;border-bottom: solid 1px #000;"><?php echo $test; ?></td>
                         </tr>
                 </table>
                 <table>

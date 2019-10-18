@@ -50,10 +50,5 @@
         <?php } } ?>
 </div>
 <div class="modal-footer">
-	<?php if($_SESSION['emp_permission'] == 0){ ?>
-    <a class="btn btn-info" href="order_report.php?id=<?php echo $id;?>"><i class="fas fa-clipboard-list mr-1"></i><span>ใบเสนอราคา</span></a>
-    <a class="btn btn-info" href="invoice_report.php?id=<?php echo $id;?>"><i class="far fa-list-alt mr-1"></i><span>ใบแจ้งหนี้</span></a>
-    <a class="btn btn-info" href="delivery_report.php?id=<?php echo $id;?>"><i class="far fa-list-alt mr-1"></i><span>ใบส่งของ</span></a>
-    <?php }else{?>
-    <?php } ?>
+    <a class="btn btn-info" href="order_report_f.php?id=<?php echo $id;?>"><i class="fas fa-clipboard-list mr-1"></i><span>ใบเสนอราคา</span></a>
 </div>

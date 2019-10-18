@@ -1,5 +1,24 @@
 <script>
             $(document).ready(function() {
+	$('#Modal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+            $.ajax({
+                type: "GET",
+                url: "order_getdata.php",
+                data: dataString,
+//                 cache: false,
+                success: function (data) {
+//                     console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    });
 
                 $('#table').DataTable( {
                 "ordering": false,
@@ -58,8 +77,10 @@
     $columns = array('order_code','customer_shop','order_date','order_sumshow','order_status');
 				$grid = new gridView();
 				$grid->pr = 'order_id';
-				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>');
-				$grid->width = array('10%','30%','20%','10%','10%');
+				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
+				$grid->width = array('10%','30%','20%','10%','10%','10%');
+                 $grid->view = '#';
+				$grid->viewtxt =' รายละเอียด';
 				$grid->name = 'table';
 				$grid->renderFromDB($columns,$rs);
 				}
@@ -68,4 +89,7 @@
 	</div>
         </div>
 </div>
-<?php endif; ?>
+<?php
+	include "order_showdetail.php";
+	endif;
+?>
