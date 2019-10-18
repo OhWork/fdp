@@ -26,8 +26,8 @@ if( isset($_SESSION['token']) ){
                 $db->findByPK(array(
 			'emp'
 			),array(
-                                                           'emp_email' => "'$empname'",
-                                                           'emp_password' => "'$password'"
+                'emp_email' => "'$empname'",
+                 'emp_password' => "'$password'"
                                                            ));
                  while( $col = $db->moveNext_getRow('assoc')){
                     $_SESSION['emp_name'] =  $col['emp_name'];

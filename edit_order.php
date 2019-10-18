@@ -138,6 +138,7 @@
                                                 </div>
                                         </div>
                                 </div>
+                                <?php if($_SESSION['emp_permission'] == 0){?>
                                 <div class="col-12 mt-3 mb-3">
                                         <div class="row">
                                                 <div class="col-xl-11 col-lg-10 col-md-10 col-9">
@@ -149,7 +150,7 @@
                                                         <div class="row">
                                                                 <div class="btn-group btn-group-toggle col-12" data-toggle="buttons">
                                                                         <button class="btn btn-success active col-6">
-                                                                                <input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked> 
+                                                                                <input type="radio" name="order_status" value="Y" onchange="swapConfig(this)" id="complete" autocomplete="off" checked>
                                                                                 อนุมัติใบเสนอราคา
                                                                         </button>
                                                                         <button class="btn btn-warning col-6">
@@ -165,6 +166,7 @@
 			</div>
                                         </div>
                                 </div>
+             <?php } ?>
     <?php echo $form->close();?>
                         </div>
                 </div>
