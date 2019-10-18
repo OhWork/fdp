@@ -2,6 +2,7 @@
 session_start();
 include "tools/db_tools.php";
 include "connect.php";
+error_reporting(0);
 if( isset($_SESSION['token']) ){
     if( $_POST['token'] == $_SESSION['token'] ){
    $rs = $db->insert('emp',array(
@@ -31,6 +32,9 @@ if( isset($_SESSION['token']) ){
 }
    if($rs){
        echo 'have';
+
+        $link = "main.php?url=main.php?url=show_emp.php";
+        header( "Refresh: 2; $link" );
    }else{
        echo 'don\'t';
    }

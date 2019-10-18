@@ -2,6 +2,8 @@
 session_start();
 include "tools/db_tools.php";
 include "connect.php";
+
+error_reporting(0);
 if( isset($_SESSION['token']) ){
     if( $_POST['token'] == $_SESSION['token'] ){
    $rs = $db->insert('stock',array(
@@ -18,6 +20,8 @@ if( isset($_SESSION['token']) ){
 }
 if ($rs) {
     echo "data inserted";
+    $link = "main.php?url=main.php?url=add_stock.php";
+        header( "Refresh: 2; $link" );
 }
 else
 {

@@ -27,6 +27,8 @@ if( isset($_SESSION['token']) ){
 }
    if($rs){
        echo 'have';
+        $link = "main.php?url=show_customer.php";
+        header( "Refresh: 2; $link" );
    }else{
        echo 'don\'t';
    }
