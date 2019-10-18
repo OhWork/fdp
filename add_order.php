@@ -10,12 +10,18 @@
     $lbnamessale = new label('ผู้ออก');
     $lbdate = new label('วันที่สั่ง');
     $lbaddress = new label('ที่อยู่');
+    $lbsubdis = new label('ตำบล');
+    $lbdis = new label('อำเภอ');
+    $lbpro = new label('จังหวัด');
     $lbtel = new label('เบอร์โทรศัพท์');
     $lbdateexp = new label('วันที่หมดอายุ');
     $lbocode = new label('เลขที่ใบเสนอราคา');
     $lbcomment = new label('หมายเหตุ');
     $txtnamecustomer = new textfield('customer_name','customer_name','form-control','','');
     $txtaddress = new textfieldreadonly('customer_address', 'customer_address', '');
+    $txtsubdis = new textfieldreadonly('customer_subdis', 'customer_subdis', '');
+    $txtdis = new textfieldreadonly('customer_dis', 'customer_dis', '');
+    $txtpro = new textfieldreadonly('customer_pro', 'customer_pro', '');
     $txttel = new textfieldreadonly('customer_tel', 'customer_tel', '');
     $txtdate = new textfield('order_date','','form-control','','');
     $txtdateexp = new textfield('order_dateexp','','form-control','','');
@@ -101,11 +107,11 @@
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 tx2 pt-1 aodtext">
-                                                    <?php echo $lbaddress; ?>
+                                                    <?php echo $lbsubdis; ?>
                                                         <!-- Labal ตำบล -->
                                                 </div>
                                                 <div class="w-100 tx2 aodinp5">
-                                                    <?php echo $txtaddress ; ?>
+                                                    <?php echo $txtsubdis ; ?>
                                                         <!-- เรียก ตำบล -->
                                                 </div>
                                         </div>
@@ -113,11 +119,11 @@
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 tx2 pt-1 aodtext">
-                                                    <?php echo $lbaddress; ?>
+                                                    <?php echo $lbdis; ?>
                                                         <!-- Labal อำเภอ -->
                                                 </div>
                                                 <div class="w-100 tx2 aodinp5">
-                                                    <?php echo $txtaddress ; ?>
+                                                    <?php echo $txtdis ; ?>
                                                         <!-- เรียก อำเภอ -->
                                                 </div>
                                         </div>
@@ -125,11 +131,11 @@
                                 <div class="col-12 mt-2 tx2">
                                         <div class="row">
                                                 <div class="w-100 tx2 pt-1 aodtext">
-                                                    <?php echo $lbaddress; ?>
+                                                    <?php echo $lbpro; ?>
                                                         <!-- Labal จังหวัด -->
                                                 </div>
                                                 <div class="w-100 tx2 aodinp5">
-                                                    <?php echo $txtaddress ; ?>
+                                                    <?php echo $txtpro ; ?>
                                                         <!-- เรียก จังหวัด -->
                                                 </div>
                                         </div>
@@ -250,6 +256,9 @@
                 $("#customer_address").val(ui.item.add); // เก็บ id ไว้ใน hiden element ไว้นำค่าไปใช้งาน
                 $("#customer_tel").val(ui.item.tel);
                 $("#customer_id").val(ui.item.id);
+                $("#customer_subdis").val(ui.item.subdis);
+                $("#customer_dis").val(ui.item.dis);
+                $("#customer_pro").val(ui.item.pro);
                 //setTimeout(function(){
                  // $("#h_input_q").parents("form").submit(); // เมื่อเลือกรายการแล้วให้ส่งค่าฟอร์ม ทันที
            //},500);
