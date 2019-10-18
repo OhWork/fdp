@@ -2,8 +2,14 @@
     include 'tools/db_tools.php';
     include 'connect.php';
     $id = $_GET['id'];
-    $rs = $db->findByPK(array('`order`,customer'),
-                                   array('customer_customer_id'=>"customer_id",'order_id'=>$id));
+    $rs = $db->findByPK(array('`order`,customer,provinces,districts,subdistricts'),
+                                   array(
+                                   'customer_customer_id'=>"customer_id",
+	                               'customer_provinces'=>'provinces.provinces_id',
+	                               'customer_districts'=>'districts.districts_id',
+	                               'customer_subdistricts'=>'subdistricts.subdistricts_id',
+                                   'order_id'=>$id)
+                                   );
 ?>
 <div class="modal-body col-12">
         <?php while( $row = $rs->moveNext_getRow('assoc')){  ?>
@@ -52,10 +58,7 @@
         <?php } } ?>
 </div>
 <div class="modal-footer">
-	<?php if($_SESSION['emp_permission'] == 0){ ?>
     <a class="btn btn-info" href="order_report.php?id=<?php echo $id;?>"><i class="fas fa-clipboard-list mr-1"></i><span>ใบเสนอราคา</span></a>
     <a class="btn btn-info" href="invoice_report.php?id=<?php echo $id;?>"><i class="far fa-list-alt mr-1"></i><span>ใบแจ้งหนี้</span></a>
     <a class="btn btn-info" href="delivery_report.php?id=<?php echo $id;?>"><i class="far fa-list-alt mr-1"></i><span>ใบส่งของ</span></a>
-    <?php }else{?>
-    <?php } ?>
 </div>
