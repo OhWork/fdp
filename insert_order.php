@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 session_start();
 include "tools/db_tools.php";
 include "connect.php";
@@ -35,6 +35,8 @@ if( isset($_SESSION['token']) ){
 							}
 					}
 		}
+		$link = "main.php?url=main.php?url=show_quotation.php";
+        header( "Refresh: 2; $link" );
 
     }else{
         echo "Error : Token Data not match<br>";
@@ -46,8 +48,6 @@ if( isset($_SESSION['token']) ){
 }
    if($rs){
        echo 'have';
-        $link = "main.php?url=main.php?url=show_quotation.php";
-        header( "Refresh: 2; $link" );
    }else{
        echo 'don\'t';
    }
