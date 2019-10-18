@@ -3,11 +3,12 @@
     include 'connect.php';
     $id = $_GET['id'];
     $rs = $db->findByPK(array('emp'),
-                                   array('emp_id'=>$id));
+                                   array(
+                                   'emp_id'=>$id));
 ?>
 
 <div class="modal-body col-12">
-        <?php while( $row = $rs->moveNext_getRow('assoc')){  ?>
+        <?php while( $row = $rs->moveNext_getRow('assoc')){ ?>
         <div class="col-12">
                 <div class="row">
                         <div class="col-3"><p>ชื่อพนักงาน</p></div>
@@ -24,12 +25,6 @@
                 <div class="row">
                         <div class="col-3"><p>บัตรประชาชน</p></div>
                         <div class="col-9"><p><?php echo $row['emp_idcard']; ?></p></div>
-                </div>
-        </div>
-         <div class="col-12">
-                <div class="row">
-                        <div class="col-3"><p>ที่อยู่</p></div>
-                        <div class="col-9"><p><?php echo $row['emp_address']; ?></p></div>
                 </div>
         </div>
          <div class="col-12">

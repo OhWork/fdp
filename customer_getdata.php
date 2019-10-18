@@ -2,8 +2,12 @@
     include 'tools/db_tools.php';
     include 'connect.php';
     $id = $_GET['id'];
-    $rs = $db->findByPK(array('customer'),
-                                   array('customer_id'=>$id));
+    $rs = $db->findByPK(array('customer','provinces','districts','subdistricts'),
+                                   array(
+	                               'customer_provinces'=>'provinces.provinces_id',
+	                               'customer_districts'=>'districts.districts_id',
+	                               'customer_subdistricts'=>'subdistricts.subdistricts_id',
+                                   'customer_id'=>$id));
 ?>
 
 <div class="modal-body col-12">
@@ -29,7 +33,23 @@
          <div class="col-12">
                 <div class="row">
                         <div class="col-3"><p>ที่อยู่</p></div>
-                        <div class="col-9"><p><?php echo $row['customer_address']; ?></p></div>
+                        <div class="col-9">
+							<div class="row">
+		                        <div class="col-2"><p><?php echo $row['customer_address']; ?></p></div>
+		                        <div class="col-3">
+			                        <div class="col-3">ตำบล</div>
+			                        <div class="col-9"><p><?php echo $row['subdistricts_name']; ?></p></div>
+		                        </div>
+		                        <div class="col-3">
+			                        <div class="col-3">อำเภอ</div>
+			                        <div class="col-9"><p><?php echo $row['districts_name']; ?></p></div>
+		                        </div>
+		                        <div class="col-3">
+			                        <div class="col-3">จังหวัด</div>
+			                        <div class="col-9"><p><?php echo $row['provinces_name']; ?></p></div>
+		                        </div>
+							</div>
+                        </div>
                 </div>
         </div>
          <div class="col-12">
