@@ -3,7 +3,7 @@
 	require_once 'vendor/autoload.php';
 	include 'tools/db_tools.php';
 	include 'connect.php';
-	error_reporting(0);
+// 	error_reporting(0);
 
     $id = $_GET['id'];
 	$rs = $db->conditions("customer JOIN `order` ON customer_id = customer_customer_id JOIN emp ON customer.emp_emp_id = emp.emp_id","order_id = $id");
