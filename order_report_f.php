@@ -4,10 +4,12 @@
 	include 'tools/db_tools.php';
 	include 'connect.php';
 	error_reporting(0);
-	 $id = $_GET['id'];
-	$rs = $db->conditions("customer JOIN `order` ON customer_id = customer_customer_id JOIN emp ON customer.emp_emp_id = emp.emp_id","order_id = $id");
 
-    function convert($number){
+    $id = $_GET['id'];
+	$rs = $db->conditions("customer JOIN `order` ON customer_id = customer_customer_id JOIN emp ON customer.emp_emp_id = emp.emp_id","order_id = $id");
+    ?>
+    <?PHP
+function convert($number){
 $txtnum1 = array('ศูนย์','หนึ่ง','สอง','สาม','สี่','ห้า','หก','เจ็ด','แปด','เก้า','สิบ');
 $txtnum2 = array('','สิบ','ร้อย','พัน','หมื่น','แสน','ล้าน','สิบ','ร้อย','พัน','หมื่น','แสน','ล้าน');
 $number = str_replace(",","",$number);
@@ -58,9 +60,9 @@ return $convert;
 
 <html>
         <head>
-                <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+                <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         </head>
-         <body style="margin:0; margin-top:-20px;">
+        <body style="margin:0; margin-top:-20px;">
                 <!--บรรทัดที่ 1-->
                 <table style="">
 	                <?php
@@ -114,9 +116,7 @@ return $convert;
                                 <td style="width:40px;">Tel :</td>
 		<td style="width:110px;"><?php echo $row["customer_tel"]; ?></td>
                                 <td style="width:60px;">E-mail :</td>410
-		<td style="width:192px;"><?php echo $row["customer_email"]; ?></td>
-                                <td style="width:90px;">อ้างอิง/Ref.</td>
-		<td style="width:60px;"><?php echo $row["order_code"]; ?></td>
+		<td style="width:350px;"><?php echo $row["customer_email"]; ?></td>
                         </tr>
 	</table>
                 <!--บรรทัดที่ 7-->
@@ -209,14 +209,14 @@ return $convert;
                 <table style="font-size:12px;margin-top: 8px;">
                         <tr>
                                 <td style="width:360px;"></td>
-                                <td style="width:150px;">ผู้ส่ง</td>
+                                <td style="width:150px;">อนุมัติโดย</td>
                                 <td style="width:10px;"></td>
-                                <td style="width:150px;">ผู้รับ</td>
+                                <td style="width:150px;">ยอมรับใบเสนอราคา</td>
                         </tr>
                 </table>
                 <table style="font-size:12px;margin-top:60px;">
                         <tr>
-                                 <td style="width:360px;"></td>
+                                <td style="width:360px;"></td>
                                 <td style="width:150px;border-bottom: dotted 1px #000;">นายสุวพล สิงห์ไพบูรณ์พร</td>
                                 <td style="width:10px;"></td>
                                 <td style="width:150px;border-bottom: dotted 1px #000;"><?php echo $row["customer_name"]; ?></td>
@@ -231,9 +231,9 @@ return $convert;
                                 <td style="width:80px;">วันที่ยอมรับ</td>
                                 <td style="width:70px;"><?php echo $row["order_confirm"]; ?></td>
                         </tr>
-                        <?php
-	                        }
-                        ?>
+                <?php
+                }
+                ?>
 	</table>
         </body>
 </html>
