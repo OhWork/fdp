@@ -22,7 +22,9 @@
         <div class="col-12">
                 <div class="row">
                         <div class="col-3"><p>ที่อยู่</p></div>
-                        <div class="col-9"><p><?php echo $row['customer_address']; ?></p></div>
+                        <div class="col-9">
+                                <p><?php echo $row['customer_address']; ?> ตำบล <?php echo $row['subdistricts_name']; ?> อำเภอ <?php echo $row['districts_name']; ?> จังหวัด <?php echo $row['provinces_name']; ?></p>
+                        </div>
                 </div>
         </div>
         <?php

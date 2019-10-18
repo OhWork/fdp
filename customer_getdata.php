@@ -34,16 +34,7 @@
                 <div class="row">
                         <div class="col-3"><p>ที่อยู่</p></div>
                         <div class="col-9">
-							<div class="row">
-		                        	<p><?php echo $row['customer_address']; ?></p>
-			                        <p><?php echo $row['customer_address']; ?></p>
-			                        <p>ตำบล</p>
-			                        <p><?php echo $row['subdistricts_name']; ?></p>
-			                        <p>อำเภอ</p>
-			                        <p><?php echo $row['districts_name']; ?></p>
-			                        <p>จังหวัด</p>
-			                        <p><?php echo $row['provinces_name']; ?></p></div>
-			                    </div>
+                                <p><?php echo $row['customer_address']; ?> ตำบล <?php echo $row['subdistricts_name']; ?> อำเภอ <?php echo $row['districts_name']; ?> จังหวัด <?php echo $row['provinces_name']; ?></p>
                         </div>
                 </div>
         </div>
