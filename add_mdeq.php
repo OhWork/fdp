@@ -21,10 +21,12 @@
     $txtcomment = new textArea('emp_comment','form-control ch','','', 3, 2,'');
     $radiomdeqenable = new radioGroup();
     $radiomdeqenable->name = 'mdeq_enable';
+/*
   if(empty($id)){
     	$radiomdeqenable->add('ใช้งานได้',1,'','');
     	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
     	}
+*/
   $selecttypemdeq = new SelectFromDB();
   $selecttypemdeq->name = 'typemdeq_typemdeq_id';
   $selecttypemdeq->lists = 'โปรดระบุ ชนิดของอุปกรณ์';
@@ -42,9 +44,9 @@
 		if($cols["mdeq_enable"] == 1){
 	    	$radiomdeqenable->add('ใช้งานได้',1,'checked','');
 	    	$radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
-	    }else if($r['mdeq_enable'] == 0){
-	        $radiomdeqenable->add('ใช้งานได้',1,'','checked');
-	        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'','');
+	    }else if($cols['mdeq_enable'] == 0){
+	        $radiomdeqenable->add('ใช้งานได้',1,'','');
+	        $radiomdeqenable->add('ไม่สามารถใช้งานได้',0,'checked','');
 	    }
     }
    }
@@ -127,7 +129,8 @@
                                                 </div>
                                                 <div class="w-100 tx2 adeinp4">
                                                         <div class="row">
-                                                                <?php echo $radiomdeqenable; ?>
+                                                                <?php
+	                                                                echo $radiomdeqenable; ?>
                                                         </div>
                                                 </div>
                                         </div>
