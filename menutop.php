@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-5 pt-0" href="index.html">
+    <a class="navbar-brand mr-5 pt-0" href="main.php?url=show_main.php">
         <img class="" height="30px;" src="images/fdp.png" />
     </a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0 ml-5" id="sidebarToggle" href="#">

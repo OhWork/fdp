@@ -1,5 +1,6 @@
 <?php
 	ob_start();
+	error_reporting(0);
 	require_once 'vendor/autoload.php';
 	include 'tools/db_tools.php';
 	include 'connect.php';

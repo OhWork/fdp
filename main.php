@@ -32,7 +32,7 @@
 <?php
                 session_start();
 	ob_start();
-// 	error_reporting(0);
+	error_reporting(0);
 	if(empty($_SESSION['emp_name'])){
 	  header( "Refresh: 0; index.php" );
 	}
