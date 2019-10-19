@@ -69,6 +69,7 @@ $(document).ready(function() {
                         </div>
 	</div>
 	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 card-body">
+                        <div class="table-responsive">
 			<?php
 				$grid = new gridView();
 				$grid->pr = 'mdeq_id';
@@ -79,6 +80,7 @@ $(document).ready(function() {
 				$grid->edittxt ='แก้ไข';
 				$grid->renderFromDB($columns,$rs);
 			?>
+                        </div>
 	</div>
         </div>
 </div>
