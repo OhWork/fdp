@@ -37,8 +37,12 @@
 
     if (!empty($_SESSION['emp_name'])):
     $form = new form();
-    $rs = $db->findByPK(array('`order`,customer'),
-    					array('customer_customer_id'=>"customer_id",
+    $rs = $db->findByPK(array('`order`,`orderlist`,`mdeq`,`customer`,`stock`'),
+    					array(
+    							'order.order_id'=>"orderlist.order_order_id",
+    							'orderlist.mdeq_mdeq_id'=>"mdeq.mdeq_id",
+    							'stock.mdeq_mdeq_id'=>"mdeq.mdeq_id",
+    							'order.customer_customer_id'=>"customer.customer_id",
 						));
 
 
@@ -62,11 +66,11 @@
 			<?php
 				if($_SESSION['emp_permission'] == 0){
 
-				$columns = array('order_code','customer_shop','order_date','order_sumshow','order_status');
+				$columns = array('order_code','customer_shop','order_date','order_sumshow','stock_amount','order_status');
 				$grid = new gridView();
 				$grid->pr = 'order_id';
-				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
-				$grid->width = array('10%','30%','20%','10%','10%','20%');
+				$grid->header = array('<b><center>เลขที่ใบเสนอราคา</center></b>','<b><center>ชื่อร้านค้า</center></b>','<b><center>วันที่ส่ง</center></b>','<b><center>มูลค่า</center></b>','<b><center>#</center></b>','<b><center>สถานะ</center></b>','<b><center>#</center></b>');
+				$grid->width = array('10%','30%','10%','10%','10%','10%','20%');
 				$grid->edit = 'main.php?url=edit_order.php';
 				$grid->name = 'table';
 				$grid->edittxt ='เปลี่ยนสถานะใบเสนอราคา';

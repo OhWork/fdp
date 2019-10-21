@@ -95,7 +95,22 @@ class gridView{
 			while( $r = $result->moveNext_getRow('assoc')){
 
     			@$id = $r[$this->pr];
-				$body.="<tr data-toggle='modal' data-target='#Modal2' data-href=".$this->link."&id=".$r['mdeq_id'].">";
+    			if(!empty(@$r)){
+	    			echo 1234;
+						$stock = $r['stock_amount'];
+						$order = $r['orderlist_amourt'];
+						$ordertotal +=$order;
+						echo $ordertotal;
+						$total = $stock - $order;
+						$r['stock_amount']=$total;
+						if($order > $stock){
+							$body.="<tr data-toggle='modal' class='table-warning' >";
+						}
+						else{
+							$body.="<tr data-toggle='modal' data-target='#Modal2' data-href=".$this->link."&id=".$r['mdeq_id'].">";
+						}
+
+					}
 
 				for($i =0; $i<$columncount; $i++){
     				//ส่วนนี้อาจกระทบทั้งระบบ
@@ -106,15 +121,18 @@ class gridView{
                         $body.= $columntxt;
 
 				if(!empty(@$r)){
-				if(@$r['order_status'] == 'W'){
-					 @$r['order_status'] = "รออนุมัติ";
-				}
-				if(@$r['order_status'] == 'N'){
-					 @$r['order_status'] = "ไม่อนุมัติ";
-				}
-				if(@$r['order_status'] == 'Y'){
-					 @$r['order_status'] = "อนุมัติแล้ว";
-				}
+
+					if($r['order_status'] !=''){
+						if(@$r['order_status'] == 'W'){
+							 @$r['order_status'] = "รออนุมัติ";
+						}
+						if(@$r['order_status'] == 'N'){
+							 @$r['order_status'] = "ไม่อนุมัติ";
+						}
+						if(@$r['order_status'] == 'Y'){
+							 @$r['order_status'] = "อนุมัติแล้ว";
+						}
+					}
 
 			}
 				 $body.="</center></td>";
