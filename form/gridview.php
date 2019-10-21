@@ -96,17 +96,18 @@ class gridView{
 
     			@$id = $r[$this->pr];
     			if(!empty(@$r)){
-	    			echo 1234;
 						$stock = $r['stock_amount'];
 						$order = $r['orderlist_amourt'];
-						$ordertotal +=$order;
-						echo $ordertotal;
 						$total = $stock - $order;
-						$r['stock_amount']=$total;
+						$totalcut = explode("-",$total);
 						if($order > $stock){
-							$body.="<tr data-toggle='modal' class='table-warning' >";
+
+						$r['stock_amount']=$totalcut[1];
+							$body.="<tr data-toggle='modal' class='table-warning text-danger' >";
 						}
 						else{
+
+						$r['stock_amount']=$totalcut[0];
 							$body.="<tr data-toggle='modal' data-target='#Modal2' data-href=".$this->link."&id=".$r['mdeq_id'].">";
 						}
 
